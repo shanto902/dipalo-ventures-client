@@ -9,10 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        main_bg: "url('../public/assets/main-bg.jpeg')",
         main_thesis: "url('../public/assets/main-thesis.jpeg')",
         footer_1: "url('../public/assets/footer-1.png')",
         footer_2: "url('../public/assets/footer-2.jpeg')",
+        methodologyBG: "url('../public/assets/methodologyBG.jpeg')",
       },
     },
   },

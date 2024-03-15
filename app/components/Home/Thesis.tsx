@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Thesis = () => {
   return (
-    <div className="w-full h-[600px] relative bg-main_thesis bg-fixed bg-cover">
+    <div className="w-full h-[600px] relative bg-main_thesis bg-center bg-fixed bg-cover">
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
       <div className="absolute max-w-7xl mx-auto inset-0  text-white flex flex-col justify-center items-start">
