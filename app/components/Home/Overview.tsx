@@ -9,10 +9,9 @@ import Card from "../common/Card";
 const Overview = () => {
   const params = {
     dots: true,
-    infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToScroll: 4,
   };
   return (
     <div className="my-24 mx-24">
@@ -30,41 +29,25 @@ const Overview = () => {
         </div>
         <div>
           <Card
-            img="/assets/s1.jpeg"
-            heading="Industry"
-            subheading="Investments in Hard Tech innovation for climate change"
+            img="/assets/s2.jpeg"
+            heading="Stages"
+            subheading="Pre-Seed to Early Stage"
             link="https://www.google.com/"
           />
         </div>
         <div>
           <Card
-            img="/assets/s1.jpeg"
-            heading="Industry"
-            subheading="Investments in Hard Tech innovation for climate change"
+            img="/assets/s3.jpeg"
+            heading="Check Size"
+            subheading="€250K - €2M"
             link="https://www.google.com/"
           />
         </div>
         <div>
           <Card
-            img="/assets/s1.jpeg"
-            heading="Industry"
-            subheading="Investments in Hard Tech innovation for climate change"
-            link="https://www.google.com/"
-          />
-        </div>
-        <div>
-          <Card
-            img="/assets/s1.jpeg"
-            heading="Industry"
-            subheading="Investments in Hard Tech innovation for climate change"
-            link="https://www.google.com/"
-          />
-        </div>
-        <div>
-          <Card
-            img="/assets/s1.jpeg"
-            heading="Industry"
-            subheading="Investments in Hard Tech innovation for climate change"
+            img="/assets/s4.jpeg"
+            heading="Geography"
+            subheading="USA & Portugal"
             link="https://www.google.com/"
           />
         </div>

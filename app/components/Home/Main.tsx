@@ -1,10 +1,23 @@
 import React from "react";
 import PaddingContainer from "../Layout/PaddingContainer";
-
+import Image from "next/image";
+import mainBg from "@/public/assets/main-bg.jpeg";
 const Main = () => {
   return (
     <div className=" min-h-screen">
-      <div className="w-full absolute top-0 -z-10 bg-main_bg bg-cover min-h-screen flex  items-center">
+      <div className="w-full absolute top-0 -z-10 bg-cover min-h-screen flex  items-center">
+        <Image
+          className=" -z-10"
+          alt="Mountains"
+          src={mainBg}
+          placeholder="blur"
+          quality={80}
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover",
+          }}
+        />
         <PaddingContainer>
           <div>
             <span className="text-white text-7xl font-black  leading-relaxed">

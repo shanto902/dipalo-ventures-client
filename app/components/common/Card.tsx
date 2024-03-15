@@ -31,10 +31,10 @@ const Card = ({
   return (
     <div
       style={divStyle}
-      className="min-h-[400px] m-5 p-5 rounded-md grid grid-rows-2"
+      className="h-[420px] m-5 p-5 rounded-md grid grid-rows-2"
     >
       <div className="place-items-center text-white" style={{ zIndex: 1 }}>
-        <p className="text-amber-500 leading-8 text-xl mt-56">{heading}</p>
+        <p className="text-amber-500 leading-8 text-xl mt-32">{heading}</p>
         <p>{subheading}</p>
       </div>
 
