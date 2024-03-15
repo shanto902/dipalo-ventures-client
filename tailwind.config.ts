@@ -9,10 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        my_bg_image: "url('../public/assets/main-bg.png')",
+        main_bg: "url('../public/assets/main-bg.jpeg')",
+        main_thesis: "url('../public/assets/main-thesis.jpeg')",
+        footer_1: "url('../public/assets/footer-1.png')",
+        footer_2: "url('../public/assets/footer-2.jpeg')",
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light"],
+  },
 };
 export default config;
