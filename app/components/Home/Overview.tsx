@@ -4,6 +4,7 @@ import PaddingContainer from "../Layout/PaddingContainer";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Card from "../common/Card";
 
 const Overview = () => {
   const params = {
@@ -14,31 +15,61 @@ const Overview = () => {
     slidesToScroll: 1,
   };
   return (
-    <PaddingContainer className="my-24">
+    <div className="my-24 mx-24">
       <div className="text-amber-500 text-5xl font-bold text-center uppercase leading-[76px]">
         OVERVIEW
       </div>
       <Slider {...params}>
         <div>
-          <h3>1</h3>
+          <Card
+            img="/assets/s1.jpeg"
+            heading="Industry"
+            subheading="Investments in Hard Tech innovation for climate change"
+            link="https://www.google.com/"
+          />
         </div>
         <div>
-          <h3>2</h3>
+          <Card
+            img="/assets/s1.jpeg"
+            heading="Industry"
+            subheading="Investments in Hard Tech innovation for climate change"
+            link="https://www.google.com/"
+          />
         </div>
         <div>
-          <h3>3</h3>
+          <Card
+            img="/assets/s1.jpeg"
+            heading="Industry"
+            subheading="Investments in Hard Tech innovation for climate change"
+            link="https://www.google.com/"
+          />
         </div>
         <div>
-          <h3>4</h3>
+          <Card
+            img="/assets/s1.jpeg"
+            heading="Industry"
+            subheading="Investments in Hard Tech innovation for climate change"
+            link="https://www.google.com/"
+          />
         </div>
         <div>
-          <h3>5</h3>
+          <Card
+            img="/assets/s1.jpeg"
+            heading="Industry"
+            subheading="Investments in Hard Tech innovation for climate change"
+            link="https://www.google.com/"
+          />
         </div>
         <div>
-          <h3>6</h3>
+          <Card
+            img="/assets/s1.jpeg"
+            heading="Industry"
+            subheading="Investments in Hard Tech innovation for climate change"
+            link="https://www.google.com/"
+          />
         </div>
       </Slider>
-    </PaddingContainer>
+    </div>
   );
 };
 
