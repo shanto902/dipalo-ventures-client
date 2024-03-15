@@ -1,3 +1,4 @@
+import LookingFor from "./components/Home/LookingFor";
 import Main from "./components/Home/Main";
 import Methodology from "./components/Home/Methodology";
 import Overview from "./components/Home/Overview";
@@ -12,6 +13,7 @@ const Home = () => {
       <Thesis />
       <Overview />
       <Methodology />
+      <LookingFor />
     </>
   );
 };

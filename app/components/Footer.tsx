@@ -25,7 +25,7 @@ const Footer = () => {
 
       <div className="w-full h-full  bg-black bg-footer_2 bg-blend-overlay py-10 px-20">
         <div className=" " />
-        <Image src="/logo.svg" alt="Logo" width={190} height={70} />
+        <Image src="/logo.svg" alt="Logo" width={133} height={51} />
         <div className=" grid grid-cols-2 my-10 ">
           <div>
             <p className=" text-slate-300  text-xl py-5">Quick Link</p>

@@ -1,17 +1,76 @@
 "use client";
 import React from "react";
-import PaddingContainer from "../Layout/PaddingContainer";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Card from "../common/Card";
+import Card from "../common/Cards/OverViewCard";
+import { TOverviewData } from "./types";
+
+const overViewData: TOverviewData[] = [
+  {
+    id: 1,
+    image: "/assets/s1.jpeg",
+    title: "Industry",
+    subtitle: "Investments in Hard Tech innovation for climate change",
+    link: "https://www.google.com/",
+  },
+  {
+    id: 2,
+    image: "/assets/s2.jpeg",
+    title: "Stages",
+    subtitle: "Pre-Seed to Early Stage",
+    link: "https://www.google.com/",
+  },
+  {
+    id: 3,
+    image: "/assets/s3.jpeg",
+    title: "Check Size",
+    subtitle: "€250K - €2M",
+    link: "https://www.google.com/",
+  },
+  {
+    id: 4,
+    image: "/assets/s4.jpeg",
+    title: "Geography",
+    subtitle: "USA & Portugal",
+    link: "https://www.google.com/",
+  },
+];
 
 const Overview = () => {
   const params = {
     dots: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (
     <div className="my-24 mx-24">
@@ -19,38 +78,16 @@ const Overview = () => {
         OVERVIEW
       </div>
       <Slider {...params}>
-        <div>
-          <Card
-            img="/assets/s1.jpeg"
-            heading="Industry"
-            subheading="Investments in Hard Tech innovation for climate change"
-            link="https://www.google.com/"
-          />
-        </div>
-        <div>
-          <Card
-            img="/assets/s2.jpeg"
-            heading="Stages"
-            subheading="Pre-Seed to Early Stage"
-            link="https://www.google.com/"
-          />
-        </div>
-        <div>
-          <Card
-            img="/assets/s3.jpeg"
-            heading="Check Size"
-            subheading="€250K - €2M"
-            link="https://www.google.com/"
-          />
-        </div>
-        <div>
-          <Card
-            img="/assets/s4.jpeg"
-            heading="Geography"
-            subheading="USA & Portugal"
-            link="https://www.google.com/"
-          />
-        </div>
+        {overViewData.map((data) => (
+          <div key={data.id}>
+            <Card
+              image={data.image}
+              title={data.title}
+              subtitle={data.subtitle}
+              link={data.link}
+            />
+          </div>
+        ))}
       </Slider>
     </div>
   );
