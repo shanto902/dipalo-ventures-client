@@ -9,28 +9,28 @@ import { TOverviewData } from "./types";
 const overViewData: TOverviewData[] = [
   {
     id: 1,
-    image: "/assets/s1.jpeg",
+    image: "/assets/overview/s1.jpeg",
     title: "Industry",
     subtitle: "Investments in Hard Tech innovation for climate change",
     link: "https://www.google.com/",
   },
   {
     id: 2,
-    image: "/assets/s2.jpeg",
+    image: "/assets/overview/s2.jpeg",
     title: "Stages",
     subtitle: "Pre-Seed to Early Stage",
     link: "https://www.google.com/",
   },
   {
     id: 3,
-    image: "/assets/s3.jpeg",
+    image: "/assets/overview/s3.jpeg",
     title: "Check Size",
     subtitle: "€250K - €2M",
     link: "https://www.google.com/",
   },
   {
     id: 4,
-    image: "/assets/s4.jpeg",
+    image: "/assets/overview/s4.jpeg",
     title: "Geography",
     subtitle: "USA & Portugal",
     link: "https://www.google.com/",
@@ -74,7 +74,7 @@ const Overview = () => {
   };
   return (
     <div className="my-24 mx-24">
-      <div className="text-amber-500 text-5xl font-bold text-center uppercase leading-[76px]">
+      <div className="text-dipalo text-5xl font-bold text-center uppercase leading-[76px]">
         OVERVIEW
       </div>
       <Slider {...params}>

@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-
+const colors = require("tailwindcss/colors");
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -14,6 +14,17 @@ const config: Config = {
         footer_2: "url('../public/assets/footer-2.jpeg')",
         methodologyBG: "url('../public/assets/methodologyBG.jpeg')",
       },
+    },
+    colors: {
+      transparent: "transparent",
+      current: "currentColor",
+      black: colors.black,
+      white: colors.white,
+      gray: colors.gray,
+      emerald: colors.emerald,
+      indigo: colors.indigo,
+      yellow: colors.yellow,
+      dipalo: "#FFB012",
     },
   },
   plugins: [require("daisyui")],

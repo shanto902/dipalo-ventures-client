@@ -8,7 +8,7 @@ const Thesis = () => {
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
       <div className="absolute max-w-7xl mx-auto inset-0  text-white flex flex-col justify-center items-start">
-        <div className=" text-amber-500 text-6xl font-bold leading-[84.44px]">
+        <div className=" text-dipalo text-6xl font-bold leading-[84.44px]">
           THESIS
         </div>
         <div className=" flex gap-32">
@@ -16,7 +16,7 @@ const Thesis = () => {
             Currently, sectors emitting the most greenhouse gases receive the
             least VC funding. Climate Tech offers a wave of unique investment
             opportunities that will soon dominate the{" "}
-            <span className=" underline underline-offset-8 decoration-amber-500">
+            <span className=" underline underline-offset-8 decoration-dipalo">
               market
             </span>
             .

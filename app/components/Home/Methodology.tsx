@@ -7,11 +7,11 @@ const Methodology = () => {
       <div className="absolute inset-0 max-w-7xl mx-auto flex flex-col justify-center items-center text-white">
         <h1 className="text-5xl font-bold leading-relaxed">
           <span className="text-white">OUR UNIQUE</span>{" "}
-          <span className="text-amber-500">METHODOLOGY</span>
+          <span className="text-dipalo">METHODOLOGY</span>
         </h1>
 
         <div className="w-[1502px]">
-          <span className="text-amber-500 text-xl font-semibold  leading-[50px]">
+          <span className="text-dipalo text-xl font-semibold  leading-[50px]">
             Dipalo{" "}
           </span>
           <span className="text-white text-xl font-semibold  leading-[50px]">

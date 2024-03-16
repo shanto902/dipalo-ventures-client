@@ -6,7 +6,7 @@ const LookingForCard = ({ image, title, link }: TLookingForData) => {
   return (
     <div
       style={{ backgroundImage: `url('${image}')`, backgroundSize: "cover" }}
-      className="h-[410px] p-5 rounded-md relative grid grid-rows-2"
+      className="h-[532px] p-5 rounded-md relative grid grid-rows-2"
     >
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/0 to-black rounded-md" />
       <div className="z-10 flex items-end justify-center ">

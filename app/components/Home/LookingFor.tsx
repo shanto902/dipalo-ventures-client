@@ -27,16 +27,16 @@ const lookingForData: TLookingForData[] = [
 const LookingFor = () => {
   return (
     <PaddingContainer>
-      <div className=" mt-10">
+      <div className=" mt-20">
         <span className="text-zinc-900 text-[54px] font-bold leading-[76px]">
           WHO WE’RE
         </span>
-        <span className="text-amber-500 text-[54px] font-bold leading-[76px]">
+        <span className="text-dipalo text-[54px] font-bold leading-[76px]">
           {" "}
           LOOKING FOR
         </span>
       </div>
-      <div className=" grid grid-cols-3 gap-16 mt-5 mb-20">
+      <div className=" grid grid-cols-3 gap-16 mt-5 mb-24">
         {lookingForData.map((data) => (
           <LookingForCard
             key={data.id}

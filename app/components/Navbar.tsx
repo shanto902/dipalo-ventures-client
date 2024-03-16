@@ -17,8 +17,8 @@ const Navbar = () => {
   const isActive = (path: string) => path === pathname;
   return (
     <PaddingContainer>
-      <nav>
-        <div className="navbar mt-14 z-30 bg-transparent">
+      <nav className=" relative">
+        <div className="navbar absolute mt-14 z-30 bg-transparent">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -51,7 +51,7 @@ const Navbar = () => {
                       <Link
                         href={link.path}
                         className={
-                          isActive(link.path) ? "text-amber-400" : "text-white"
+                          isActive(link.path) ? "text-dipalo" : "text-white"
                         }
                       >
                         {link.name}
@@ -64,14 +64,17 @@ const Navbar = () => {
             <Image src="/logo.svg" alt="Logo" width={133} height={51} />
           </div>
           <div className="navbar-end hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">
+            <ul className=" gap-5 menu-horizontal px-1">
               {navLinks.map((link) => {
                 return (
-                  <li key={link.id} className=" text-lg font-medium">
+                  <li
+                    key={link.id}
+                    className=" text-lg font-medium hover:underline underline-offset-4 hover:decoration-dipalo "
+                  >
                     <Link
                       href={link.path}
                       className={
-                        isActive(link.path) ? "text-amber-400" : "text-white"
+                        isActive(link.path) ? "text-dipalo" : "text-white"
                       }
                     >
                       {link.name}

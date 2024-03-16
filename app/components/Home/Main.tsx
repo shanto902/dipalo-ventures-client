@@ -7,16 +7,13 @@ const Main = () => {
     <div className=" min-h-screen">
       <div className="w-full absolute top-0 -z-10 bg-cover min-h-screen flex  items-center">
         <Image
-          className=" -z-10"
-          alt="Mountains"
+          className=" -z-10 object-cover"
+          alt="Main Background"
           src={mainBg}
           placeholder="blur"
           quality={80}
           fill
           sizes="100vw"
-          style={{
-            objectFit: "cover",
-          }}
         />
         <PaddingContainer>
           <div>
@@ -27,7 +24,7 @@ const Main = () => {
               <br />
               Time{" "}
             </span>
-            <span className="text-amber-500 text-7xl font-black leading-relaxed">
+            <span className="text-dipalo text-7xl font-black leading-relaxed">
               Well Spent.
             </span>
             <div className="text-yellow-50 text-2xl font-medium leading-loose">
@@ -35,6 +32,7 @@ const Main = () => {
               digital
             </div>
           </div>
+          <div className="absolute top-0 -z-10 left-0 w-full h-full bg-black opacity-30 rounded-md" />
         </PaddingContainer>
       </div>
     </div>
