@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Layout/Navigation/Navigation";
 import Footer from "./components/Footer";
+import Navigation from "./components/Layout/Navigation/Navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,9 +20,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
+        <Navigation />
+
         <main> {children}</main>
+
         <Footer />
+        <script
+          type="module"
+          src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+          nomodule
+          src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
       </body>
     </html>
   );

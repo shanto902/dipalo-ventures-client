@@ -2,7 +2,7 @@ import React from "react";
 
 const Methodology = () => {
   return (
-    <div className="relative h-[500px] w-full bg-methodologyBG  bg-center bg-cover overflow-hidden">
+    <div className="relative h-[500px] w-full bg-methodologyBG  bg-fixed bg-center bg-cover overflow-hidden">
       <div className="absolute inset-0 bg-black bg-opacity-70"></div>
       <div className="absolute inset-0 max-w-7xl mx-auto flex flex-col justify-center items-center text-white">
         <h1 className="text-5xl font-bold leading-relaxed">

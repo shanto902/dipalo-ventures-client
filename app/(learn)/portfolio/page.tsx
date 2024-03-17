@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "../components/common/Header";
+import Header from "../../components/common/Header";
 import image from "../../public/assets/headers/learn.jpeg";
-import PaddingContainer from "../components/Layout/PaddingContainer";
+import PaddingContainer from "../../components/Layout/PaddingContainer";
 import Image from "next/image";
-const Learn = () => {
+const Portfolio = () => {
   return (
     <>
       <Header title="Portfolio" image={"/assets/headers/learn.jpeg"} />
@@ -34,11 +34,11 @@ const Learn = () => {
           height={191}
         />
       </PaddingContainer>
-      <div className=" bg-[#FFF9EE]">
+      <div className=" bg-[#FFF9EE] w-full h-[900px]">
         <div></div>
       </div>
     </>
   );
 };
 
-export default Learn;
+export default Portfolio;

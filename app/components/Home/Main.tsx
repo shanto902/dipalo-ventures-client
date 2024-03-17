@@ -32,7 +32,7 @@ const Main = () => {
               digital
             </div>
           </div>
-          <div className="absolute top-0 -z-10 left-0 w-full h-full bg-black opacity-30 rounded-md" />
+          <div className="absolute top-0 -z-10 left-0 w-full h-full bg-black opacity-30" />
         </PaddingContainer>
       </div>
     </div>

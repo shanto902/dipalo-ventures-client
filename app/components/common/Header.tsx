@@ -16,7 +16,7 @@ const Header = ({ image, title }: { image: string; title: string }) => {
           {title}
         </div>
       </div>
-      <div className="absolute inset-0 bg-black opacity-30 rounded-md" />
+      <div className="absolute inset-0 bg-black opacity-30" />
     </div>
   );
 };

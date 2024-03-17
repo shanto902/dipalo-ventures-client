@@ -77,9 +77,9 @@ const Overview = () => {
       <div className="text-dipalo text-5xl font-bold text-center uppercase leading-[76px]">
         OVERVIEW
       </div>
-      <Slider {...params}>
+      <Slider {...params} className="mt-10">
         {overViewData.map((data) => (
-          <div key={data.id}>
+          <div className=" rounded-md overflow-hidden" key={data.id}>
             <Card
               image={data.image}
               title={data.title}

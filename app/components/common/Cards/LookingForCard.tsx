@@ -6,7 +6,7 @@ const LookingForCard = ({ image, title, link }: TLookingForData) => {
   return (
     <div
       style={{ backgroundImage: `url('${image}')`, backgroundSize: "cover" }}
-      className="h-[532px] p-5 rounded-md relative grid grid-rows-2"
+      className="h-[532px] p-5 shadow-lg rounded-md relative grid grid-rows-2 transition-transform transform hover:scale-105 duration-500"
     >
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/0 to-black rounded-md" />
       <div className="z-10 flex items-end justify-center ">
@@ -16,8 +16,8 @@ const LookingForCard = ({ image, title, link }: TLookingForData) => {
       </div>
 
       <Link href={link}>
-        <button className="absolute bottom-8 left-1/2 transform -translate-x-1/2 uppercase text-center btn btn-outline z-20 text-white">
-          See More
+        <button className=" absolute bottom-8 left-1/2 transform -translate-x-1/2 uppercase text-center border rounded border-white border-opacity-30 py-2 px-8 hover:border-dipalo z-20 text-white transition-all duration-500">
+          Submit
         </button>
       </Link>
     </div>
