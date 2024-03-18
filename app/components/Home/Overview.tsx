@@ -73,15 +73,14 @@ const Overview = () => {
     ],
   };
   return (
-    <div className="lg:my-24 my-20 lg:mx-24 overflow-hidden">
-
+    <div className="my-20 overflow-hidden lg:my-24 lg:mx-24">
       {/* Title Text  */}
       <div className="text-dipalo lg:text-5xl text-5xl font-bold text-center uppercase leading-[76px]">
         OVERVIEW
       </div>
-      <Slider {...params} className="lg:mt-10 my-5">
+      <Slider {...params} className="my-5 lg:mt-10">
         {overViewData.map((data) => (
-          <div className=" rounded-md overflow-hidden py-2" key={data.id}>
+          <div className="py-2 overflow-hidden rounded-md " key={data.id}>
             <OverViewCard
               image={data.image}
               title={data.title}
