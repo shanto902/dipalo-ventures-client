@@ -3,7 +3,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Card from "../common/Cards/OverViewCard";
+import OverViewCard from "../common/Cards/OverViewCard";
 import { TOverviewData } from "./types";
 
 const overViewData: TOverviewData[] = [
@@ -47,7 +47,7 @@ const Overview = () => {
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1200,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
@@ -73,14 +73,16 @@ const Overview = () => {
     ],
   };
   return (
-    <div className="lg:my-24 my-20 lg:mx-24">
+    <div className="lg:my-24 my-20 lg:mx-24 overflow-hidden">
+
+      {/* Title Text  */}
       <div className="text-dipalo lg:text-5xl text-5xl font-bold text-center uppercase leading-[76px]">
         OVERVIEW
       </div>
-      <Slider {...params} className="lg:mt-10">
+      <Slider {...params} className="lg:mt-10 my-5">
         {overViewData.map((data) => (
-          <div className=" rounded-md overflow-hidden" key={data.id}>
-            <Card
+          <div className=" rounded-md overflow-hidden py-2" key={data.id}>
+            <OverViewCard
               image={data.image}
               title={data.title}
               subtitle={data.subtitle}

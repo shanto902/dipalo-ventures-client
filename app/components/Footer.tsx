@@ -4,8 +4,8 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div className="grid w-full lg:grid-cols-2 grid-cols-1">
-      <div className=" col-span-1 bg-dipalo bg-footer_1 bg-blend-luminosity flex-col justify-start items-start gap-[35px] inline-flex">
+    <div className="grid w-full md:grid-cols-2 grid-cols-1">
+      <div className=" col-span-1 bg-dipalo bg-footer_1 bg-blend-luminosity flex-col justify-start items-start  inline-flex">
         <PaddingContainer>
           <div className="flex-col justify-start items-start gap-[13px] flex lg:m-10 my-10">
             <div className="text-white text-[15px] font-normal  uppercase leading-relaxed tracking-[4px]">
@@ -26,7 +26,7 @@ const Footer = () => {
       <div className="w-full h-full  bg-black bg-footer_2 bg-blend-overlay py-10 lg:px-20 px-5">
         <div className=" " />
         <Image src="/logo.svg" alt="Logo" width={133} height={51} />
-        <div className=" grid lg:grid-cols-2 grid-cols-1 my-10 ">
+        <div className=" grid md:grid-cols-2 grid-cols-1 my-10 ">
           <div>
             <p className=" text-white  text-xl py-5">Quick Link</p>
             <ul className=" text-white text-base font-normal leading-7">
