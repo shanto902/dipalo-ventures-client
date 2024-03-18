@@ -17,17 +17,17 @@ const Main = () => {
         />
         <PaddingContainer>
           <div>
-            <span className="text-white text-7xl font-black  leading-relaxed">
+            <span className="text-white  text-4xl lg:text-7xl font-black leading-[50px]  lg:leading-[100px]">
               Craftsmanship,
               <br />
               Expertise,
               <br />
               Time{" "}
             </span>
-            <span className="text-dipalo text-7xl font-black leading-relaxed">
+            <span className="text-dipalo text-4xl lg:text-7xl font-black leading-[50px]  lg:leading-[100px]">
               Well Spent.
             </span>
-            <div className="text-yellow-50 text-2xl font-medium leading-loose">
+            <div className="text-yellow-50 lg:text-2xl text-lg font-medium leading-relaxed">
               Breakthrough technologies at the intersection of physical and
               digital
             </div>

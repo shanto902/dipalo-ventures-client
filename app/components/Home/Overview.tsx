@@ -73,11 +73,11 @@ const Overview = () => {
     ],
   };
   return (
-    <div className="my-24 mx-24">
-      <div className="text-dipalo text-5xl font-bold text-center uppercase leading-[76px]">
+    <div className="lg:my-24 my-20 lg:mx-24">
+      <div className="text-dipalo lg:text-5xl text-5xl font-bold text-center uppercase leading-[76px]">
         OVERVIEW
       </div>
-      <Slider {...params} className="mt-10">
+      <Slider {...params} className="lg:mt-10">
         {overViewData.map((data) => (
           <div className=" rounded-md overflow-hidden" key={data.id}>
             <Card

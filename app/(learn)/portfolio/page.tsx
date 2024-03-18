@@ -1,12 +1,12 @@
 import React from "react";
 import Header from "../../components/common/Header";
-import image from "../../public/assets/headers/learn.jpeg";
+import image from "@/public/assets/headers/learn.jpeg";
 import PaddingContainer from "../../components/Layout/PaddingContainer";
 import Image from "next/image";
 const Portfolio = () => {
   return (
     <>
-      <Header title="Portfolio" image={"/assets/headers/learn.jpeg"} />
+      <Header title="Portfolio" image={image} />
       <PaddingContainer className="my-24 relative pb-20">
         <span className="text-dipalo text-4xl font-semibold  leading-10">
           O

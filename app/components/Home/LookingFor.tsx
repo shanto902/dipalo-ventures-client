@@ -28,15 +28,15 @@ const LookingFor = () => {
   return (
     <PaddingContainer>
       <div className=" mt-20">
-        <span className="text-zinc-900 text-[54px] font-bold leading-[76px]">
+        <span className="text-zinc-900 text-5xl lg:text-6xl font-bold leading-[76px]">
           WHO WE’RE
         </span>
-        <span className="text-dipalo text-[54px] font-bold leading-[76px]">
+        <span className="text-dipalo text-5xl lg:text-6xl font-bold leading-[76px]">
           {" "}
           LOOKING FOR
         </span>
       </div>
-      <div className=" grid grid-cols-3 gap-16 mt-5 mb-24">
+      <div className=" grid lg:grid-cols-3 grid-cols-1 gap-16 mt-5 mb-24">
         {lookingForData.map((data) => (
           <LookingForCard
             key={data.id}
