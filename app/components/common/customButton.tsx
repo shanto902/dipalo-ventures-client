@@ -1,11 +1,9 @@
 import React from "react";
 
 const customButton = ({
-  title,
   link,
   className,
 }: {
-  title: string;
   link: string;
   className: string;
 }) => {

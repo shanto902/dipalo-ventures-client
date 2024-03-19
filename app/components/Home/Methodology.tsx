@@ -16,7 +16,7 @@ const Methodology = () => {
           <span className="text-dipalo lg:text-xl text-lg font-semibold  lg:leading-[50px]">
             Dipalo{" "}
           </span>
-          <span className="text-white lg:text-xl text-lg lg:font-semibold text-justify  lg:leading-[50px] leading-relaxed">
+          <span className="text-white lg:text-xl text-lg lg:font-normal text-justify  lg:leading-[50px] leading-relaxed">
             Ventures de-risks investments by incorporating hands-on product
             design and engineering reviews in our due diligence process. Our
             technical diligence identifies gaps mitigated post-investment via a

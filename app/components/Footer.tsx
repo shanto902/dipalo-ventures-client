@@ -1,6 +1,7 @@
 import React from "react";
 import PaddingContainer from "./Layout/PaddingContainer";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -16,9 +17,9 @@ const Footer = () => {
               <br />
               to work
             </div>
-            <button className=" uppercase leading-7 tracking-widest text-white border px-3 py-2 rounded-lg hover:bg-black hover:border-black hover:text-dipalo">
+            <Link href={'/contact'} className=" uppercase leading-7 tracking-widest text-white border px-3 py-2 rounded-lg hover:bg-black hover:border-black hover:text-dipalo">
               Contact Us
-            </button>
+            </Link>
           </div>
         </PaddingContainer>
       </div>

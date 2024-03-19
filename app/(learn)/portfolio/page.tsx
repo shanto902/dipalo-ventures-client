@@ -6,7 +6,7 @@ import Image from "next/image";
 const Portfolio = () => {
   return (
     <>
-      <Header title="Portfolio" image={image} />
+      <Header title="Portfolio" image={image}  breadcrumb="Learn"/>
       <PaddingContainer className="my-24 relative pb-20">
         <span className="text-dipalo text-4xl font-semibold  leading-10">
           O

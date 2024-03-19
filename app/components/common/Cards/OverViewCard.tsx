@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const OverViewCard = ({ image, title, subtitle, link }: TOverviewData) => {
   return (
-    <div className="xl:h-[512px] lg:h-[500px] h-[300px] xl:m-10 m-5 xl:p-5 p-3  rounded-md shadow-lg relative grid grid-rows-2 transition-transform transform hover:scale-105 duration-700">
+    <div className="xl:h-[512px] lg:h-[500px] sm:h-[400px] h-[300px] xl:m-10 m-5 xl:p-5 p-3  rounded-md shadow-lg relative grid grid-rows-2 transition-transform transform hover:scale-105 duration-700">
       <Image
         className="object-cover rounded-md -z-10"
         alt={title}
