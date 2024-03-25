@@ -1,4 +1,4 @@
-import Header from '@/app/components/common/Header'
+import Header from '@/components/common/Header'
 import React from 'react'
 import image from '@/public/assets/headers/residency-program.jpg'
 const page = () => {

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import PaddingContainer from "../Layout/PaddingContainer";
-import imageBG from "../../../public/assets/what-1.png";
+import imageBG from "@/public/assets/what-1.png";
 const WhatWeDo = () => {
   return (
     <div className="relative lg:pt-10 lg:pb-14">

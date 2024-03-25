@@ -1,5 +1,5 @@
 import React from "react";
-import PaddingContainer from "./Layout/PaddingContainer";
+import PaddingContainer from "./PaddingContainer";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -17,7 +17,10 @@ const Footer = () => {
               <br />
               to work
             </div>
-            <Link href={'/contact'} className=" uppercase leading-7 tracking-widest text-white border px-3 py-2 rounded-lg hover:bg-black hover:border-black hover:text-dipalo">
+            <Link
+              href={"/contact"}
+              className=" uppercase leading-7 tracking-widest text-white border px-3 py-2 rounded-lg hover:bg-black hover:border-black hover:text-dipalo"
+            >
               Contact Us
             </Link>
           </div>
@@ -41,9 +44,9 @@ const Footer = () => {
             <p className=" text-white  text-xl py-5">Say Hello</p>
             <p>info@dipaloventures.com</p>
             <p>
-              350 Coworking 350 N. Orleans, goooN, Chicago
+              1623 W Fulton St, Suite 237 Chicago
               <br />
-              IL 60654
+              IL  60612
             </p>
           </div>
         </div>

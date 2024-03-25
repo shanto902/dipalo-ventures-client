@@ -24,11 +24,7 @@ const OverViewCard = ({ image, title, subtitle, link }: TOverviewData) => {
           {subtitle}
         </p>
       </div>
-      <Link href={link}>
-        <button className="absolute z-20 px-4 py-2 text-sm text-center text-white uppercase transition-all duration-500 transform -translate-x-1/2 border border-white rounded bottom-8 left-1/2 border-opacity-30 hover:border-dipalo">
-          See More
-        </button>
-      </Link>
+    
     </div>
   );
 };

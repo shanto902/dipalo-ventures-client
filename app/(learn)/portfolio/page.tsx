@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "../../components/common/Header";
+import Header from "@/components/common/Header";
 import image from "@/public/assets/headers/learn.jpeg";
-import PaddingContainer from "../../components/Layout/PaddingContainer";
+import PaddingContainer from "@/components/Layout/PaddingContainer";
 import Image from "next/image";
 const Portfolio = () => {
   return (
@@ -14,7 +14,7 @@ const Portfolio = () => {
         <span className="text-dipalo text-2xl font-semibold  leading-10">
           ur
         </span>
-        <span className="text-neutral-600 text-2xl font-semibold leading-10">
+        <span className="text-[#555555] text-2xl font-semibold leading-10">
           {" "}
           first fund specialized in advancing built technologies at the
           intersection of digital and physical. We sought to foster innovative
@@ -34,8 +34,10 @@ const Portfolio = () => {
           height={191}
         />
       </PaddingContainer>
-      <div className=" bg-[#FFF9EE] w-full h-[900px]">
-        <div></div>
+      <div className=" bg-[#FFF9EE] w-full h-[900px] py-16 underline decoration-dipalo underline-offset-8 " >
+        <PaddingContainer className=" text-center text-5xl font-bold text-dipalo leading-[76px] uppercase ">
+          <h2>Portfolio</h2>
+        </PaddingContainer>
       </div>
     </>
   );
