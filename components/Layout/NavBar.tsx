@@ -15,7 +15,6 @@ const Navbar = () => {
   const [isSideMenuOpen, setSideMenu] = useState(false);
   const sidebarRef = useRef<HTMLDivElement>(null);
   const currentPath = usePathname();
-  console.log(currentPath)
   // For sidebar close on clicking outside of sidebar
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

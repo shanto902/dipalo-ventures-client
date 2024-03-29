@@ -5,7 +5,7 @@ import Overview from "@/components/Home/Overview";
 import Thesis from "@/components/Home/Thesis";
 import WhatWeDo from "@/components/Home/WhatWeDo";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <>
       <Main />
@@ -18,4 +18,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

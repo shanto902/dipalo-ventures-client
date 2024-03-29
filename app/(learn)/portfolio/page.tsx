@@ -3,7 +3,7 @@ import Header from "@/components/common/Header";
 import image from "@/public/assets/headers/learn.jpeg";
 import PaddingContainer from "@/components/Layout/PaddingContainer";
 import Image from "next/image";
-const Portfolio = () => {
+const PortfolioPage = () => {
   return (
     <>
       <Header title="Portfolio" image={image}  breadcrumb="Learn"/>
@@ -43,4 +43,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default PortfolioPage;
