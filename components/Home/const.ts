@@ -1,4 +1,4 @@
-import { TLookingForData, TOverviewData } from "./types";
+import { TLookingForData, TOverviewData, TWhatsWrongVC } from "./types";
 
 export const overViewData: TOverviewData[] = [
     {
@@ -10,7 +10,7 @@ export const overViewData: TOverviewData[] = [
     {
       id: 2,
       title: "Stages",
-      subtitle: "Pre-Seed to Early Stage",
+      subtitle: "Early Stage (USA) <br/> Later Stage (EU)",
       link: "https://www.google.com/",
     },
     {
@@ -32,18 +32,40 @@ export const overViewData: TOverviewData[] = [
       id: 1,
       title: "Founders",
       image: "/assets/lookingfor/l1.jpeg",
-      link: "google.com",
+      link: "/residency-program",
+      buttonText: 'Submit'
     },
     {
       id: 2,
       title: "Investors",
       image: "/assets/lookingfor/l2.jpeg",
-      link: "google.com",
+      link: "/fund-2",
+      buttonText: 'Invest'
     },
     {
       id: 3,
       title: "Partners",
       image: "/assets/lookingfor/l3.jpeg",
-      link: "google.com",
+      link: "/contact",
+      buttonText: 'Learn More'
     },
   ];
+
+  export const whatsWrongVC: TWhatsWrongVC[] = [
+    {
+      image: "/assets/whats-wrong-vc/vc1.jpeg",
+      logo: "/assets/whats-wrong-vc/logo/vl1.svg",
+      title: "VENTURE IS TOO CONCENTRATED IN SOFTWARE",
+    },
+    {
+      image: "/assets/whats-wrong-vc/vc2.jpeg",
+      logo: "/assets/whats-wrong-vc/logo/vl2.svg",
+      title: "TECHNICAL DILIGENCE SKILLS ARE MISSING",
+    },
+    {
+      image: "/assets/whats-wrong-vc/vc3.jpeg",
+      logo: "/assets/whats-wrong-vc/logo/vl3.svg",
+      title: "LESS SUPPORT FOR ENGINEERING AND MANUFACTURING",
+    },
+  ];
+  

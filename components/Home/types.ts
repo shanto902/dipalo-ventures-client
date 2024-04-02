@@ -10,4 +10,11 @@ export type TLookingForData = {
   image: string;
   title: string;
   link: string;
+  buttonText: string;
+};
+
+export type TWhatsWrongVC = {
+  image: string;
+  logo: string;
+  title: string;
 };

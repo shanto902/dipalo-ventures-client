@@ -79,6 +79,7 @@ const config = {
         footer_1: "url('../public/assets/footer-1.png')",
         footer_2: "url('../public/assets/footer-2.jpeg')",
         methodologyBG: "url('../public/assets/methodologyBG.jpeg')",
+        quotes: "url('../public/assets/quotesBG.jpeg')",
       },
       
     },

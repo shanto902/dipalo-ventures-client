@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { TLookingForData } from "../../Home/types";
 
-const LookingForCard = ({ image, title, link }: TLookingForData) => {
+const LookingForCard = ({ image, title, link, buttonText }: TLookingForData) => {
   return (
     <div
       style={{ backgroundImage: `url('${image}')`, backgroundSize: "cover" }}
@@ -17,7 +17,7 @@ const LookingForCard = ({ image, title, link }: TLookingForData) => {
 
       <Link href={link}>
         <button className=" absolute bottom-8 left-1/2 transform -translate-x-1/2 uppercase text-center border rounded border-white border-opacity-30 py-2 px-8 hover:border-dipalo z-20 text-white transition-all duration-500">
-          Submit
+        {buttonText}
         </button>
       </Link>
     </div>

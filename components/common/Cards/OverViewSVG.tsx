@@ -57,7 +57,7 @@ export const OverViewSVG = ({ id, hovered } : { id: number, hovered: boolean}) =
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g id="Frame" clip-path="url(#clip0_2486_2560)">
+      <g id="Frame" clipPath="url(#clip0_2486_2560)">
         <g id="Group">
           <path
             id="Vector"

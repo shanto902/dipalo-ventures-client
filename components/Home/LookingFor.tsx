@@ -1,6 +1,5 @@
 import React from "react";
 import PaddingContainer from "../Layout/PaddingContainer";
-import { TLookingForData } from "./types";
 import LookingForCard from "../common/Cards/LookingForCard";
 import { lookingForData } from "./const";
 
@@ -25,6 +24,7 @@ const LookingFor = () => {
             title={data.title}
             image={data.image}
             link={data.link}
+            buttonText={data.buttonText}
           />
         ))}
       </div>

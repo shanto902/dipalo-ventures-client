@@ -26,6 +26,7 @@ const MainTeamCard = ({
             alt=""
             width={500}
             height={1000}
+  
           />
         </div>
         <div className="absolute inset-0"></div>

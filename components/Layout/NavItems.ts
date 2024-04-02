@@ -20,10 +20,6 @@ export const navItems: TNavItem[] = [
           label: "Residency Program",
           link: "/residency-program",
         },
-        {
-          label: "About Us",
-          link: "/about-us",
-        }
       ]
     },
     {
