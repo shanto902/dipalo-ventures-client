@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { TOverviewData } from "../../Home/types";
 import { OverViewSVG } from "./OverViewSVG";
 
-const OverViewCard = ({id, image, title, subtitle, link }: TOverviewData) => {
+const OverViewCard = ({id,  title, subtitle, link }: TOverviewData) => {
   const [hovered, setHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -20,7 +20,7 @@ const OverViewCard = ({id, image, title, subtitle, link }: TOverviewData) => {
     onMouseLeave={handleMouseLeave}>
       <OverViewSVG id={id} hovered={hovered}/>
       <h3 className="text-center text-zinc-900 text-[32px] font-medium">{title}</h3>
-      <p className=" max-w-[412px] text-center">Investments in Hard Tech innovation for climate change</p>
+      <p className=" max-w-[412px] text-center text-neutral-600 text-xl font-semibold">{subtitle}</p>
     </div>
   );
 };

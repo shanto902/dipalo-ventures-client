@@ -3,6 +3,7 @@ import Main from "@/components/Home/Main";
 import Methodology from "@/components/Home/Methodology";
 import Overview from "@/components/Home/Overview";
 import Thesis from "@/components/Home/Thesis";
+import WhatsWrongWithVC from "@/components/Home/WhatsWrongWithVC";
 import WhatWeDo from "@/components/Home/WhatWeDo";
 
 const HomePage = () => {
@@ -12,6 +13,7 @@ const HomePage = () => {
       <WhatWeDo />
       <Thesis />
       <Overview />
+      <WhatsWrongWithVC/>
       <Methodology />
       <LookingFor />
     </>
