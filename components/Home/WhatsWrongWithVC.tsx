@@ -13,7 +13,7 @@ const WhatsWrongWithVC = () => {
         {" "}
         <h2 className=" text-center text-amber-500 text-5xl font-bold ">
           WHAT’S WRONG WITH{" "}
-          <span className=" underline underline-offset-8 decoration-dipalo">
+          <span className=" underline  underline-offset-[15px] decoration-dipalo">
             {" "}
             VC
           </span>

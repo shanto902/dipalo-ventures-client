@@ -62,7 +62,7 @@ const Navbar = () => {
           <div className="items-center hidden gap-4 transition-all md:flex">
             {navItems.map((d, i) => (
               <div key={i} className="relative px-2 py-3 transition-all group">
-                <span className={`flex items-center gap-2 text-lg font-semibold cursor-pointer  group-hover:underline decoration-dipalo underline-offset-8 ${ currentPath === d.link ? 'text-dipalo' : 'text-white'}`}>
+                <span className={`flex items-center gap-2 text-lg font-semibold cursor-pointer  group-hover:underline decoration-dipalo  underline-offset-[15px] ${ currentPath === d.link ? 'text-dipalo' : 'text-white'}`}>
                   <Link href={d.link ?? "#"}>{d.label}</Link>
                   {d.children && (
                     <IoIosArrowDown className="transition-all rotate-180 group-hover:rotate-0" />

@@ -17,7 +17,7 @@ const Thesis = () => {
               Currently, sectors emitting the most greenhouse gases receive the
               least VC funding. Climate Tech offers a wave of unique investment
               opportunities that will soon dominate the{" "}
-              <span className="underline underline-offset-8 decoration-dipalo">
+              <span className="underline  underline-offset-[15px] decoration-dipalo">
                 market
               </span>
               .

@@ -18,7 +18,7 @@ const TopSection = () => {
           intersection of digital and physical. We sought to foster innovative
           solutions that integrate seamlessly into our built world to promote
           sustainability and{" "}
-          <span className=" underline underline-offset-8 decoration-dipalo">
+          <span className=" underline  underline-offset-[15px] decoration-dipalo">
             resilience
           </span>
           .

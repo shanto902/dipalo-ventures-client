@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from "react";
 import { TOverviewData } from "../../Home/types";
-import { OverViewSVG } from "./OverViewSVG";
+import { OverViewSVG } from "../SVG/OverViewSVG";
 import parse from 'html-react-parser';
 const OverViewCard = ({id,  title, subtitle, link }: TOverviewData) => {
   const [hovered, setHovered] = useState(false);

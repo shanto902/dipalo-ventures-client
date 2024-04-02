@@ -6,7 +6,7 @@ const ThesisSection = () => {
   return (
     <div className=" bg-orange-50 pb-24 pt-16 relative">
       <PaddingContainer>
-        <h2 className="text-dipalo text-5xl font-bold uppercase underline underline-offset-8 decoration-dipalo py-10 ">
+        <h2 className="text-dipalo text-5xl font-bold uppercase underline  underline-offset-[15px] decoration-dipalo py-10 ">
           Thesis
         </h2>
         <p
