@@ -102,14 +102,14 @@ const PortfolioSection = () => {
           <hr className=" mt-10" />
           {/* Display filtered companies */}
           <div>
-            {filterCompanies.length > 0 ? (
+            {selectedCompanies.length > 0 ? (
               <div className=" grid grid-cols-4 gap-5 h-full my-10">
                 {selectedCompanies.map((company, index) => (
                   <PortfolioCard key={index} name={company.name} logo={company.logo} />
                 ))}
               </div>
             ) : (
-              <p>No companies found.</p>
+              <p className=" text-center py-10 text-lg font-semibold">No companies found</p>
             )}
           </div>
         </PaddingContainer>
