@@ -34,7 +34,7 @@ export const navItems: TNavItem[] = [
     },
     {
       label: "Insights",
-      link: "/insights"
+      link: "/#"
     },
     {
       label: "Contact",
