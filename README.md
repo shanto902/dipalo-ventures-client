@@ -1,1 +1,1 @@
-Client Side Application For diploventure Website Build With Next JS
+Client Side Application For dipalo Venture Website Build With Next JS
