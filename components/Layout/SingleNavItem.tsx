@@ -31,7 +31,7 @@ const SingleNavItem = ({ label, link, children }: TNavItem) => {
             <Link
               key={i}
               href={ch.link ?? "#"}
-              className="flex items-center py-1 pl-6 pr-8 text-black cursor-pointer text-neutral-400 hover:text-dipalo"
+              className="flex items-center py-1 pl-6 pr-8 text-black cursor-pointer hover:text-dipalo"
             >
               <span className="pl-12 ">{ch.label}</span>
             </Link>

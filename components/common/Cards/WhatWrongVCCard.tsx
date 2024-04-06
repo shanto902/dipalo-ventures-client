@@ -1,27 +1,42 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
+import { TWhatsWrongVC } from "@/components/Home/types";
+import React, { useState } from "react";
+import { WhatsWrongWithVCSVG } from "../SVG/WhatsWrongWithVCSVG";
+import { motion } from "framer-motion";
+const WhatWrongVCCard = ({ id, logo, title }: TWhatsWrongVC) => {
+  const [hovered, setHovered] = useState(false);
 
-const WhatWrongVCCard = ({image, logo, title}:{image:string, logo: string, title:string}) => {
+  const handleMouseEnter = () => {
+    setHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHovered(false);
+  };
+  const icon = { hidden: { y: -10, scale: 1.1 } };
   return (
-<div
-  style={{ backgroundImage: `url('${image}')`, backgroundSize: "cover",  backgroundPosition: "center"  }}
-  className="p-5 shadow-lg rounded relative  transition-transform transform hover:scale-105 duration-500 px-10 py-20"
->
-<div className="z-[-10] absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/50 to-black/50 rounded-md" />
-  <div className="z-10 flex flex-col items-center gap-10 justify-center  h-full ">
-   
-      <Image src={logo} width={150} height={150} alt={title}  />
-      <p className="text-white text-xl font-bold leading-9 text-center ">
-        {title}
-      </p>
- 
-  </div>
+    <motion.div
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      whileHover="hidden"
+      className="group p-5 shadow-md rounded-3xl relative bg-white  aspect-square hover:bg-dipalo  transition-colors duration-500"
+    >
+      <div className="z-10  grid-rows-2 grid place-items-center h-full ">
+        <div className=" row-span-1 mt-8">
+          <motion.div variants={icon}>
+            <WhatsWrongWithVCSVG
+              id={id}
+              width="100"
+              height="100"
+              hovered={hovered}
+            />
+          </motion.div>
+        </div>
+        <p className=" grod text-base font-bold text-center group-hover:text-white transition-colors duration-300">
+          {title}
+        </p>
+      </div>
+    </motion.div>
+  );
+};
 
-
-</div>
-
-  )
-}
-
-export default WhatWrongVCCard
+export default WhatWrongVCCard;

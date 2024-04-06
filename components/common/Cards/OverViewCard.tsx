@@ -1,26 +1,27 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import { TOverviewData } from "../../Home/types";
 import { OverViewSVG } from "../SVG/OverViewSVG";
-import parse from 'html-react-parser';
-const OverViewCard = ({id,  title, subtitle, link }: TOverviewData) => {
-  const [hovered, setHovered] = useState(false);
+import parse from "html-react-parser";
+import { motion } from "framer-motion";
+const OverViewCard = ({ id, title, subtitle, link }: TOverviewData) => {
 
-  const handleMouseEnter = () => {
-    setHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setHovered(false);
-  };
-
+  const icon = { hidden : { y:-10, scale:1.1 } }
   return (
-    <div className="group flex flex-col items-center gap-4 my-10 trasitio"    onMouseEnter={handleMouseEnter}
-    onMouseLeave={handleMouseLeave}>
-      <OverViewSVG id={id} hovered={hovered}/>
-      <h3 className="text-center text-zinc-900 text-[32px] font-medium">{title}</h3>
-      <p className=" max-w-[412px] text-center text-neutral-600 text-xl font-semibold">{ parse(subtitle)}</p>
-    </div>
+    <motion.div whileHover="hidden" className="text-center hover:bg-dipalo transition-colors duration-300 w-full justify-center place-items-center bg-neutral-800 aspect-square  items-center grid grid-rows-2 h-full p-5 rounded-3xl text-white shadow-md ">
+      <div className=" row-span-1  mt-8 ">
+        <motion.div
+        variants={icon}
+        >
+          {" "}
+          <OverViewSVG height="100" width="100" id={id} />
+        </motion.div>
+      </div>
+      <div>
+        <h3 className=" font-medium text-xl py-2">{title}</h3>
+        <p className=" text-sm">{parse(subtitle)}</p>
+      </div>
+    </motion.div>
   );
 };
 

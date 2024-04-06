@@ -16,6 +16,7 @@ const MainTeamCard = ({
   bio: string;
   linkedinLink: string;
 }) => {
+  
   return (
     <div>
       <div className="group relative  items-center justify-center overflow-hidden  ">
@@ -37,7 +38,7 @@ const MainTeamCard = ({
             </h2>
             <h3 className="text-center text-amber-500 text-xs font-semibold mt-2">{designation}</h3>
           </div>
-          <div className=" absolute h-full w-full text-left   text-white text-xs font-semibold opacity-0 transition-opacity  bg-black bg-opacity-70 duration-300 group-hover:opacity-100 p-5 overflow-y-scroll no-scrollbar">
+          <div className=" absolute h-full w-full text-left   text-white text-xs font-semibold opacity-0 transition-opacity  bg-black bg-opacity-70 duration-300 group-hover:opacity-100 p-5">
          {parse(bio)}
            <Link href={linkedinLink}   >
            <Image  src={linkedinLogo} className=" my-3 mx-auto" alt="Linkedin Icon">

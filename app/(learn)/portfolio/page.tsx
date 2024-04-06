@@ -6,12 +6,12 @@ import PortfolioSection from "@/components/Portfolio/PortfolioSection";
 import FounderVideo from "@/components/Portfolio/FounderVideo";
 const PortfolioPage = () => {
   return (
-    <>
+    <div >
       <Header title="Portfolio" image={image} breadcrumb="Learn" />
       <TopSection />
       <PortfolioSection />
       <FounderVideo />
-    </>
+    </div>
   );
 };
 

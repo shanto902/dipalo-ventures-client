@@ -2,6 +2,7 @@ import React from 'react'
 import PaddingContainer from '../Layout/PaddingContainer'
 import MainTeamCard from './MainTeamCard'
 import { mainTeam } from './const'
+import TeamBioDialog from '../common/Dialog/TeamBioDialog'
 
 
 
@@ -17,7 +18,7 @@ const TeamSection = () => {
 
         {/* Main Team  */}
   {
-    mainTeam.map((user, i) => <MainTeamCard key={i}  image={user.image} name={user.name} linkedinLink={user.linkedinLink} designation={user.designation} bio={user.bio} />)
+    mainTeam.map((user, i) => <TeamBioDialog key={i} id={i}  image={user.image} name={user.name} linkedinLink={user.linkedinLink} designation={user.designation} bio={user.bio} />)
   }
     </PaddingContainer>
   )

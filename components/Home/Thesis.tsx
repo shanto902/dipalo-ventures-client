@@ -1,36 +1,62 @@
+"use client";
 import React from "react";
 import PaddingContainer from "../Layout/PaddingContainer";
 import Image from "next/image";
-
+import { motion } from "framer-motion";
 const Thesis = () => {
   return (
-    <div className="w-full sm:h-[500px] lg:h-[600px]  h-[680px] relative bg-main_thesis bg-center bg-fixed bg-cover">
-      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+    <PaddingContainer>
+      <motion.div
+        initial={{ y: 50 }}
+        whileInView={{ y: 0 }}
+        transition={{ duration: 0.5, delay: 0, ease: "easeInOut" }}
+        viewport={{ once: true }}
+        className="  h-[380px] rounded-3xl overflow-hidden relative bg-main_thesis bg-center shadow-md  bg-cover"
+      >
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
-      <div className="absolute inset-0 flex-col items-start justify-center mx-auto text-white max-w-7xl lg:flex">
-        <PaddingContainer>
-          <div className=" text-dipalo lg:text-6xl text-5xl  font-bold leading-[84.44px] mt-10 lg:mt-0">
+        <div className="absolute inset-0 flex-col items-start justify-center mx-auto text-white p-28 lg:flex">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: .2, ease: "easeInOut" }}
+            viewport={{ once: true }}
+            className=" text-dipalo lg:text-4xl text-xl mb-2 font-bold leading-[84.44px] "
+          >
             THESIS
-          </div>
+          </motion.div>
           <div className="flex flex-col gap-20 lg:flex-row lg:gap-32">
-            <div className="text-lg leading-9 text-white ">
+            <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: .3, ease: "easeInOut" }}
+            viewport={{ once: true }} 
+             className=" leading-normal font-semibold text-white ">
               Currently, sectors emitting the most greenhouse gases receive the
               least VC funding. Climate Tech offers a wave of unique investment
               opportunities that will soon dominate the{" "}
-              <span className="underline  underline-offset-[15px] decoration-dipalo">
+              <span className="underline  underline-offset-8 decoration-dipalo">
                 market
               </span>
               .
-            </div>
+            </motion.div>
 
             <div>
-              <div className=" text-right text-white lg:text-xl text-lg font-normal lg:leading-10">
+              <motion.div 
+                 initial={{ opacity: 0 }}
+                 whileInView={{ opacity: 1 }}
+                 transition={{ duration: 0.5, delay: .4, ease: "easeInOut" }}
+                 viewport={{ once: true }}  className=" text-right text-white font-normal leading-normal">
                 The Dipalo Heed ClimateTech Fund offers exposure to rapidly
                 growing climate tech innovation in the US and Portugal, combined
                 with EU residency and citizenship.
-              </div>
+              </motion.div>
 
-              <div className="flex justify-end w-full mt-5 ">
+              <motion.div className="flex justify-end w-full mt-5 "
+                 initial={{ x:100, opacity:0}}
+                 whileInView={{ x:0, opacity:1 }}
+                 transition={{ duration: 0.5, delay: .3, ease: "easeInOut" }}
+                 viewport={{ once: true }} >
                 <Image
                   className=""
                   src="/assets/dipalo-heed.svg"
@@ -38,12 +64,12 @@ const Thesis = () => {
                   width={280}
                   height={70}
                 />
-              </div>
+              </motion.div>
             </div>
           </div>
-        </PaddingContainer>
-      </div>
-    </div>
+        </div>
+      </motion.div>
+    </PaddingContainer>
   );
 };
 

@@ -53,19 +53,19 @@ export const overViewData: TOverviewData[] = [
 
   export const whatsWrongVC: TWhatsWrongVC[] = [
     {
-      image: "/assets/whats-wrong-vc/vc1.jpeg",
       logo: "/assets/whats-wrong-vc/logo/vl1.svg",
       title: "VENTURE IS TOO CONCENTRATED IN SOFTWARE",
+      id: 1
     },
     {
-      image: "/assets/whats-wrong-vc/vc2.jpeg",
       logo: "/assets/whats-wrong-vc/logo/vl2.svg",
       title: "TECHNICAL DILIGENCE SKILLS ARE MISSING",
+      id: 2
     },
     {
-      image: "/assets/whats-wrong-vc/vc3.jpeg",
       logo: "/assets/whats-wrong-vc/logo/vl3.svg",
       title: "LESS SUPPORT FOR ENGINEERING AND MANUFACTURING",
+      id: 3
     },
   ];
   

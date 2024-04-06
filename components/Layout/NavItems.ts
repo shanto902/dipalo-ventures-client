@@ -6,42 +6,42 @@ export const navItems: TNavItem[] = [
       link: "/"
     },
     {
-      label: "Learn",
+      label: "Residency",
+      link: "/residency-program"
+    },
+    {
+      label: "Funds",
       children: [
-        {
-          label: "Portfolio",
-          link: "/portfolio",
-        },
         {
           label: "Dipalo Ventures Fund I",
           link: "/fund-1",
         },
         {
-          label: "Residency Program",
-          link: "/residency-program",
+          label: "Dipalo Heed Climate Fund II",
+          link: "/fund-2",
+          children: [
+            {
+              label: "Golden Visa",
+              link: "/db",
+            },
+          ]
         },
       ]
     },
     {
-      label: "Invest",
-      children: [
-        {
-            label: "Dipalo Heed ClimateTech Fund II",
-            link: "/fund-2",
-          }
-
-      ]
+      label: "Our Portfolio",
+     link:'/portfolio'
     },
     {
-      label: "Insights",
+      label: "Team",
+      link: "/about-us"
+    },
+    {
+      label: "Media",
       link: "/#"
     },
     {
       label: "Contact",
       link: "/contact"
     },
-    {
-      label: "About Us",
-      link: "/about-us"
-    }
   ];

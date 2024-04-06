@@ -1,42 +1,60 @@
-import Image from "next/image";
+"use client";
 import React from "react";
 import PaddingContainer from "../Layout/PaddingContainer";
-import imageBG from "@/public/assets/what-1.png";
+import { motion } from "framer-motion";
 const WhatWeDo = () => {
   return (
     <div className="relative lg:pt-10 lg:pb-14">
-      <Image
-        className="absolute bottom-0 right-0 hidden w-56 md:block md:w-96 -z-10"
-        src={"/assets/whatWeDoBG.svg"}
-        alt="Logo"
-        width={550}
-        height={267}
-      />
-
+      <div className="absolute bottom-0 right-0 hidden w-56 md:block md:w-96 -z-10"></div>
       <PaddingContainer>
-        <div className="items-center justify-start -mt-10 md:justify-center lg:-mt-56 md:-mt-10 gap-28 lg:inline-flex">
-          <Image
-            className=" object-cover shadow-xl mx-auto lg:w-[420px] lg:h-[720px] aspect-square  rounded-md"
-            src={imageBG}
-            alt="Logo"
-            placeholder="blur"
-            width={520}
-            height={820}
-            quality={100}
-          />
+        <motion.div
+           initial={{ y:200 }}
+           whileInView={{ y:0 }}
+           transition={{ duration: 1, delay: .25, ease: "easeInOut" }}
+           viewport={{once:true}}
+          className="items-center justify-start  -mt-10 md:justify-center lg:-mt-[200px] md:-mt-10 gap-28 lg:inline-flex"
+        >
+          <video
+            className="h-full shadow-md object-cover aspect-square overflow-hidden rounded-3xl"
+            width="1000"
+            height="800"
+            loop
+            autoPlay
+            muted
+            preload="none"
+          >
+            <source src="/homepage.mp4" type="video/mp4" />
 
-          <div className="inline-flex flex-col items-center justify-center gap-5 py-10 md:items-start md:justify-start lg:py-72">
-            <p className="text-center md:text-left">
-              <span className="text-3xl font-bold text-zinc-900 md:text-4xl lg:text-5xl ">WHAT</span>
-              <span className="text-3xl font-bold text-dipalo md:text-4xl lg:text-5xl "> WE DO</span>
-            </p>
-            <div className="  lg:text-2xl md:text-lg text-base font-normal md:leading-[50px] text-center md:text-left bg-white rounded-xl">
+            Your browser does not support the video tag.
+          </video>
+
+          <div className=" mt-32"
+         >
+            <motion.p className="text-center text-4xl font-bold md:text-left"
+               initial={{ opacity: 0 }}
+               whileInView={{ opacity: 1 }}
+               transition={{ duration: 0.5, delay: 0.25, ease: "easeInOut" }}
+               viewport={{once:true}}>
+              <span className="  text-zinc-900 ">
+                WHAT
+                {" "}
+              </span>
+              <span className=" underline underline-offset-8 text-dipalo   ">
+              
+                WE DO ?
+              </span>
+            </motion.p>
+            <motion.div className="  pt-5 lg:text-xl md:text-lg text-base font-normal md:leading-[50px] text-center md:text-left bg-white rounded-xl"
+               initial={{ opacity: 0 }}
+               whileInView={{ opacity: 1 }}
+               transition={{ duration: 0.5, delay: 0.5, ease: "easeInOut" }}
+               viewport={{once:true}}>
               We invest in a balanced portfolio across pre-seed to early-stage
               rounds in physical products utilizing data intelligence and
               designed for sustainability.
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </PaddingContainer>
     </div>
   );
