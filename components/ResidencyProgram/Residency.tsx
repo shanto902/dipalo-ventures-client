@@ -2,21 +2,20 @@ import React from "react";
 import PaddingContainer from "../Layout/PaddingContainer";
 import { residencyData } from "./const";
 import ResidencyCard from "../common/Cards/ResidencyCard";
+import CustomTitle from "../common/CustomTitle";
+import AnimatedDiv from "../common/AnimatedDiv";
 
 const Residency = () => {
   return (
-    <PaddingContainer className=" py-5">
+    <PaddingContainer className=" py-10">
       {" "}
-      <h2
-        className=" text-center text-2xl py-10
-font-bold text-black underline underline-offset-8 decoration-dipalo "
-      >
-        RESIDENCY
-      </h2>
-      <div className=" grid grid-cols-3 gap-x-6 gap-y-10">
-        {
-            residencyData.map((card)=><ResidencyCard key={card.id} id={card.id}text={card.text} />)
-        }
+      <CustomTitle>RESIDENCY</CustomTitle>
+      <div className=" mt-10 grid grid-cols-3 gap-x-6 gap-y-10">
+        {residencyData.map((card) => (
+          <AnimatedDiv key={card.id} id={card.id} delay={0.25}>
+          <ResidencyCard key={card.id} id={card.id} text={card.text} />
+          </AnimatedDiv>
+        ))}
       </div>
     </PaddingContainer>
   );

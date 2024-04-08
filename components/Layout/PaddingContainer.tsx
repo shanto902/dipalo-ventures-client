@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import { twMerge } from "tailwind-merge";
 
 const PaddingContainer = ({
   children,
@@ -8,7 +9,7 @@ const PaddingContainer = ({
   className?: string;
 }) => {
   return (
-    <div className={` max-w-7xl px-8 w-full mx-auto ${className}`}>
+    <div className={twMerge('max-w-7xl px-8 w-full mx-auto', className)}>
       {children}
     </div>
   );

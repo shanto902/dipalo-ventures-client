@@ -4,6 +4,7 @@ import image from '@/public/assets/headers/residency-program.jpg'
 import Process from '@/components/ResidencyProgram/Process'
 import CaseStudies from '@/components/ResidencyProgram/CaseStudies'
 import Residency from '@/components/ResidencyProgram/Residency'
+import ResidencyAdvisory from '@/components/ResidencyProgram/ResidencyAdvisory'
 const ResidencyProgramPage = () => {
   return (
    <>
@@ -11,6 +12,7 @@ const ResidencyProgramPage = () => {
     <Process />
     <Residency/>
     <CaseStudies />
+    <ResidencyAdvisory/>
     </>
   )
 }

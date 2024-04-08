@@ -6,9 +6,10 @@ export type TResidencyData = {
 export type TCaseStudy = {
     id: number,
     company: string,
-    image?: string,
+    image: string,
     video?: string,
     logo: string,
     overview:string,
-    solution:string
+    solution:string,
+    blurData: string
 }
