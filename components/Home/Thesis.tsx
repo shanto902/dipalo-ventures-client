@@ -11,9 +11,9 @@ const Thesis = () => {
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, delay: 0, ease: "easeInOut" }}
         viewport={{ once: true }}
-        className="  h-[380px] rounded-3xl overflow-hidden relative bg-main_thesis bg-center shadow-md  bg-cover"
+        className="  h-[350px] rounded-3xl overflow-hidden relative bg-main_thesis bg-center shadow-md  bg-cover"
       >
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
 
         <div className="absolute inset-0 flex-col items-start justify-center mx-auto text-white p-28 lg:flex">
           <motion.div
@@ -21,7 +21,7 @@ const Thesis = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: .2, ease: "easeInOut" }}
             viewport={{ once: true }}
-            className=" text-dipalo lg:text-4xl text-xl mb-2 font-bold leading-[84.44px] "
+            className=" text-dipalo  text-2xl mb-2 font-bold "
           >
             THESIS
           </motion.div>
@@ -31,7 +31,7 @@ const Thesis = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: .3, ease: "easeInOut" }}
             viewport={{ once: true }} 
-             className=" leading-normal font-semibold text-white ">
+             className=" leading-normal font-normal text-white ">
               Currently, sectors emitting the most greenhouse gases receive the
               least VC funding. Climate Tech offers a wave of unique investment
               opportunities that will soon dominate the{" "}

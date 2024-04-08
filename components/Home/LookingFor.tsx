@@ -11,7 +11,7 @@ const LookingFor = () => {
       <motion.h2 initial={{ opacity: 0 }}
                whileInView={{ opacity: 1 }}
                transition={{ duration: 0.5, delay: 0.25, ease: "easeInOut" }}
-               viewport={{once:true}} className=" my-20 text-4xl  font-bold text-center ">
+               viewport={{once:true}} className="mb-10 text-2xl  font-bold text-center ">
         <span className="text-zinc-900 ">WHO WE’RE </span>
         <span className="text-dipalo underline underline-offset-8">
           LOOKING

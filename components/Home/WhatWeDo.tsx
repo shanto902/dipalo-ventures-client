@@ -20,6 +20,7 @@ const WhatWeDo = () => {
             height="800"
             loop
             autoPlay
+            
             muted
             preload="none"
           >
@@ -30,7 +31,7 @@ const WhatWeDo = () => {
 
           <div className=" mt-32"
          >
-            <motion.p className="text-center text-4xl font-bold md:text-left"
+            <motion.p className=" text-2xl font-bold text-left"
                initial={{ opacity: 0 }}
                whileInView={{ opacity: 1 }}
                transition={{ duration: 0.5, delay: 0.25, ease: "easeInOut" }}
@@ -44,7 +45,7 @@ const WhatWeDo = () => {
                 WE DO ?
               </span>
             </motion.p>
-            <motion.div className="  pt-5 lg:text-xl md:text-lg text-base font-normal md:leading-[50px] text-center md:text-left bg-white rounded-xl"
+            <motion.div className="  pt-5 text-lg font-semibold  text-left bg-white rounded-xl"
                initial={{ opacity: 0 }}
                whileInView={{ opacity: 1 }}
                transition={{ duration: 0.5, delay: 0.5, ease: "easeInOut" }}

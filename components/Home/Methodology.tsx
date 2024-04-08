@@ -13,7 +13,7 @@ const Methodology = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.25, ease: "easeInOut" }}
           viewport={{ once: true }}
-          className=" text-4xl lg:font-bold font-semibold leading-normal text-center"
+          className=" text-2xl lg:font-bold font-semibold leading-normal text-center"
         >
           <span className="text-white">OUR UNIQUE</span>{" "}
           <span className="text-dipalo underline underline-offset-8">
@@ -26,7 +26,7 @@ const Methodology = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.5, ease: "easeInOut" }}
           viewport={{ once: true }}
-          className=" text-lg text-center pt-5 px-5  "
+          className=" text-lg text-center pt-5 px-32  "
         >
           <span className="text-dipalo font-semibold ">Dipalo </span>
           <span className="text-white    leading-normal">

@@ -2,9 +2,19 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const Header = ({ image, title, subtitle, breadcrumb }: { image: StaticImageData; title: string, subtitle?: string , breadcrumb:string}) => {
+const Header = ({
+  image,
+  title,
+  subtitle,
+  breadcrumb,
+}: {
+  image: StaticImageData;
+  title: string;
+  subtitle?: string;
+  breadcrumb: string;
+}) => {
   return (
-    <div className="relative h-[455px] overflow-hidden">
+    <div className="relative h-[400px] overflow-hidden">
       <Image
         className="absolute inset-0 w-full h-full object-cover object-center"
         alt="Main Background"
@@ -14,11 +24,16 @@ const Header = ({ image, title, subtitle, breadcrumb }: { image: StaticImageData
         fill
       />
       <div className="absolute inset-0 flex flex-col z-10 items-center justify-center text-white">
-        <h2 className="text-center  text-5xl font-bold font-Poppins">
+        <h2 className="text-center mt-20  text-3xl font-bold font-Poppins">
           {title}
         </h2>
         {subtitle && <p>{subtitle}</p>}
-      <p className=" mt-4 text-sm"><Link className=" hover:text-dipalo" href={'/'}>Home</Link>  <span className=" text-gray-500">/</span> <span className=" text-dipalo">{breadcrumb}</span></p>
+        <p className=" mt-4 text-sm">
+          <Link className=" hover:text-dipalo" href={"/"}>
+            Home
+          </Link>
+          {" "} / {" "}<span className=" text-dipalo">{breadcrumb}</span>
+        </p>
       </div>
       <div className="absolute inset-0 bg-black opacity-50" />
     </div>

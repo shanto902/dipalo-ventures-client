@@ -6,11 +6,11 @@ import { whatsWrongVC } from "./const";
 import { motion } from "framer-motion";
 const WhatsWrongWithVC = () => {
   return (
-    <div className=" py-10 mt-10">
+    <div className=" py-14">
       <PaddingContainer>
         {" "}
         <motion.h2
-          className=" text-center  text-4xl font-bold "
+          className=" text-center  text-2xl font-bold "
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.25, ease: "easeInOut" }}
@@ -22,15 +22,15 @@ const WhatsWrongWithVC = () => {
             VC ?
           </span>
         </motion.h2>
-        <motion.p  className=" text-center text-zinc-900  text-xl font-semibold leading-normal py-5" 
+        <motion.p  className=" text-center text-zinc-900  font-semibold leading-normal py-5" 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.5, ease: "easeInOut" }}
         viewport={{ once: true }}>
           Traditional Accelerators and VC do not go far enough in supporting
-          startups that are at the intersection of hardware and software.
+          startups that <br/> are at the intersection of hardware and software.
         </motion.p>
-        <div className=" grid grid-cols-3 gap-48 mx-auto my-10">
+        <div className=" grid grid-cols-3 gap-48 mx-auto mt-10">
           {whatsWrongVC.map((card, i) => (
             <motion.div
               key={i}

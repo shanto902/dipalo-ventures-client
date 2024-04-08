@@ -8,14 +8,14 @@ import { motion } from "framer-motion";
 const Overview = () => {
   return (
     <PaddingContainer>
-      <div className="py-20  ">
+      <div className="py-14">
         {/* Title Text  */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.5, ease: "easeInOut" }}
           viewport={{ once: true }}
-          className=" pb-10 text-4xl font-bold text-center uppercase underline underline-offset-8 decoration-dipalo "
+          className=" pb-10 text-2xl font-bold text-center uppercase underline underline-offset-8 decoration-dipalo "
         >
           OVERVIEW
         </motion.div>

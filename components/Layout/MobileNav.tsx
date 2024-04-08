@@ -5,7 +5,7 @@ import SingleNavItem from "./SingleNavItem";
 
 const MobileNav = ({ closeSideMenu }: { closeSideMenu: () => void }, ref: React.Ref<HTMLDivElement>) => {
   return (
-    <div className="fixed top-0 left-0 flex justify-end w-full h-full min-h-screen bg-black/60 md:hidden">
+    <div className="fixed top-0 left-0 flex justify-end w-full h-full min-h-screen bg-black/60 lg:hidden">
       <div className="h-full w-[65%] bg-white px-4 py-4" ref={ref} >
         <section className="flex justify-end">
           <AiOutlineClose onClick={closeSideMenu} className="text-4xl text-black cursor-pointer text-wh" />

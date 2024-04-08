@@ -18,7 +18,7 @@ const WhatWrongVCCard = ({ id, logo, title }: TWhatsWrongVC) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       whileHover="hidden"
-      className="group p-5 shadow-md rounded-3xl relative bg-white  aspect-square hover:bg-dipalo  transition-colors duration-500"
+      className="group p-5 shadow-md rounded-3xl relative bg-stone-50  aspect-square hover:bg-dipalo  transition-colors duration-500"
     >
       <div className="z-10  grid-rows-2 grid place-items-center h-full ">
         <div className=" row-span-1 mt-8">
@@ -31,7 +31,7 @@ const WhatWrongVCCard = ({ id, logo, title }: TWhatsWrongVC) => {
             />
           </motion.div>
         </div>
-        <p className=" grod text-base font-bold text-center group-hover:text-white transition-colors duration-300">
+        <p className=" text-base font-semibold text-center group-hover:text-white transition-colors duration-300">
           {title}
         </p>
       </div>

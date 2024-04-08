@@ -20,7 +20,7 @@ const LookingForCard = ({ image, title, link, buttonText }: TLookingForData) => 
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/0 to-black  rounded-3xl " />
       <div className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-500 top-0  left-0 w-full h-full bg-gradient-to-b from-black/0 to-dipalo rounded-3xl" />
       <div className="z-10 flex items-end justify-center ">
-        <p className="text-white text-4xl font-bold text-center">
+        <p className="text-white text-3xl font-bold text-center">
           {title}
         </p>
       </div>

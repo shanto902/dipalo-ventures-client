@@ -1,5 +1,14 @@
-export type TProcessData = {
+export type TResidencyData = {
     id: number,
-    image: string,
     text:string
+}
+
+export type TCaseStudy = {
+    id: number,
+    company: string,
+    image?: string,
+    video?: string,
+    logo: string,
+    overview:string,
+    solution:string
 }

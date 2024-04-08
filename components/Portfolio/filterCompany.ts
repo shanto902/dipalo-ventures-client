@@ -2,28 +2,36 @@ import { companies } from "./const";
 import { TCompany } from "./types";
 
 // Function to filter companies based on selected category, state, or stage
-export const filterCompanies = (selectedCategory: string, selectedState: string, selectedStage: string) => {
+export const filterCompanies = (
+    selectedCategories: string[],
+    selectedStates: string[],
+    selectedStages: string[]
+  ) => {
     // Filtered companies array
-    let filteredCompanies = companies.filter(company => true); // Keeping all companies initially
-
-    // If a category is selected, filter companies by category
-    if (selectedCategory) {
-        filteredCompanies = filteredCompanies.filter(company => company.category === selectedCategory);
+    let filteredCompanies = companies;
+  
+    // Filter companies by selected categories
+    if (selectedCategories.length > 0) {
+      filteredCompanies = filteredCompanies.filter(company =>
+        selectedCategories.includes(company.category)
+      );
     }
-
-    // If a state is selected, filter companies by state
-    if (selectedState) {
-        filteredCompanies = filteredCompanies.filter(company => company.state === selectedState);
+  
+    // Filter companies by selected states
+    if (selectedStates.length > 0) {
+      filteredCompanies = filteredCompanies.filter(company =>
+        selectedStates.includes(company.state)
+      );
     }
-
-    // If a stage is selected, filter companies by stage
-    if (selectedStage) {
-        filteredCompanies = filteredCompanies.filter(company => company.stage === selectedStage);
+  
+    // Filter companies by selected stages
+    if (selectedStages.length > 0) {
+      filteredCompanies = filteredCompanies.filter(company =>
+        selectedStages.includes(company.stage)
+      );
     }
-
+  
     // Return the filtered companies
-    return filteredCompanies as TCompany[];
-}
-
-// Example usage:
-
+    return filteredCompanies;
+  };
+  
