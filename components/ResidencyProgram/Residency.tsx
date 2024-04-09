@@ -12,7 +12,7 @@ const Residency = () => {
       <CustomTitle>RESIDENCY</CustomTitle>
       <div className=" mt-10 grid grid-cols-3 gap-x-6 gap-y-10">
         {residencyData.map((card) => (
-          <AnimatedDiv key={card.id} id={card.id} delay={0.25}>
+          <AnimatedDiv className="rounded-3xl shadow-md" key={card.id} id={card.id} delay={0.25}>
           <ResidencyCard key={card.id} id={card.id} text={card.text} />
           </AnimatedDiv>
         ))}

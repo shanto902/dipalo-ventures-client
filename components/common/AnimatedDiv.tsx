@@ -6,21 +6,30 @@ const AnimatedDiv = ({
   children,
   id = 1,
   className,
-  delay = 0.5
+  delay = 0.25,
+  animationStyle = "up",
 }: {
   children: ReactNode;
   id: number;
   className?: string;
-  delay?:number;
+  delay?: number;
+  animationStyle?: "fade" | "left" | "right" | "up" | "down";
 }) => {
+  const animations = {
+    fade: { opacity: 0 },
+    left: { opacity: 0, x: -30 },
+    right: { opacity: 0, x: 30 },
+    up: { opacity: 0, y: 30 },
+    down: { opacity: 0, y: -30 },
+  };
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }} // Initial state before the animation starts
-      whileInView={{ opacity: 1, y: 0 }} // Target state of the animation
+      initial={animations[animationStyle]}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
       transition={{ duration: 0.5, delay: id * delay }}
       viewport={{ once: true }}
       key={id}
-      className={twMerge(" group rounded-3xl overflow-hidden shadow-md", className)}
+      className={twMerge("  overflow-hidden ", className)}
     >
       {children}
     </motion.div>

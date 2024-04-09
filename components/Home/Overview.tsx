@@ -19,6 +19,7 @@ const Overview = () => {
         <div className="mt-10 grid grid-cols-4 gap-6">
           {overViewData.map((card, index) => (
             <AnimatedDiv
+            className="rounded-3xl shadow-md"
               key={card.id}
              id={card.id}
             >

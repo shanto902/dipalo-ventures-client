@@ -15,7 +15,7 @@ const LookingFor = () => {
       </CustomTitle>
       <div className=" grid lg:grid-cols-3 grid-cols-1 gap-16 mt-10 mb-24">
         {lookingForData.map((data, i) => (
-          <AnimatedDiv key={i} id={i} className="aspect-[69/72]">
+          <AnimatedDiv key={i} id={i} className="aspect-[69/72] rounded-3xl shadow-md">
             <LookingForCard
               title={data.title}
               image={data.image}

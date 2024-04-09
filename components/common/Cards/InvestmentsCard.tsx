@@ -24,7 +24,7 @@ const InvestmentsCard = ({id, image, text }: TInvestment) => {
     onMouseEnter={handleMouseEnter}
     onMouseLeave={handleMouseLeave}
     whileHover="hidden"
-     className="group shadow-md rounded flex items-center justify-start px-10 py-5 bg-stone-50 hover:bg-dipalo  transition-colors duration-500">
+     className="group shadow-md rounded-xl overflow-hidden flex items-center justify-start px-10 py-5 bg-stone-50 hover:bg-dipalo  transition-colors duration-500">
      <div className=" flex flex-row  gap-5 items-center  h-full  ">
   <motion.div variants={icon}>
       <InvestmentsSVG id={id} hovered={hovered} width={80} height={80}/>

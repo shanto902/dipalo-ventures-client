@@ -17,7 +17,7 @@ const KeyMetrics = () => {
 
           <div className=" grid grid-cols-3 place-items-center gap-10 p-20 h-full w-full">
             {keyMetrics.map((key, i) => (
-             <AnimatedDiv className=" shadow-none"  key={key.id} id={i} >
+             <AnimatedDiv className=" "  key={key.id} id={i} >
                <KeyMetricsCard
                 text={key.text}
                 value={key.value}

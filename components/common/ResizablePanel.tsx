@@ -25,7 +25,7 @@ const ResizablePanel = ({ children } : {children: ReactNode}) => {
                transition: { duration: duration / 2, delay: duration / 2 },
             }}
             exit={{
-              // opacity: 0,
+               opacity: 0,
   
                transition: { duration: duration / 2 }
             }}

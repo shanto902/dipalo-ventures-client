@@ -27,6 +27,7 @@ const WhatsWrongWithVC = () => {
         <div className=" grid grid-cols-3 gap-48 mx-auto mt-10">
           {whatsWrongVC.map((card, i) => (
             <AnimatedDiv
+            className="rounded-3xl shadow-md"
               key={i}
               id={i}
             >
