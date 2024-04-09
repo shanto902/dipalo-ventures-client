@@ -1,9 +1,9 @@
-"use client";
-import React from "react";
-import PaddingContainer from "../Layout/PaddingContainer";
-import Image from "next/image";
-import mainBg from "@/public/assets/main-bg.jpeg";
-import { motion } from "framer-motion";
+'use client';
+import React from 'react';
+import PaddingContainer from '../Layout/PaddingContainer';
+import Image from 'next/image';
+import mainBg from '@/public/assets/main-bg.jpeg';
+import { motion } from 'framer-motion';
 const Main = () => {
   return (
     <div className=" lg:min-h-screen min-h-[50vh]">
@@ -23,37 +23,37 @@ const Main = () => {
               <motion.span
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: .2, ease: "easeInOut" }}
+                transition={{ duration: 0.5, delay: 0.2, ease: 'easeInOut' }}
                 viewport={{ once: true }}
               >
-                {" "}
+                {' '}
                 Craftsmanship,
               </motion.span>
               <br />
               <motion.span
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: .4, ease: "easeInOut" }}
+                transition={{ duration: 0.5, delay: 0.4, ease: 'easeInOut' }}
                 viewport={{ once: true }}
               >
-                {" "}
+                {' '}
                 Expertise,
               </motion.span>
               <br />
               <motion.span
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: .5, ease: "easeInOut" }}
+                transition={{ duration: 0.5, delay: 0.5, ease: 'easeInOut' }}
                 viewport={{ once: true }}
               >
-                {" "}
+                {' '}
                 Time <span className="text-dipalo">Well Spent.</span>
               </motion.span>
             </h2>
             <motion.h3
               initial={{ y: -50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: .6, ease: "easeInOut" }}
+              transition={{ duration: 0.5, delay: 0.6, ease: 'easeInOut' }}
               viewport={{ once: true }}
               className="text-base font-medium leading-relaxed py-5 text-yellow-50 lg:text-xl md:text-lg"
             >

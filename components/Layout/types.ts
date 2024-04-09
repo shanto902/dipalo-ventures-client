@@ -1,6 +1,5 @@
 export type TNavItem = {
-    label: string;
-    link?: string;
-    children?: TNavItem[];
-
-  };
+  label: string;
+  link?: string;
+  children?: TNavItem[];
+};

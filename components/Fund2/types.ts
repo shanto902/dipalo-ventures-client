@@ -1,5 +1,5 @@
 export type TFocusAreas = {
-    logo: string,
-    title: string,
-    listText: string
-}
+  logo: string;
+  title: string;
+  listText: string;
+};

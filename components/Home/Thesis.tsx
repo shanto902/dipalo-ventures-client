@@ -1,15 +1,15 @@
-"use client";
-import React from "react";
-import PaddingContainer from "../Layout/PaddingContainer";
-import Image from "next/image";
-import { motion } from "framer-motion";
+'use client';
+import React from 'react';
+import PaddingContainer from '../Layout/PaddingContainer';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 const Thesis = () => {
   return (
     <PaddingContainer>
       <motion.div
         initial={{ y: 50 }}
         whileInView={{ y: 0 }}
-        transition={{ duration: 0.5, delay: 0, ease: "easeInOut" }}
+        transition={{ duration: 0.5, delay: 0, ease: 'easeInOut' }}
         viewport={{ once: true }}
         className="  h-[350px] rounded-3xl overflow-hidden relative bg-main_thesis bg-center shadow-md  bg-cover"
       >
@@ -19,7 +19,7 @@ const Thesis = () => {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: .2, ease: "easeInOut" }}
+            transition={{ duration: 0.5, delay: 0.2, ease: 'easeInOut' }}
             viewport={{ once: true }}
             className=" text-dipalo  text-2xl mb-2 font-bold "
           >
@@ -27,14 +27,15 @@ const Thesis = () => {
           </motion.div>
           <div className="flex flex-col gap-20 lg:flex-row lg:gap-32">
             <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: .3, ease: "easeInOut" }}
-            viewport={{ once: true }} 
-             className=" leading-normal font-normal text-white ">
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.3, ease: 'easeInOut' }}
+              viewport={{ once: true }}
+              className=" leading-normal font-normal text-white "
+            >
               Currently, sectors emitting the most greenhouse gases receive the
               least VC funding. Climate Tech offers a wave of unique investment
-              opportunities that will soon dominate the{" "}
+              opportunities that will soon dominate the{' '}
               <span className="underline  underline-offset-8 decoration-dipalo">
                 market
               </span>
@@ -42,21 +43,25 @@ const Thesis = () => {
             </motion.div>
 
             <div>
-              <motion.div 
-                 initial={{ opacity: 0 }}
-                 whileInView={{ opacity: 1 }}
-                 transition={{ duration: 0.5, delay: .4, ease: "easeInOut" }}
-                 viewport={{ once: true }}  className=" text-right text-white font-normal leading-normal">
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.4, ease: 'easeInOut' }}
+                viewport={{ once: true }}
+                className=" text-right text-white font-normal leading-normal"
+              >
                 The Dipalo Heed ClimateTech Fund offers exposure to rapidly
                 growing climate tech innovation in the US and Portugal, combined
                 with EU residency and citizenship.
               </motion.div>
 
-              <motion.div className="flex justify-end w-full mt-5 "
-                 initial={{ x:100, opacity:0}}
-                 whileInView={{ x:0, opacity:1 }}
-                 transition={{ duration: 0.5, delay: .3, ease: "easeInOut" }}
-                 viewport={{ once: true }} >
+              <motion.div
+                className="flex justify-end w-full mt-5 "
+                initial={{ x: 100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.3, ease: 'easeInOut' }}
+                viewport={{ once: true }}
+              >
                 <Image
                   className=""
                   src="/assets/dipalo-heed.svg"

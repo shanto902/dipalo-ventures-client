@@ -1,13 +1,13 @@
-"use client";
-import { useState, useRef, useEffect, forwardRef, SetStateAction } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { IoIosArrowDown } from "react-icons/io";
-import { FiMenu } from "react-icons/fi";
-import { navItems } from "./NavItems";
-import MobileNav from "./MobileNav";
-import { usePathname } from "next/navigation";
-import Headroom from "react-headroom";
+'use client';
+import { useState, useRef, useEffect, forwardRef, SetStateAction } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { IoIosArrowDown } from 'react-icons/io';
+import { FiMenu } from 'react-icons/fi';
+import { navItems } from './NavItems';
+import MobileNav from './MobileNav';
+import { usePathname } from 'next/navigation';
+import Headroom from 'react-headroom';
 
 const ForwardedMobileNav = forwardRef(MobileNav);
 
@@ -18,7 +18,7 @@ const Navbar = () => {
   const sidebarRef = useRef<HTMLDivElement>(null);
   const currentPath = usePathname();
 
-  const pathArray = currentPath.split("/");
+  const pathArray = currentPath.split('/');
   const lastPathComponent = pathArray[pathArray.length - 2];
 
   useEffect(() => {
@@ -26,10 +26,10 @@ const Navbar = () => {
       setScrollY(window.scrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -44,9 +44,9 @@ const Navbar = () => {
     };
 
     if (isSideMenuOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside);
       return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
+        document.removeEventListener('mousedown', handleClickOutside);
       };
     }
   }, [isSideMenuOpen]);
@@ -74,16 +74,16 @@ const Navbar = () => {
     <nav className="absolute w-full z-30 lg:mt-12">
       <Headroom pinStart={40}>
         <div
-          className={`${scrollY < 150 ? "" : " backdrop-blur-sm bg-black/50"}`}
+          className={`${scrollY < 150 ? '' : ' backdrop-blur-sm bg-black/50'}`}
           style={{
-            transition: "background-color 0.3s ease",
+            transition: 'background-color 0.3s ease'
           }}
         >
           <div
             className={`relative z-30 flex justify-between w-full px-4 max-w-7xl py-5 mx-auto text-sm  `}
           >
             <section className="flex items-center gap-10">
-              <Link href={"/"} className="pl-4">
+              <Link href={'/'} className="pl-4">
                 <Image src="/logo.svg" alt="logo" width={100} height={100} />
               </Link>
               {isSideMenuOpen && (
@@ -105,15 +105,15 @@ const Navbar = () => {
                       className={` text-lg font-semibold cursor-pointer hover-underline-animation ${
                         currentPath === d.link ||
                         lastPathComponent == d.label.toLowerCase()
-                          ? "text-dipalo"
-                          : "text-white"
+                          ? 'text-dipalo'
+                          : 'text-white'
                       }`}
                     >
                       <Link
                         className=" inline-flex items-center gap-2"
-                        href={d.link ?? "#"}
+                        href={d.link ?? '#'}
                       >
-                        {d.label}{" "}
+                        {d.label}{' '}
                         {d.children && (
                           <IoIosArrowDown className="transition-all rotate-180 group-hover:rotate-0" />
                         )}
@@ -131,13 +131,13 @@ const Navbar = () => {
                               onMouseLeave={(e) => handleSubmenuClose(e)}
                               className={`flex items-start py-1 pl-2 pr-3 text-base cursor-pointer whitespace-nowrap ${
                                 currentPath === ch.link
-                                  ? "text-dipalo"
-                                  : "text-black"
+                                  ? 'text-dipalo'
+                                  : 'text-black'
                               }`}
                             >
                               <Link
                                 className="w-full  inline-flex gap-2 items-center group"
-                                href={ch.link ? ch.link : "#"}
+                                href={ch.link ? ch.link : '#'}
                               >
                                 <span className=" hover:text-dipalo  hover-underline-animation">
                                   {ch.label}
@@ -146,8 +146,8 @@ const Navbar = () => {
                                   <IoIosArrowDown
                                     className={`transition-all  -rotate-90 ${
                                       openSubmenu === i
-                                        ? "group-hover:rotate-90"
-                                        : ""
+                                        ? 'group-hover:rotate-90'
+                                        : ''
                                     }`}
                                   />
                                 )}
@@ -159,7 +159,7 @@ const Navbar = () => {
                                 onMouseEnter={() => handleSubmenuOpen(i)}
                                 onMouseLeave={(e) => handleSubmenuClose(e)}
                                 className={`absolute left-full top-[-12px] pl-3 flex-col hidden w-auto gap-1 font-semibold text-black  bg-white rounded-lg shadow-md transition-transform duration-700 ${
-                                  openSubmenu === i ? "group-hover:flex" : ""
+                                  openSubmenu === i ? 'group-hover:flex' : ''
                                 }`}
                               >
                                 {ch.children.map((subCh, k) => (
@@ -167,13 +167,13 @@ const Navbar = () => {
                                     key={k}
                                     className={`flex items-start py-2 my-2 pr-4 text-base   underline-offset-4 whitespace-nowrap ${
                                       currentPath === subCh.link
-                                        ? "text-dipalo"
-                                        : "text-black"
+                                        ? 'text-dipalo'
+                                        : 'text-black'
                                     }`}
                                   >
                                     <Link
                                       className="w-full cursor-pointer hover:text-dipalo  hover-underline-animation"
-                                      href={subCh.link ? subCh.link : "#"}
+                                      href={subCh.link ? subCh.link : '#'}
                                     >
                                       {subCh.label}
                                     </Link>

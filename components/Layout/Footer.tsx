@@ -1,9 +1,9 @@
-import React from "react";
-import PaddingContainer from "./PaddingContainer";
-import Image from "next/image";
-import Link from "next/link";
+import React from 'react';
+import PaddingContainer from './PaddingContainer';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import { FaCaretRight } from "react-icons/fa";
+import { FaCaretRight } from 'react-icons/fa';
 const Footer = () => {
   return (
     <div className=" bg-zinc-900">
@@ -27,8 +27,13 @@ const Footer = () => {
 
           <div className=" text-white text-base font-normal leading-7">
             <p className=" text-white  text-xl py-5">Say Hello</p>
-            <p className="hover-underline-animation hover:text-dipalo cursor-pointer">info@dipaloventures.com</p>
-            <p className="hover-underline-animation hover:text-dipalo cursor-pointer"> deals@dipaloventures.com</p>
+            <p className="hover-underline-animation hover:text-dipalo cursor-pointer">
+              info@dipaloventures.com
+            </p>
+            <p className="hover-underline-animation hover:text-dipalo cursor-pointer">
+              {' '}
+              deals@dipaloventures.com
+            </p>
           </div>
           <div className=" text-white text-base font-normal leading-7">
             <p className=" text-white  text-xl py-5">Find us in</p>
@@ -58,12 +63,9 @@ const Footer = () => {
                 Email
               </label>
             </div>
-            <button 
-        
-        className=" flex items-center  gap-2 mt-5 uppercase text-center border rounded  text-sm shadow-md border-white border-opacity-30 py-2 px-4 hover:bg-dipalo z-20 text-white transition-all duration-500">
-       Subscribe <FaCaretRight />
-
-       </button>
+            <button className=" flex items-center  gap-2 mt-5 uppercase text-center border rounded  text-sm shadow-md border-white border-opacity-30 py-2 px-4 hover:bg-dipalo z-20 text-white transition-all duration-500">
+              Subscribe <FaCaretRight />
+            </button>
           </div>
         </div>
 

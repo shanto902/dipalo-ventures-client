@@ -14,7 +14,7 @@ export type TLookingForData = {
 };
 
 export type TWhatsWrongVC = {
-  id: number
+  id: number;
   logo: string;
   title: string;
 };

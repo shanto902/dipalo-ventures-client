@@ -1,16 +1,16 @@
 /** @type {import('next').NextConfig} */
 
-
 const nextConfig = {
-    async redirects() {
+  async redirects() {
     return [
       // Basic redirect
       {
         source: '/funds',
         destination: '/funds/fund-2',
-        permanent: true,
-      },
-    ]
-  },};
+        permanent: true
+      }
+    ];
+  }
+};
 
 export default nextConfig;

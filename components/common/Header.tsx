@@ -1,12 +1,12 @@
-import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
-import React from "react";
+import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 
 const Header = ({
   image,
   title,
   subtitle,
-  breadcrumb,
+  breadcrumb
 }: {
   image: StaticImageData;
   title: string;
@@ -29,10 +29,10 @@ const Header = ({
         </h2>
         {subtitle && <p>{subtitle}</p>}
         <p className=" mt-4 text-sm">
-          <Link className=" hover:text-dipalo" href={"/"}>
+          <Link className=" hover:text-dipalo" href={'/'}>
             Home
-          </Link>
-          {" "} / {" "}<span className=" text-dipalo">{breadcrumb}</span>
+          </Link>{' '}
+          / <span className=" text-dipalo">{breadcrumb}</span>
         </p>
       </div>
       <div className="absolute inset-0 bg-black opacity-50" />

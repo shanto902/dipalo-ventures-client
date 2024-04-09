@@ -1,6 +1,6 @@
-import React from "react";
-import PaddingContainer from "../Layout/PaddingContainer";
-import Image from "next/image";
+import React from 'react';
+import PaddingContainer from '../Layout/PaddingContainer';
+import Image from 'next/image';
 
 const TopSection = () => {
   return (
@@ -13,11 +13,11 @@ const TopSection = () => {
           ur
         </span>
         <span className="text-[#555555] text-2xl font-semibold leading-10">
-          {" "}
+          {' '}
           first fund specialized in advancing built technologies at the
           intersection of digital and physical. We sought to foster innovative
           solutions that integrate seamlessly into our built world to promote
-          sustainability and{" "}
+          sustainability and{' '}
           <span className=" underline  underline-offset-[15px] decoration-dipalo">
             resilience
           </span>
@@ -27,12 +27,11 @@ const TopSection = () => {
         <Image
           className=" absolute right-0 -z-10 "
           alt="Main Background"
-          src={"/assets/learnBgDsign.png"}
+          src={'/assets/learnBgDsign.png'}
           width={394}
           height={191}
         />
       </PaddingContainer>
-     
     </>
   );
 };

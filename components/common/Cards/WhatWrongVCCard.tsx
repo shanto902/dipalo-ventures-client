@@ -1,7 +1,7 @@
-import { TWhatsWrongVC } from "@/components/Home/types";
-import React, { useState } from "react";
-import { WhatsWrongWithVCSVG } from "../SVG/WhatsWrongWithVCSVG";
-import { motion } from "framer-motion";
+import { TWhatsWrongVC } from '@/components/Home/types';
+import React, { useState } from 'react';
+import { WhatsWrongWithVCSVG } from '../SVG/WhatsWrongWithVCSVG';
+import { motion } from 'framer-motion';
 const WhatWrongVCCard = ({ id, logo, title }: TWhatsWrongVC) => {
   const [hovered, setHovered] = useState(false);
 

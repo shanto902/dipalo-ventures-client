@@ -1,10 +1,10 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import PaddingContainer from "../Layout/PaddingContainer";
-import { filterCompanies } from "./filterCompany";
-import { companies } from "./const";
-import PortfolioCard from "../common/Cards/PortfolioCard";
-import { SelectedFilterButtons } from "./SelectedFilterButtons";
+'use client';
+import React, { useEffect, useState } from 'react';
+import PaddingContainer from '../Layout/PaddingContainer';
+import { filterCompanies } from './filterCompany';
+import { companies } from './const';
+import PortfolioCard from '../common/Cards/PortfolioCard';
+import { SelectedFilterButtons } from './SelectedFilterButtons';
 
 const PortfolioSection = () => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
@@ -116,7 +116,7 @@ const PortfolioSection = () => {
           <hr className="mt-10" />
 
           <div className=" flex gap-2">
-          <SelectedFilterButtons
+            <SelectedFilterButtons
               items={selectedCategories}
               onClick={removeSelectedCategory}
             />
@@ -139,9 +139,9 @@ const PortfolioSection = () => {
                     key={index}
                     name={company.name}
                     logo={company.logo}
-                    category={""}
-                    state={""}
-                    stage={""}
+                    category={''}
+                    state={''}
+                    stage={''}
                   />
                 ))}
               </div>

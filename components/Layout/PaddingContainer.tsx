@@ -1,9 +1,9 @@
-import React, { ReactNode } from "react";
-import { twMerge } from "tailwind-merge";
+import React, { ReactNode } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 const PaddingContainer = ({
   children,
-  className,
+  className
 }: {
   children: ReactNode;
   className?: string;

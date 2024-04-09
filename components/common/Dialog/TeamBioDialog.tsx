@@ -1,14 +1,14 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import React, { useState } from "react";
-import parse from "html-react-parser";
-import linkedinLogo from "@/public/assets/linkedin.svg";
-import ResizablePanel from "../ResizablePanel";
-import {motion, MotionConfig } from "framer-motion";
-import Marquee from "react-fast-marquee";
-import { TPriorInvestments } from "@/components/AboutUs/types";
-import Tooltip from "../Tooltip";
+'use client';
+import Image from 'next/image';
+import Link from 'next/link';
+import React, { useState } from 'react';
+import parse from 'html-react-parser';
+import linkedinLogo from '@/public/assets/linkedin.svg';
+import ResizablePanel from '../ResizablePanel';
+import { motion, MotionConfig } from 'framer-motion';
+import Marquee from 'react-fast-marquee';
+import { TPriorInvestments } from '@/components/AboutUs/types';
+import Tooltip from '../Tooltip';
 
 export type TTeam = {
   id: number;
@@ -26,7 +26,7 @@ const TeamBioDialog = ({
   designation,
   bio,
   linkedinLink,
-  priorInvestments,
+  priorInvestments
 }: TTeam) => {
   const [hovered, setHovered] = useState(false);
   const handleMouseEnter = () => {
@@ -44,7 +44,7 @@ const TeamBioDialog = ({
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        {" "}
+        {' '}
         <Image
           className=" h-[170] shadow-md mx-auto absolute top-0 left-0 right-0 justify-center  w-[170] aspect-square object-cover rounded-full"
           src={image}
@@ -142,39 +142,37 @@ const TeamBioDialog = ({
                 )}
               </div>
               <div>
-                {priorInvestments  && (
-        
-                    <div className=" flex flex-row flex-wrap gap-4 mt-4 justify-center">
-                      {priorInvestments.map((company) => (
-                        <Link
-                          key={company.id}
-                          href={company.link}
-                          className=" relative  border rounded-xl "
-                        >
-                          {company.status !== "Ongoing" && (
-                            <span
-                              className={` absolute badge z-10 badge-xs  bottom-0 left-0 text-white ${
-                                company.status === "Exit"
-                                  ? `badge-error`
-                                  : `badge-warning`
-                              }`}
-                            >
-                              {company.status}
-                            </span>
-                          )}
-                         <Tooltip message={company.name}>
-                            <Image
-                              className=" -z-20 aspect-square object-contain m-1"
-                              src={company.logo}
-                              alt={company.name}
-                              height={60}
-                              width={60}
-                            />
-                          </Tooltip>
-                        </Link>
-                      ))}
-                    </div>
-    
+                {priorInvestments && (
+                  <div className=" flex flex-row flex-wrap gap-4 mt-4 justify-center">
+                    {priorInvestments.map((company) => (
+                      <Link
+                        key={company.id}
+                        href={company.link}
+                        className=" relative  border rounded-xl "
+                      >
+                        {company.status !== 'Ongoing' && (
+                          <span
+                            className={` absolute badge z-10 badge-xs  bottom-0 left-0 text-white ${
+                              company.status === 'Exit'
+                                ? `badge-error`
+                                : `badge-warning`
+                            }`}
+                          >
+                            {company.status}
+                          </span>
+                        )}
+                        <Tooltip message={company.name}>
+                          <Image
+                            className=" -z-20 aspect-square object-contain m-1"
+                            src={company.logo}
+                            alt={company.name}
+                            height={60}
+                            width={60}
+                          />
+                        </Tooltip>
+                      </Link>
+                    ))}
+                  </div>
                 )}
               </div>
             </div>

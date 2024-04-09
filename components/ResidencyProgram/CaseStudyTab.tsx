@@ -1,10 +1,10 @@
-import { motion, MotionConfig } from "framer-motion";
-import { useState } from "react";
-import { caseStudies } from "./const";
-import PaddingContainer from "../Layout/PaddingContainer";
-import ResizablePanel from "../common/ResizablePanel";
-import Image from "next/image";
-import parse from "html-react-parser";
+import { motion, MotionConfig } from 'framer-motion';
+import { useState } from 'react';
+import { caseStudies } from './const';
+import PaddingContainer from '../Layout/PaddingContainer';
+import ResizablePanel from '../common/ResizablePanel';
+import Image from 'next/image';
+import parse from 'html-react-parser';
 const CaseStudyTab = () => {
   let [activeTab, setActiveTab] = useState(caseStudies[0].id);
   let duration = 0.25;
@@ -16,17 +16,17 @@ const CaseStudyTab = () => {
       scale: 1,
       transition: {
         delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
+        staggerChildren: 0.2
+      }
+    }
   };
 
   const item = {
     hidden: { y: -20, opacity: 0 },
     visible: {
       y: 0,
-      opacity: 1,
-    },
+      opacity: 1
+    }
   };
 
   return (
@@ -37,17 +37,17 @@ const CaseStudyTab = () => {
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
             className={`${
-              activeTab === tab.id ? "text-white" : "hover:text-dipalo"
+              activeTab === tab.id ? 'text-white' : 'hover:text-dipalo'
             } relative rounded-3xl shadow-md px-3 bg-stone-50 z-10 w-[300px] h-[80px] py-1.5 overflow-hidden text-lg font-medium text-black dipalo transition focus-visible:outline-2`}
             style={{
-              WebkitTapHighlightColor: "transparent",
+              WebkitTapHighlightColor: 'transparent'
             }}
           >
             {activeTab === tab.id && (
               <motion.span
                 layoutId="bubble"
                 className="absolute inset-0 rounded-3xl  bg-dipalo -z-30"
-                transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
               />
             )}
             {tab.company}
@@ -108,12 +108,9 @@ const CaseStudyTab = () => {
         )}
       </MotionConfig>
 
-      <button 
-        
-        className=" flex items-center mx-auto gap-2 mt-5 text-center border rounded  text-base font-semibold shadow-md border-black border-opacity-30 py-2 px-8 hover:bg-dipalo z-20 text-black  transition-all duration-500 uppercase hover:text-white hover:border-dipalo">
-       Submit
-
-       </button>
+      <button className=" flex items-center mx-auto gap-2 mt-5 text-center border rounded  text-base font-semibold shadow-md border-black border-opacity-30 py-2 px-8 hover:bg-dipalo z-20 text-black  transition-all duration-500 uppercase hover:text-white hover:border-dipalo">
+        Submit
+      </button>
     </PaddingContainer>
   );
 };
