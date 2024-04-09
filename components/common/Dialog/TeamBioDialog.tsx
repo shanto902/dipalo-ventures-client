@@ -1,9 +1,24 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import parse from "html-react-parser";
 import linkedinLogo from "@/public/assets/linkedin.svg";
+import ResizablePanel from "../ResizablePanel";
+import {motion, MotionConfig } from "framer-motion";
+import Marquee from "react-fast-marquee";
+import { TPriorInvestments } from "@/components/AboutUs/types";
+import Tooltip from "../Tooltip";
+
+export type TTeam = {
+  id: number;
+  image: string;
+  name: string;
+  designation: string;
+  bio: string;
+  linkedinLink: string;
+  priorInvestments?: TPriorInvestments[];
+};
 const TeamBioDialog = ({
   id,
   image,
@@ -11,88 +26,164 @@ const TeamBioDialog = ({
   designation,
   bio,
   linkedinLink,
-}: {
-  id: number;
-  image: string;
-  name: string;
-  designation: string;
-  bio: string;
-  linkedinLink: string;
-}) => {
+  priorInvestments,
+}: TTeam) => {
+  const [hovered, setHovered] = useState(false);
+  const handleMouseEnter = () => {
+    setHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHovered(false);
+  };
+
   return (
     <div>
-      {/* Open the modal using document.getElementById('ID').showModal() method */}
-      {/* You can open the modal using document.getElementById('ID').showModal() method */}
-      <button
-        onClick={() => {
-          const modal = document.getElementById(
-            `my_modal_${id}`
-          ) as HTMLDialogElement;
-          if (modal) {
-            modal.showModal();
-          }
-        }}
+      <section
+        className=" group relative h-[315px]  rounded-3xl  "
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         {" "}
-        <div className="relative">
-  <Image
-    className="h-full rounded-md w-full aspect-[3/4] object-cover transition-transform duration-500"
-    src={image}
-    alt=""
-    width={500}
-    height={1000}
-  />
-  <div className="absolute bottom-0 left-0 bg-black bg-opacity-70 w-full h-[110px] group-hover:opacity-0 transition-opacity duration-500">
-    <h2 className="text-center mt-5 text-white text-base font-bold uppercase">
-      {name}
-    </h2>
-    <h3 className="text-center text-amber-500 text-xs font-semibold mt-2">{designation}</h3>
-  </div>
-</div>
+        <Image
+          className=" h-[170] shadow-md mx-auto absolute top-0 left-0 right-0 justify-center  w-[170] aspect-square object-cover rounded-full"
+          src={image}
+          alt=""
+          width={200}
+          height={200}
+        />
+        {hovered ? (
+          <div className="absolute bottom-4 left-0 right-0 mx-auto transition-opacity duration-500 ${hovered ? 'opacity-100' : 'opacity-0'}">
+            <div className="text-center text-white">
+              <h2 className="text-base font-bold uppercase">{name}</h2>
+              <h3 className="text-xs">{designation}</h3>
+              <div>
+                <a
+                  href={linkedinLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mx-auto mt-2 -mb-1 inline-block"
+                >
+                  <Image
+                    src={linkedinLogo}
+                    className=" cursor-pointer"
+                    alt="Linkedin Icon"
+                  />
+                </a>
+              </div>
+              <div
+                className="z-20 inline-block text-xs mx-auto pointer hover:underline underline-offset-4 cursor-pointer transition-all duration-300"
+                onClick={() => {
+                  const modal = document.getElementById(
+                    `my_modal_${id}`
+                  ) as HTMLDialogElement;
+                  if (modal) {
+                    modal.showModal();
+                  }
+                }}
+              >
+                Click To Learn More
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="absolute bottom-4 left-0 right-0 mx-auto transition-opacity duration-500 ${hovered ? 'opacity-100' : 'opacity-0'}">
+            <div className="text-center text-black px-4 ">
+              <h2 className="text-base font-bold uppercase">{name}</h2>
+              <h3 className="text-xs">{designation}</h3>
+              <div className=" text-xs line-clamp-2 my-2">{parse(bio)}</div>
+            </div>
+          </div>
+        )}
+        <div className="shadow-md absolute w-full group-hover:bg-dipalo bg-stone-50 h-[180px] rounded-3xl bottom-0 -z-10 transition-colors duration-300" />
+      </section>
 
-      </button>
       <dialog id={`my_modal_${id}`} className="modal">
-        <div className="modal-box w-11/12 max-w-5xl rounded-xl">
-          <div className=" flex gap-5 items-center overflow-hidden  ">
-     
-         <div className="flex-1">
-         <Image
-            className="h-full w-full aspect-square rounded-lg  object-cover  transition-transform duration-500 "
-            src={image}
-            alt=""
-            width={500}
-            height={1000}
-          />
- <h2 className="text-center text-black text-2xl font-bold uppercase mt-5">
-              {name}
-            </h2>
-            <h3 className="text-center text-amber-500 text-lg pb-2 font-semibold ">
-              {designation}
-            </h3>
-         </div>
-          
-
-          <div className=" flex-1">
-         
-
-            {parse(bio)}
-            <Link href={linkedinLink}>
+        <div className="modal-box max-w-6xl rounded-xl bg-stone-50">
+          <div className=" grid grid-cols-3 overflow-hidden px-20 pb-10 pt-14 gap-x-12 ">
+            <div className="col-span-1 flex flex-col items-center">
               <Image
-                src={linkedinLogo}
-                className=" my-3 mx-auto"
-                alt="Linkedin Icon"
-              ></Image>
-            </Link>
-          </div>
-            <div>
-           </div>
-          </div>
+                className="h-[330px] w-[330px] aspect-square rounded-xl  object-cover  transition-transform duration-500 "
+                src={image}
+                alt=""
+                width={500}
+                height={500}
+              />
+              <h2 className="text-center text-black text-2xl font-semibold uppercase mt-5">
+                {name}
+              </h2>
+              <h3 className="text-center text-amber-500 text-lg pb-2 font-medium ">
+                {designation}
+              </h3>
 
-       
+              <a
+                href={linkedinLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mx-auto mt-2 -mb-1 inline-block"
+              >
+                <Image
+                  src={linkedinLogo}
+                  className=" cursor-pointer h-10 w-10 "
+                  alt="Linkedin Icon"
+                />
+              </a>
+            </div>
+
+            <div className=" col-span-2 text-base  ">
+              {parse(bio)}
+              <div className="font-semibold text-lg text-center pt-5">
+                {priorInvestments && (
+                  <span>
+                    <span className="underline decoration-dipalo underline-offset-4">
+                      Prior Investments
+                    </span>
+                  </span>
+                )}
+              </div>
+              <div>
+                {priorInvestments  && (
+        
+                    <div className=" flex flex-row flex-wrap gap-4 mt-4 justify-center">
+                      {priorInvestments.map((company) => (
+                        <Link
+                          key={company.id}
+                          href={company.link}
+                          className=" relative  border rounded-xl "
+                        >
+                          {company.status !== "Ongoing" && (
+                            <span
+                              className={` absolute badge z-10 badge-xs  bottom-0 left-0 text-white ${
+                                company.status === "Exit"
+                                  ? `badge-error`
+                                  : `badge-warning`
+                              }`}
+                            >
+                              {company.status}
+                            </span>
+                          )}
+                         <Tooltip message={company.name}>
+                            <Image
+                              className=" -z-20 aspect-square object-contain m-1"
+                              src={company.logo}
+                              alt={company.name}
+                              height={60}
+                              width={60}
+                            />
+                          </Tooltip>
+                        </Link>
+                      ))}
+                    </div>
+    
+                )}
+              </div>
+            </div>
+          </div>
         </div>
+
         <form method="dialog" className="modal-backdrop">
-    <button>close</button>
-  </form>
+          <button>close</button>
+        </form>
       </dialog>
     </div>
   );

@@ -2,7 +2,7 @@
 import React from "react";
 import PaddingContainer from "../Layout/PaddingContainer";
 import { residencyOutputs } from "./const";
-const ResidencyLottie = dynamic(() => import("./ResidencyLottie"), {
+const LottieAnimation = dynamic(() => import("@/components/common/LottieAnimation"), {
   ssr: false,
 });
 import Image from "next/image";
@@ -10,6 +10,8 @@ import arrowSVG from "@/public/assets/arrow.svg";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import CustomTitle from "../common/CustomTitle";
+import animationData from "@/components/LottieFiles/residency-lottie.json";
+import AnimatedPara from "../common/AnimatedPara";
 
 const Process = () => {
   const container = {
@@ -36,26 +38,17 @@ const Process = () => {
           PROCESS
         </CustomTitle>
         <div className=" flex items-center mt-5">
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.5, ease: "easeInOut" }}
-            viewport={{ once: true }}
-            className=" mt-10 text-left text-zinc-900 text-lg leading-loose font-semibold"
+          <AnimatedPara
+            className=" mt-10 text-left "
           >
             The Dipalo Ventures Residency is our technical diligence program
             identifying product design and engineering gaps. We conduct the
             technical diligence prior to the initial investment.
-          </motion.p>
+          </AnimatedPara>
 
-          <motion.div
-            initial={{ x: -20, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.25, ease: "easeInOut" }}
-            viewport={{ once: true }}
-          >
-            <ResidencyLottie />
-          </motion.div>
+         
+            <LottieAnimation animationData={animationData} />
+       
         </div>
         <section className="bg-stone-50 rounded-3xl py-10 shadow">
           <motion.div
@@ -114,13 +107,13 @@ const Process = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.25, ease: "easeInOut" }}
             viewport={{ once: true }}
-            className=" text-center mt-6 mb-4 pb-3 text-black text-xl font-semibold"
+            className=" text-center mt-6 mb-4 pb-3 text-black text-xl font-semibold "
           >
             Examples of Residency outputs:
           </motion.h3>
           <motion.div variants={container} viewport={{once:true}} initial="hidden" whileInView="visible" className=" flex flex-wrap gap-4 justify-center text-xl font-semibold ">
             {residencyOutputs.map((example, i) => (
-              <motion.h3 variants={item}  key={i}>{example}</motion.h3>
+              <motion.h3 variants={item} className="border rounded-lg  px-2 py-1 border-dipalo hover:bg-dipalo hover:text-white duration-300 transition-colors"  key={i}>{example}</motion.h3>
             ))}
           </motion.div>
         </section>

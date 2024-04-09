@@ -13,7 +13,7 @@ const Fund1Page = () => {
         title="Dipalo Ventures Fund I"
         image={image}
         subtitle="(Dipalo Ventures Fund I is now closed)"
-        breadcrumb="Learn"
+        breadcrumb="Funds"
       />
       <ThesisSection />
       <QuotesSection />

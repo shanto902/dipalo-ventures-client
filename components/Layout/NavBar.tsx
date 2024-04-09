@@ -7,9 +7,7 @@ import { FiMenu } from "react-icons/fi";
 import { navItems } from "./NavItems";
 import MobileNav from "./MobileNav";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
 import Headroom from "react-headroom";
-import PaddingContainer from "./PaddingContainer";
 
 const ForwardedMobileNav = forwardRef(MobileNav);
 
@@ -19,6 +17,9 @@ const Navbar = () => {
   const [scrollY, setScrollY] = useState(0);
   const sidebarRef = useRef<HTMLDivElement>(null);
   const currentPath = usePathname();
+
+  const pathArray = currentPath.split("/");
+  const lastPathComponent = pathArray[pathArray.length - 2];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,7 +33,6 @@ const Navbar = () => {
     };
   }, []);
 
-  // For sidebar close on clicking outside of sidebar
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -70,21 +70,13 @@ const Navbar = () => {
     }
   };
 
-  const handleHeadroomPin = () => {};
-
-  const handleHeadroomUnpin = () => {};
-
   return (
     <nav className="absolute w-full z-30 lg:mt-12">
-      <Headroom
-        pinStart={40}
-        onPin={handleHeadroomPin}
-        onUnpin={handleHeadroomUnpin}
-      >
+      <Headroom pinStart={40}>
         <div
           className={`${scrollY < 150 ? "" : " backdrop-blur-sm bg-black/50"}`}
           style={{
-            transition: "background-color 0.3s ease"
+            transition: "background-color 0.3s ease",
           }}
         >
           <div
@@ -111,7 +103,10 @@ const Navbar = () => {
                   >
                     <span
                       className={` text-lg font-semibold cursor-pointer hover-underline-animation ${
-                        currentPath === d.link ? "text-dipalo" : "text-white"
+                        currentPath === d.link ||
+                        lastPathComponent == d.label.toLowerCase()
+                          ? "text-dipalo"
+                          : "text-white"
                       }`}
                     >
                       <Link
@@ -144,7 +139,9 @@ const Navbar = () => {
                                 className="w-full  inline-flex gap-2 items-center group"
                                 href={ch.link ? ch.link : "#"}
                               >
-                                <span className=" hover:text-dipalo  hover-underline-animation">{ch.label}</span>
+                                <span className=" hover:text-dipalo  hover-underline-animation">
+                                  {ch.label}
+                                </span>
                                 {ch.children && (
                                   <IoIosArrowDown
                                     className={`transition-all  -rotate-90 ${

@@ -14,11 +14,11 @@ export const navItems: TNavItem[] = [
       children: [
         {
           label: "Dipalo Ventures Fund I",
-          link: "/fund-1",
+          link: "/funds/fund-1",
         },
         {
           label: "Dipalo Heed Climate Fund II",
-          link: "/fund-2",
+          link: "/funds/fund-2",
           children: [
             {
               label: "Golden Visa",

@@ -4,6 +4,7 @@ import { OverViewSVG } from "../SVG/OverViewSVG";
 import parse from 'html-react-parser';
 import { TInvestment, TKeyMetrics } from "@/components/Fund1/types";
 import { InvestmentsSVG } from "@/components/common/SVG/InvestmentsSVG";
+import { motion } from "framer-motion";
 const InvestmentsCard = ({id, image, text }: TInvestment) => {
   const [hovered, setHovered] = useState(false);
 
@@ -15,28 +16,24 @@ const InvestmentsCard = ({id, image, text }: TInvestment) => {
     setHovered(false);
   };
 
+  const icon = { hidden: { y: -5, scale: 1.1 } };
+
   return (
 
-    <div
-  style={{ backgroundImage: `url('${image}')`, backgroundSize: "cover",  backgroundPosition: "center"  }}
-  className=" group p-5 shadow-lg rounded relative  transition-transform transform hover:scale-105 duration-500 px-10 py-20"
-  onMouseEnter={handleMouseEnter}
-  onMouseLeave={handleMouseLeave}
->
-<div className="z-[-10] absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/80 to-black/80 rounded-sm" />
-  <div className="z-10 flex flex-col items-center gap-10 justify-center  h-full  ">
-   
-  <div className="group flex flex-col items-center gap-4 my-10 transition"   >
-      <InvestmentsSVG id={id} hovered={hovered}/>
-      <h3 className="text-center text-xl mt-16 font-semibold text-white group-hover:text-dipalo transition-colors duration-300">{text}</h3>
-    </div>
- 
-  </div>
-
-
-</div>
-
-  
+ <motion.div 
+    onMouseEnter={handleMouseEnter}
+    onMouseLeave={handleMouseLeave}
+    whileHover="hidden"
+     className="group shadow-md rounded flex items-center justify-start px-10 py-5 bg-stone-50 hover:bg-dipalo  transition-colors duration-500">
+     <div className=" flex flex-row  gap-5 items-center  h-full  ">
+  <motion.div variants={icon}>
+      <InvestmentsSVG id={id} hovered={hovered} width={80} height={80}/>
+      </motion.div>
+      <h3 className="text-center text-lg  font-semibold text-black group-hover:text-white transition-colors duration-300">
+          {text}
+        </h3>
+      </div>
+    </motion.div>
   );
 };
 

@@ -5,7 +5,7 @@ import { ignoreCircularReferences } from "./utils/ignoreCircularReferences";
 
 const ResizablePanel = ({ children } : {children: ReactNode}) => {
     let [ref, { height }] = useMeasure();
-    let duration = 0.25;
+    let duration = 0.5;
   
     return (
       <motion.div
@@ -32,7 +32,7 @@ const ResizablePanel = ({ children } : {children: ReactNode}) => {
           >
             <div
               ref={ref}
-              className={`${height ? "absolute" : "relative"} px-8 pb-8`}
+              className={`${height ? "absolute" : "relative"} `}
             >
               {children}
             </div>

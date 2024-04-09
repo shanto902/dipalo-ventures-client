@@ -14,10 +14,10 @@ const HeaderAboutUs = ({ image }: { image: StaticImageData }) => {
         fill
       />
       <PaddingContainer className="absolute inset-0 flex flex-col z-10 items- justify-center text-white px-5 mt-44">
-        <h2 className=" text-white text-[54px]  leading-[76px] font-bold">
+        <h2 style={{textShadow: "3px 0px 7px #514315cc, -3px 0px 7px #514315cc, 0px 4px 7px #514315cc"}} className=" text-white text-3xl  leading-[76px] font-bold drop-shadow-2xl">
           Dipalo [DI-PA-LO]
         </h2>
-        <ol className="list-decimal pl-5 text-xl font-normal leading-loose ">
+        <ol className="list-decimal pl-5 text-lg font-normal leading-loose ">
           <li>
             From Bangla, the modern South Asian language rooted in Sanskrit
           </li>

@@ -5,7 +5,7 @@ export type TInvestment = {
 }
 
 export type TKeyMetrics = {
-    id: number,
+    id?: number,
     value: string,
     text: string
 }
