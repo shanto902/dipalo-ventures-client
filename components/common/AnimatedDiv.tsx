@@ -10,7 +10,7 @@ const AnimatedDiv = ({
   animationStyle = 'up'
 }: {
   children: ReactNode;
-  id: number;
+  id?: number;
   className?: string;
   delay?: number;
   animationStyle?: 'fade' | 'left' | 'right' | 'up' | 'down';

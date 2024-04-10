@@ -9,7 +9,7 @@ const Fund2Page = () => {
       <Header
         title="Dipalo Heed ClimateTech Fund II"
         image={image}
-        breadcrumb="Invest"
+        breadcrumb="Funds"
       />
       <Fund2Thesis />
       <FocusAreas />

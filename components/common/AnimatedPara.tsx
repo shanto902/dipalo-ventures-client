@@ -13,24 +13,22 @@ const AnimatedPara = ({
   className?: string;
   duration?: number;
   delay?: number;
-  animationStyle?: 'fade' | 'left' | 'right';
+  animationStyle?: 'fade' | 'left' | 'right' | 'up' | 'down';
 }) => {
-  const fade = { opacity: 0 };
-  const left = { opacity: 0, x: -30 };
-  const right = { opacity: 0, x: 30 };
+  const animations = {
+    fade: { opacity: 0 },
+    left: { opacity: 0, x: -30 },
+    right: { opacity: 0, x: 30 },
+    up: { opacity: 0, y: 30 },
+    down: { opacity: 0, y: -30 }
+  };
   return (
     <motion.p
       className={twMerge(
         'text-lg font-semibold leading-loose text-zinc-900',
         className
       )}
-      initial={
-        animationStyle === 'fade'
-          ? fade
-          : animationStyle === 'left'
-            ? left
-            : right
-      }
+      initial={animations[animationStyle]}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       transition={{ duration: duration, delay: delay, ease: 'easeInOut' }}
       viewport={{ once: true }}
