@@ -5,10 +5,12 @@ import TeamBioDialog from '../common/Dialog/TeamBioDialog';
 import CustomTitle from '../common/CustomTitle';
 import AnimatedPara from '../common/AnimatedPara';
 import AnimatedDiv from '../common/AnimatedDiv';
+import { TResidencyAdvisor, TTeam } from '../common/types';
 
-const TeamSection = () => {
+
+const TeamSection = ( {members} :{ members: TTeam[]}) => {
   return (
-    <PaddingContainer className=" my-20 grid grid-cols-4 gap-10 ">
+    <PaddingContainer className=" my-20 grid lg:grid-cols-4 grid-cols-1 md:gap-10 gap-y-10 ">
       {/* Titles  */}
       <AnimatedDiv
         id={1}
@@ -28,18 +30,16 @@ const TeamSection = () => {
       </AnimatedDiv>
 
       {/* Main Team  */}
-      {mainTeam.map((user, i) => (
-        <AnimatedDiv id={i} key={i} className="rounded-3xl shadow-md">
+      {members.map((user, i) => (
+        <AnimatedDiv id={i} key={i} className="rounded-3xl shadow-md ">
           <TeamBioDialog
             priorInvestments={user.priorInvestments}
             key={i}
-            id={i}
-            image={user.image}
+            photo={user.photo}
             name={user.name}
             linkedinLink={user.linkedinLink}
             designation={user.designation}
-            bio={user.bio}
-          />
+            bio={user.bio} serialNo={user.serialNo}          />
         </AnimatedDiv>
       ))}
     </PaddingContainer>

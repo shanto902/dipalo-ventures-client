@@ -11,11 +11,11 @@ const Thesis = () => {
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, delay: 0, ease: 'easeInOut' }}
         viewport={{ once: true }}
-        className="  h-[350px] rounded-3xl overflow-hidden relative bg-main_thesis bg-center shadow-md  bg-cover"
+        className="  lg:h-[350px] h-[450px] rounded-3xl overflow-hidden relative bg-main_thesis bg-center shadow-md  bg-cover"
       >
         <div className="absolute inset-0 bg-black bg-opacity-30"></div>
 
-        <div className="absolute inset-0 flex-col items-start justify-center mx-auto text-white p-28 lg:flex">
+        <div className="absolute inset-0 flex-col items-start justify-center mx-auto text-white lg:p-28 p-5 lg:flex">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

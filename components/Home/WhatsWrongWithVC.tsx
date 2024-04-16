@@ -8,7 +8,7 @@ import CustomTitle from '../common/CustomTitle';
 import AnimatedDiv from '../common/AnimatedDiv';
 const WhatsWrongWithVC = () => {
   return (
-    <div className=" py-14">
+    <div className=" lg:py-14 py-10">
       <PaddingContainer>
         {' '}
         <CustomTitle>
@@ -24,7 +24,7 @@ const WhatsWrongWithVC = () => {
           Traditional Accelerators and VC do not go far enough in supporting
           startups that <br /> are at the intersection of hardware and software.
         </motion.p>
-        <div className=" grid grid-cols-3 gap-48 mx-auto mt-10">
+        <div className=" grid lg:grid-cols-3 md:grid-cols-2 gap-5 grid-cols-1 lg:gap-48 mx-auto mt-10">
           {whatsWrongVC.map((card, i) => (
             <AnimatedDiv className="rounded-3xl shadow-md" key={i} id={i}>
               <WhatWrongVCCard

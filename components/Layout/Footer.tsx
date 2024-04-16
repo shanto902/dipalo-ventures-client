@@ -9,32 +9,48 @@ const Footer = () => {
     <div className=" bg-zinc-900">
       <PaddingContainer className=" pt-12 pb-6">
         <Image src="/logo.svg" alt="Logo" width={133} height={51} />
-        <div className=" grid grid-cols-4  mt-10 mb-5 ">
-          <div>
+        <div className=" grid lg:grid-cols-4 grid-cols-1  mt-10 mb-5 ">
+          <section>
             <p className=" text-white  text-xl py-5">Quick Links</p>
-            <ul className=" text-white text-base font-normal leading-7">
-              <li className="hover-underline-animation hover:text-dipalo cursor-pointer">
-                ClimateTech Investors
+            <ol className=" text-white text-base font-normal leading-7 list-none">
+              <li>
+                <span className="hover-underline-animation hover:text-dipalo cursor-pointer">
+                  ClimateTech Investors
+                </span>
               </li>
-              <li className="hover-underline-animation hover:text-dipalo cursor-pointer">
-                Residency Program
+              <li>
+                <span className="hover-underline-animation hover:text-dipalo cursor-pointer">
+                  Residency Program
+                </span>
               </li>
-              <li className="hover-underline-animation hover:text-dipalo cursor-pointer">
-                Golden Visa Opportunity
+              <li>
+                <span className="hover-underline-animation hover:text-dipalo cursor-pointer">
+                  Golden Visa Opportunity
+                </span>
               </li>
-            </ul>
-          </div>
+            </ol>
+          </section>
 
-          <div className=" text-white text-base font-normal leading-7">
-            <p className=" text-white  text-xl py-5">Say Hello</p>
-            <p className="hover-underline-animation hover:text-dipalo cursor-pointer">
-              info@dipaloventures.com
-            </p>
-            <p className="hover-underline-animation hover:text-dipalo cursor-pointer">
-              {' '}
-              deals@dipaloventures.com
-            </p>
-          </div>
+          <section className="  text-white text-base font-normal leading-7">
+            <h3 className=" text-white  text-xl py-5">Say Hello</h3>
+            <ul className=' list-none'>
+             
+           <li>
+           <a href="mailto:info@dipaloventures.com">
+              <span className="hover-underline-animation hover:text-dipalo cursor-pointer">
+                info@dipaloventures.com
+              </span>
+            </a>
+           </li>
+
+          <li>  <a href="mailto: deals@dipaloventures.com">
+              <span className="hover-underline-animation hover:text-dipalo cursor-pointer">
+                deals@dipaloventures.com
+              </span>
+            </a></li>
+            
+            </ul>
+          </section>
           <div className=" text-white text-base font-normal leading-7">
             <p className=" text-white  text-xl py-5">Find us in</p>
             <p className="">
@@ -49,11 +65,11 @@ const Footer = () => {
 
             <p className="text-white">Subscribe to our newsletter</p>
 
-            <div className="relative mt-5">
+            <div className="relative mt-5 ">
               <input
                 type="text"
                 id="username"
-                className="border-b py-1 focus:outline-none text-white bg-zinc-900 focus:border-dipalo focus:border-b-2 transition-colors peer"
+                className="border-b py-1 w-full md:w-auto focus:outline-none text-white bg-zinc-900 focus:border-dipalo focus:border-b-2 transition-colors peer"
                 autoComplete="off"
               />
               <label

@@ -7,43 +7,43 @@ const ResidencyAdvisorsCard = ({
   image,
   name,
   designation,
-
+  companyName,
   linkedinLink
 }: {
   image: string;
   name: string;
   designation: string;
-
+  companyName:string;
   linkedinLink: string;
 }) => {
   return (
     <div>
-      <div className="group relative  items-center justify-center overflow-hidden  ">
-        <div className=" aspect-square ">
+      <div className="group relative  items-center justify-center  rounded-full overflow-hidden shadow-md">
+        <div className=" aspect-square  ">
           <Image
             className="h-full w-full object-cover  transition-transform duration-500 "
-            src={image}
+            src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${image}`}
             alt=""
             width={500}
             height={1000}
           />
         </div>
         <div className="absolute inset-0"></div>
-        <div className="absolute inset-0 flex translate-y-[50%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-10">
-          <div className="  bg-black  bg-opacity-70 w-[363px] h-[150px]  transition-opacity duration-500">
-            <h2 className="text-center mt-2 text-white text-sm font-bold uppercase">
+        <div className="absolute inset-0 flex translate-y-[45%] flex-col items-center justify-end px-9 text-center transition-all duration-500 group-hover:translate-y-10">
+          <div className=" h-[80%]  bg-white  bg-opacity-80 w-[360px] transition-opacity duration-500 text-black">
+            <h2 className="text-center mt-2  text-xs font-bold uppercase">
               {name}
             </h2>
-            <h4 className="text-center text-white text-xs py-1  ">
+            <h4 className="text-center text-xs py-1  ">
               {designation}
             </h4>
-            <h3 className="text-center text-amber-500 text-xs font-semibold ">
-              Diplo
+            <h3 className="text-center text-dipalo text-xs font-semibold ">
+              {companyName}
             </h3>
             <Link href={linkedinLink}>
               <Image
                 src={linkedinLogo}
-                className=" my-3 mx-auto"
+                className=" mt-3 mx-auto"
                 alt="Linkedin Icon"
               ></Image>
             </Link>

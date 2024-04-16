@@ -19,7 +19,7 @@ const Methodology = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5, ease: 'easeInOut' }}
             viewport={{ once: true }}
-            className=" text-lg text-center pt-5 px-32  "
+            className=" text-lg text-center pt-5 lg:px-32 p-5  "
           >
             <span className="text-dipalo font-semibold ">Dipalo </span>
             <span className="text-white    leading-normal">

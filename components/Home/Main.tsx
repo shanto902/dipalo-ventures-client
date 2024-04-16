@@ -6,10 +6,10 @@ import mainBg from '@/public/assets/main-bg.jpeg';
 import { motion } from 'framer-motion';
 const Main = () => {
   return (
-    <div className=" lg:min-h-screen min-h-[50vh]">
-      <div className="absolute top-0 flex items-center w-full bg-cover lg:min-h-screen -z-10">
+    <div className=" container  lg:min-h-screen min-h-[80vh]">
+      <div className="absolute top-0 flex items-center w-full bg-cover min-h-screen -z-10">
         <Image
-          className="object-cover -z-10"
+          className="object-cover h-full -z-10"
           alt="Main Background"
           src={mainBg}
           placeholder="blur"

@@ -18,7 +18,7 @@ const WhatWrongVCCard = ({ id, logo, title }: TWhatsWrongVC) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       whileHover="hidden"
-      className="group p-5 shadow-md rounded-3xl relative bg-stone-50  aspect-square hover:bg-dipalo  transition-colors duration-500"
+      className="group p-5 shadow-md rounded-3xl relative bg-stone-50  lg:aspect-square hover:bg-dipalo  transition-colors duration-500"
     >
       <div className="z-10  grid-rows-2 grid place-items-center h-full ">
         <div className=" row-span-1 mt-8">

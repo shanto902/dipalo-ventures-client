@@ -4,13 +4,12 @@ import PaddingContainer from '../Layout/PaddingContainer';
 
 const HeaderAboutUs = ({ image }: { image: StaticImageData }) => {
   return (
-    <div className="relative h-[455px] overflow-hidden">
+    <div className="relative md:h-[455px] h-[60vh] overflow-hidden">
       <Image
-        className="absolute inset-0 w-full h-full object-cover object-center"
+        className="absolute inset-0 w-full h-full object-center object-cover "
         alt="Main Background"
         placeholder="blur"
         src={image}
-        quality={80}
         fill
       />
       <PaddingContainer className="absolute inset-0 flex flex-col z-10 items- justify-center text-white px-5 mt-44">

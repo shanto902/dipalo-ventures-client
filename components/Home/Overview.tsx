@@ -14,7 +14,7 @@ const Overview = () => {
         {/* Title Text  */}
         <CustomTitle>OVERVIEW</CustomTitle>
 
-        <div className="mt-10 grid grid-cols-4 gap-6">
+        <div className="mt-10 grid lg:grid-cols-4 grid-cols-2 gap-6">
           {overViewData.map((card, index) => (
             <AnimatedDiv
               className="rounded-3xl shadow-md"

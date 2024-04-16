@@ -4,29 +4,18 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import parse from 'html-react-parser';
 import linkedinLogo from '@/public/assets/linkedin.svg';
-import ResizablePanel from '../ResizablePanel';
-import { motion, MotionConfig } from 'framer-motion';
-import Marquee from 'react-fast-marquee';
-import { TPriorInvestments } from '@/components/AboutUs/types';
 import Tooltip from '../Tooltip';
+import { TTeam } from '../types';
 
-export type TTeam = {
-  id: number;
-  image: string;
-  name: string;
-  designation: string;
-  bio: string;
-  linkedinLink: string;
-  priorInvestments?: TPriorInvestments[];
-};
+
 const TeamBioDialog = ({
-  id,
-  image,
+  photo,
   name,
   designation,
   bio,
   linkedinLink,
-  priorInvestments
+  priorInvestments,
+  serialNo
 }: TTeam) => {
   const [hovered, setHovered] = useState(false);
   const handleMouseEnter = () => {
@@ -47,12 +36,13 @@ const TeamBioDialog = ({
         {' '}
         <Image
           className=" h-[170] shadow-md mx-auto absolute top-0 left-0 right-0 justify-center  w-[170] aspect-square object-cover rounded-full"
-          src={image}
+          src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${photo}`}
           alt=""
           width={200}
           height={200}
         />
-        {hovered ? (
+       <div>
+       {hovered ? (
           <div className="absolute bottom-4 left-0 right-0 mx-auto transition-opacity duration-500 ${hovered ? 'opacity-100' : 'opacity-0'}">
             <div className="text-center text-white">
               <h2 className="text-base font-bold uppercase">{name}</h2>
@@ -75,7 +65,7 @@ const TeamBioDialog = ({
                 className="z-20 inline-block text-xs mx-auto pointer hover:underline underline-offset-4 cursor-pointer transition-all duration-300"
                 onClick={() => {
                   const modal = document.getElementById(
-                    `my_modal_${id}`
+                    `my_modal_${serialNo}`
                   ) as HTMLDialogElement;
                   if (modal) {
                     modal.showModal();
@@ -95,24 +85,25 @@ const TeamBioDialog = ({
             </div>
           </div>
         )}
+       </div>
         <div className="shadow-md absolute w-full group-hover:bg-dipalo bg-stone-50 h-[180px] rounded-3xl bottom-0 -z-10 transition-colors duration-300" />
       </section>
 
-      <dialog id={`my_modal_${id}`} className="modal">
-        <div className="modal-box max-w-6xl rounded-xl bg-stone-50">
-          <div className=" grid grid-cols-3 overflow-hidden px-20 pb-10 pt-14 gap-x-12 ">
-            <div className="col-span-1 flex flex-col items-center">
+      <dialog id={`my_modal_${serialNo}`} className="modal">
+        <div className="modal-box md:max-w-6xl max-w-sm rounded-xl bg-stone-50">
+          <div className=" grid md:grid-cols-3 grid-cols-1 overflow-hidden md:px-20 md:pb-10 md:pt-14 md:gap-x-12 place-items-center ">
+            <div className="col-span-1 flex justify-center flex-col items-center">
               <Image
-                className="h-[330px] w-[330px] aspect-square rounded-xl  object-cover  transition-transform duration-500 "
-                src={image}
+                className="md:h-[330px] md:w-[330px] aspect-square rounded-xl  object-cover  transition-transform duration-500 "
+                src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${photo}`}
                 alt=""
                 width={500}
                 height={500}
               />
-              <h2 className="text-center text-black text-2xl font-semibold uppercase mt-5">
+              <h2 className="text-center text-black md:text-2xl text-xl font-semibold uppercase mt-5">
                 {name}
               </h2>
-              <h3 className="text-center text-amber-500 text-lg pb-2 font-medium ">
+              <h3 className="text-center text-amber-500 md:text-lg text-base pb-2 font-medium ">
                 {designation}
               </h3>
 
@@ -120,20 +111,20 @@ const TeamBioDialog = ({
                 href={linkedinLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mx-auto mt-2 -mb-1 inline-block"
+                className="mx-auto mt-2 md:-mb-1 mb-2  inline-block"
               >
                 <Image
                   src={linkedinLogo}
-                  className=" cursor-pointer h-10 w-10 "
+                  className=" cursor-pointer size-8 md:size-10 "
                   alt="Linkedin Icon"
                 />
               </a>
             </div>
 
-            <div className=" col-span-2 text-base  ">
+            <div className=" col-span-2 md:text-base text-sm ">
               {parse(bio)}
               <div className="font-semibold text-lg text-center pt-5">
-                {priorInvestments && (
+                {priorInvestments && priorInvestments?.length > 0 && (
                   <span>
                     <span className="underline decoration-dipalo underline-offset-4">
                       Prior Investments
@@ -147,13 +138,13 @@ const TeamBioDialog = ({
                     {priorInvestments.map((company) => (
                       <Link
                         key={company.id}
-                        href={company.link}
+                        href={company.companyLink}
                         className=" relative  border rounded-xl "
                       >
-                        {company.status !== 'Ongoing' && (
+                        {company.status !== 'ongoing' && (
                           <span
                             className={` absolute badge z-10 badge-xs  bottom-0 left-0 text-white ${
-                              company.status === 'Exit'
+                              company.status === 'exit'
                                 ? `badge-error`
                                 : `badge-warning`
                             }`}
@@ -161,11 +152,11 @@ const TeamBioDialog = ({
                             {company.status}
                           </span>
                         )}
-                        <Tooltip message={company.name}>
+                        <Tooltip message={company.companyName}>
                           <Image
                             className=" -z-20 aspect-square object-contain m-1"
-                            src={company.logo}
-                            alt={company.name}
+                            src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${company.companyLogo}`}
+                            alt={company.companyName}
                             height={60}
                             width={60}
                           />
