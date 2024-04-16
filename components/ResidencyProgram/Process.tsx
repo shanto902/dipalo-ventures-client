@@ -38,7 +38,7 @@ const Process = () => {
     <div className=" pb-5 pt-10">
       <PaddingContainer>
         <CustomTitle>PROCESS</CustomTitle>
-        <div className=" flex items-center mt-5">
+        <div className=" flex flex-col-reverse md:flex-row items-center mt-5">
           <AnimatedPara className=" mt-10 text-left ">
             The Dipalo Ventures Residency is our technical diligence program
             identifying product design and engineering gaps. We conduct the
@@ -49,7 +49,7 @@ const Process = () => {
         </div>
         <section className="bg-stone-50 rounded-3xl py-10 shadow">
           <motion.div
-            className="flex gap-6 px-40 items-center pb-10 justify-around"
+            className="flex gap-6 md:px-40 px-5 items-center md:pb-10 pb-5 justify-around"
             variants={container}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -61,7 +61,7 @@ const Process = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.25, ease: 'easeInOut' }}
               viewport={{ once: true }}
-              className=" text-2xl font-bold"
+              className="  md:text-2xl text-xl font-bold"
             >
               In the future, the{' '}
               <span className=" underline decoration-dipalo underline-offset-8 leading-relaxed">
@@ -69,16 +69,16 @@ const Process = () => {
               </span>{' '}
               will incorporate two additional phases:
             </motion.h2>
-            <Image src={arrowSVG} alt={'Arrow'} />
+            <Image className=' hidden md:block' src={arrowSVG} alt={'Arrow'} />
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.25, ease: 'easeInOut' }}
             viewport={{ once: true }}
-            className=" bg-neutral-600 rounded-xl mx-28"
+            className=" bg-neutral-600 rounded-xl mx-5 md:mx-28"
           >
-            <p className=" text-white text-xl font-semibold px-28 py-7">
+            <p className=" text-white md:text-xl text-lg font-semibold md:px-28 px-5 md:py-7 py-4">
               The Residency Audit{' '}
               <span className=" text-dipalo">(Phase 1)</span> as a valuable gap
               analysis from which Founders choose topics to solve during{' '}
@@ -90,7 +90,7 @@ const Process = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.25, ease: 'easeInOut' }}
             viewport={{ once: true }}
-            className=" py-8 text-zinc-900 text-xl font-semibold  mx-28 leading-relaxed"
+            className=" md:py-8 py-4 text-zinc-900 md:text-xl text-lg font-semibold  md:mx-28 mx-5 leading-relaxed"
           >
             With Phase 2, the program provides technical evaluations, workshops,
             mentorship, and specific design and engineering support. It includes
@@ -104,7 +104,7 @@ const Process = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.25, ease: 'easeInOut' }}
             viewport={{ once: true }}
-            className=" text-center mt-6 mb-4 pb-3 text-black text-xl font-semibold "
+            className=" text-center md:mt-6 md:mb-4 my-4 pb-3 text-black text-xl font-semibold "
           >
             Examples of Residency outputs:
           </motion.h3>
@@ -113,12 +113,12 @@ const Process = () => {
             viewport={{ once: true }}
             initial="hidden"
             whileInView="visible"
-            className=" flex flex-wrap gap-4 justify-center text-xl font-semibold "
+            className=" flex flex-wrap gap-4 justify-center md:text-xl text-base md:font-semibold font-bold"
           >
             {residencyOutputs.map((example, i) => (
               <motion.h3
                 variants={item}
-                className="border rounded-lg  px-2 py-1 border-dipalo hover:bg-dipalo hover:text-white duration-300 transition-colors"
+                className="border rounded-lg text-center  px-2 py-1 border-dipalo hover:bg-dipalo hover:text-white duration-300 transition-colors"
                 key={i}
               >
                 {example}

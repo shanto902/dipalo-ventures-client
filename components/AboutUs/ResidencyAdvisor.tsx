@@ -11,7 +11,7 @@ const ResidencyAdvisor = ({residencyAdvisors}: {residencyAdvisors:TResidencyAdvi
       <CustomTitle className='mb-10' >
       Residency Advisors
       </CustomTitle>
-      <div className=" grid lg:grid-cols-5 grid-cols-1 mx-16 place-content-center gap-10 ">
+      <div className=" grid lg:grid-cols-5 md:grid-cols-3 grid-cols-1  md:mx-5 mx-16 place-content-center gap-10 ">
         {residencyAdvisors.map((user, i) => (
           <ResidencyAdvisorsCard
             key={i}

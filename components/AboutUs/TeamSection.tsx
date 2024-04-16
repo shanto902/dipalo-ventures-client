@@ -10,7 +10,7 @@ import { TResidencyAdvisor, TTeam } from '../common/types';
 
 const TeamSection = ( {members} :{ members: TTeam[]}) => {
   return (
-    <PaddingContainer className=" my-20 grid lg:grid-cols-4 grid-cols-1 md:gap-10 gap-y-10 ">
+    <PaddingContainer className=" my-20 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 md:gap-10 gap-y-10 ">
       {/* Titles  */}
       <AnimatedDiv
         id={1}

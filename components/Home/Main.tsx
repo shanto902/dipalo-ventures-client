@@ -19,7 +19,7 @@ const Main = () => {
         />
         <PaddingContainer>
           <div>
-            <h2 className="text-white  text-5xl font-black  leading-relaxed">
+            <h2 className="text-white  lg:text-5xl md:text-4xl sm:text-3xl xs:text-2xl font-black  leading-relaxed">
               <motion.span
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}

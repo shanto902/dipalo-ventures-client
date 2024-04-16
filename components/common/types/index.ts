@@ -27,3 +27,14 @@ export type TResidencyAdvisor = {
   linkedinLink: string;
   companyName: string;
 };
+
+export type TCaseStudy = {
+  id?: string;
+  status?: string;
+  companyName: string;
+  companyLogo: string;
+  companyLink: string;
+  bannerPicture: string;
+  overview: string;
+  solution: string;
+};

@@ -5,13 +5,15 @@ import Process from '@/components/ResidencyProgram/Process';
 import CaseStudies from '@/components/ResidencyProgram/CaseStudies';
 import Residency from '@/components/ResidencyProgram/Residency';
 import ResidencyAdvisory from '@/components/ResidencyProgram/ResidencyAdvisory';
-const ResidencyProgramPage = () => {
+import getAllCaseStudies from '@/helpers/getAllCaseStudies';
+const ResidencyProgramPage = async () => {  
+  const caseStudies = await getAllCaseStudies();
   return (
     <>
       <Header title="Residency Program" image={image} breadcrumb="Residency" />
       <Process />
       <Residency />
-      <CaseStudies />
+      <CaseStudies caseStudies={caseStudies}  />
       <ResidencyAdvisory />
     </>
   );

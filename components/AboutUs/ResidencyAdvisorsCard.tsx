@@ -40,7 +40,7 @@ const ResidencyAdvisorsCard = ({
             <h3 className="text-center text-dipalo text-xs font-semibold ">
               {companyName}
             </h3>
-            <Link href={linkedinLink}>
+            <Link className=' opacity-0 group-hover:opacity-100 duration-300' href={linkedinLink}>
               <Image
                 src={linkedinLogo}
                 className=" mt-3 mx-auto"

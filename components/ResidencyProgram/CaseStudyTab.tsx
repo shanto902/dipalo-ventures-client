@@ -1,11 +1,11 @@
 import { motion, MotionConfig } from 'framer-motion';
 import { useState } from 'react';
-import { caseStudies } from './const';
 import PaddingContainer from '../Layout/PaddingContainer';
 import ResizablePanel from '../common/ResizablePanel';
 import Image from 'next/image';
 import parse from 'html-react-parser';
-const CaseStudyTab = () => {
+import { TCaseStudy } from '../common/types';
+const CaseStudyTab = ({ caseStudies } : {caseStudies:TCaseStudy[]}) => {
   let [activeTab, setActiveTab] = useState(caseStudies[0].id);
   let duration = 0.25;
   const selectedCaseStudy = caseStudies.find((study) => study.id === activeTab);
@@ -31,7 +31,7 @@ const CaseStudyTab = () => {
 
   return (
     <PaddingContainer>
-      <div className="flex  gap-6 space-x-1 justify-center my-5">
+      <div className="flex  md:gap-6 gap-1 space-x-1 justify-center my-5">
         {caseStudies.map((tab) => (
           <button
             key={tab.id}
@@ -50,24 +50,22 @@ const CaseStudyTab = () => {
                 transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
               />
             )}
-            {tab.company}
+            {tab.companyName}
           </button>
         ))}
       </div>
       <MotionConfig transition={{ duration }}>
         {selectedCaseStudy && (
           <ResizablePanel>
-            <div className="  rounded-3xl shadow border overflow-hidden border-neutral-200 grid grid-cols-3">
+            <div className="  rounded-3xl shadow border overflow-hidden border-neutral-200 grid md:grid-cols-3 grid-cols-1">
               <Image
-                className="col-span-1 object-cover h-full"
-                src={selectedCaseStudy.image}
-                alt={selectedCaseStudy.company}
+                className="col-span-1 object-cover w-full h-full"
+                src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${selectedCaseStudy.bannerPicture}`}
+                alt={selectedCaseStudy.companyName}
                 height={480}
                 width={380}
-                placeholder="blur"
-                blurDataURL={`/_next/image?url=${selectedCaseStudy.image}&w=16&q=1`}
               />
-              <div className="col-span-2 flex flex-1 items-center mb-2 px-20 py-5 flex-col">
+              <div className="col-span-2 flex flex-1 items-center mb-2 md:px-20 px-5 md:py-5 flex-col">
                 <motion.div
                   variants={container}
                   className=" py-5 "
@@ -77,8 +75,8 @@ const CaseStudyTab = () => {
                   <motion.div className=" justify-self-center" variants={item}>
                     <Image
                       className=" mx-auto mb-5"
-                      src={selectedCaseStudy.logo}
-                      alt={selectedCaseStudy.company}
+                      src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${selectedCaseStudy.companyLogo}`}
+                      alt={selectedCaseStudy.companyName}
                       height={100}
                       width={100}
                     />
@@ -89,18 +87,18 @@ const CaseStudyTab = () => {
                   >
                     Overview
                   </motion.h3>
-                  <motion.p variants={item} className=" text-black">
+                  <motion.div variants={item} className=" text-black">
                     {parse(selectedCaseStudy.overview)}
-                  </motion.p>
+                  </motion.div>
                   <motion.h3
                     variants={item}
                     className=" pt-3 pb-1 text-dipalo text-base font-semibold"
                   >
                     Solution
                   </motion.h3>
-                  <motion.p variants={item} className=" text-black">
+                  <motion.div variants={item} className=" text-black">
                     {parse(selectedCaseStudy.solution)}
-                  </motion.p>
+                  </motion.div>
                 </motion.div>
               </div>
             </div>

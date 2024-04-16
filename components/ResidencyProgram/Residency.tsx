@@ -10,7 +10,7 @@ const Residency = () => {
     <PaddingContainer className=" py-10">
       {' '}
       <CustomTitle>RESIDENCY</CustomTitle>
-      <div className=" mt-10 grid grid-cols-3 gap-x-6 gap-y-10">
+      <div className=" mt-10 grid md:grid-cols-3 grid-cols-2 gap-x-6 gap-y-10">
         {residencyData.map((card) => (
           <AnimatedDiv
             className="rounded-3xl shadow-md"

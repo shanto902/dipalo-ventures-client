@@ -24,11 +24,11 @@ const Header = ({
         fill
       />
       <div className="absolute inset-0 flex flex-col z-10 items-center justify-center text-white">
-        <h2 className="text-center mt-20  text-3xl font-bold font-Poppins">
+        <h2 className="text-center md:mt-20 mt-10  lg:text-3xl md:text-2xl text-xl font-bold font-Poppins">
           {title}
         </h2>
         {subtitle && <p>{subtitle}</p>}
-        <p className=" mt-4 text-sm">
+        <p className=" mt-4 md:text-sm text-xs">
           <Link className=" hover:text-dipalo" href={'/'}>
             Home
           </Link>{' '}
