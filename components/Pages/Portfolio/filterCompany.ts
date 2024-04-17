@@ -1,5 +1,4 @@
 import { companies } from './const';
-import { TCompany } from './types';
 
 // Function to filter companies based on selected category, state, or stage
 export const filterCompanies = (

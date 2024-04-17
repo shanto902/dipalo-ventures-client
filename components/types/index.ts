@@ -58,3 +58,11 @@ export type TYoutubePlaylist = {
   };
   video: string;
 };
+
+export type TFounderVideo = {
+  id: string;
+  name: string;
+  companyLogo: string;
+  companyName: string;
+  videoLink: string;
+};

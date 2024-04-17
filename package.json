@@ -19,6 +19,8 @@
     "@directus/sdk": "^15.1.0",
     "@lottiefiles/react-lottie-player": "^3.5.3",
     "classnames": "^2.5.1",
+    "embla-carousel": "^8.0.2",
+    "embla-carousel-react": "^8.0.2",
     "framer-motion": "^11.0.25",
     "html-react-parser": "^5.1.10",
     "moment": "^2.30.1",

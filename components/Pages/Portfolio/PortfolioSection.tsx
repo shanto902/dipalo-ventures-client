@@ -133,7 +133,7 @@ const PortfolioSection = () => {
           {/* Display filtered companies */}
           <div>
             {selectedCompanies.length > 0 ? (
-              <div className="grid grid-cols-4 gap-5 h-full my-10">
+              <div className="grid lg:grid-cols-4 grid-cols-1 gap-5 h-full my-10">
                 {selectedCompanies.map((company, index) => (
                   <PortfolioCard
                     key={index}
