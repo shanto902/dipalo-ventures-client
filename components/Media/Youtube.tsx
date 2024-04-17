@@ -3,7 +3,7 @@ import { TYoutubePlaylist } from '../types';
 import PaddingContainer from '../Layout/PaddingContainer';
 import Image from 'next/image';
 import moment from 'moment';
-import Video from '../common/utils/youtubeVideoHover';
+import Video from '../common/utils/Video';
 
 const Youtube = ({
   youtubePlaylist,
@@ -16,8 +16,8 @@ const Youtube = ({
     <PaddingContainer className=''>
       <div className=' grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 py-10'>
         {youtubePlaylist.map((video) => (
-          <div key={video.id} className="card w-96 bg-base-100 shadow-xl overflow-hidden">
-            <figure className='aspect-video' onClick={() => {
+          <div key={video.id} className="card w-fit bg-base-100 shadow-xl overflow-hidden">
+            <figure className='aspect-video hover:cursor-pointer' onClick={() => {
               setModal(video.id);
             }}>
               <Image
@@ -40,11 +40,11 @@ const Youtube = ({
 
       {modal && (
         <dialog id={`my_modal_${modal}`} className="modal" open>
-          <div className="modal-box  min-w-[690px] rounded-xl bg-black">
+          <div className="modal-box  lg:min-w-[690px] rounded-xl bg-black">
             <Video  video={youtubePlaylist.find(video => video.id === modal)?.video || ''} />
           </div>
 
-          <form method="dialog" className="modal-backdrop bg-black/40 transition-colors duration-300" 
+          <form method="dialog" className="modal-backdrop bg-black/80 transition-colors duration-300" 
           >
             <button onClick={() => setModal("")}>Close</button>
           </form>

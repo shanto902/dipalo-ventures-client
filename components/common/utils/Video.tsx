@@ -19,7 +19,8 @@ const Video = ({ video }: { video: string }) => {
     <div suppressHydrationWarning className=" rounded-xl overflow-hidden flex justify-center items-center">
       <ReactPlayer
         playing={playing}
-        fluid
+        width="90vw" // Set width to 100% of parent container
+        height="40vh" 
         controls
         config={{ file: { forceHLS: true } }}
         url={`https://youtu.be/${video}`}
