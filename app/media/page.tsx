@@ -2,7 +2,7 @@ import Header from '@/components/common/Header';
 import getMediumPosts from '@/helpers/getMediumPosts';
 import React from 'react';
 import image from '@/public/assets/headers/media.jpeg';
-import MediaTabs from '@/components/Media/MediaTabs';
+import MediaTabs from '@/components/Pages/Media/MediaTabs';
 import getAllYoutubeVideos from '@/helpers/getAllYoutubeVideos';
 
 const MediaPage = async () => {

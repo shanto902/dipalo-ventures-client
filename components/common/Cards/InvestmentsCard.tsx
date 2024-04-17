@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { OverViewSVG } from '../SVG/OverViewSVG';
 import parse from 'html-react-parser';
-import { TInvestment, TKeyMetrics } from '@/components/Fund1/types';
+import { TInvestment, TKeyMetrics } from '@/components/Pages/Fund1/types';
 import { InvestmentsSVG } from '@/components/common/SVG/InvestmentsSVG';
 import { motion } from 'framer-motion';
 const InvestmentsCard = ({ id, image, text }: TInvestment) => {

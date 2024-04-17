@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 
-import { TResidencyData } from '@/components/ResidencyProgram/types';
+import { TResidencyData } from '@/components/Pages/ResidencyProgram/types';
 import { ResidencySVG } from '../SVG/ResidencySVG';
 import { motion } from 'framer-motion';
 const ResidencyCard = ({ id, text }: TResidencyData) => {

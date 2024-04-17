@@ -1,11 +1,11 @@
-import LookingFor from '@/components/Home/LookingFor';
-import Main from '@/components/Home/Main';
-import Methodology from '@/components/Home/Methodology';
-import Overview from '@/components/Home/Overview';
-import PortfolioLogsMarquee from '@/components/Home/PortfolioLogsMarquee';
-import Thesis from '@/components/Home/Thesis';
-import WhatsWrongWithVC from '@/components/Home/WhatsWrongWithVC';
-import WhatWeDo from '@/components/Home/WhatWeDo';
+import LookingFor from '@/components/Pages/Home/LookingFor';
+import Main from '@/components/Pages/Home/Main';
+import Methodology from '@/components/Pages/Home/Methodology';
+import Overview from '@/components/Pages/Home/Overview';
+import PortfolioLogsMarquee from '@/components/Pages/Home/PortfolioLogsMarquee';
+import Thesis from '@/components/Pages/Home/Thesis';
+import WhatsWrongWithVC from '@/components/Pages/Home/WhatsWrongWithVC';
+import WhatWeDo from '@/components/Pages/Home/WhatWeDo';
 
 const HomePage = () => {
   return (

@@ -5,9 +5,8 @@ import { Player } from '@lottiefiles/react-lottie-player';
 import { motion } from 'framer-motion';
 
 const LottieAnimation = ({ animationData }: { animationData: any }) => {
-  // Check if `document` is available before rendering
   if (typeof document === 'undefined') {
-    return null; // Return null if `document` is not available (for SSR)
+    return null; 
   }
 
   return (
@@ -18,7 +17,7 @@ const LottieAnimation = ({ animationData }: { animationData: any }) => {
       viewport={{ once: true }}
     >
       <Player
-        className="h-[400px] w-[400px]"
+        className="md:h-[400px] md:w-[400px] h-full w-full"
         src={animationData}
         autoplay
         loop

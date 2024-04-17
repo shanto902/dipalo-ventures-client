@@ -1,4 +1,4 @@
-import { TKeyMetrics } from '@/components/Fund1/types';
+import { TKeyMetrics } from '@/components/Pages/Fund1/types';
 import React from 'react';
 import { AnimatedNumbers } from '../AnimatedNumbers';
 

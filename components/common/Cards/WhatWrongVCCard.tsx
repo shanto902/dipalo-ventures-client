@@ -1,4 +1,4 @@
-import { TWhatsWrongVC } from '@/components/Home/types';
+import { TWhatsWrongVC } from '@/components/Pages/Home/types';
 import React, { useState } from 'react';
 import { WhatsWrongWithVCSVG } from '../SVG/WhatsWrongWithVCSVG';
 import { motion } from 'framer-motion';

@@ -6,10 +6,8 @@ const Video = ({ video }: { video: string }) => {
   const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
-    // Play the video when the component mounts
     setPlaying(true);
 
-    // Pause the video when the component unmounts
     return () => {
       setPlaying(false);
     };
@@ -19,8 +17,8 @@ const Video = ({ video }: { video: string }) => {
     <div suppressHydrationWarning className=" rounded-xl overflow-hidden flex justify-center items-center">
       <ReactPlayer
         playing={playing}
-        width="90vw" // Set width to 100% of parent container
-        height="40vh" 
+        width="100%"
+        height="40dvh" 
         controls
         config={{ file: { forceHLS: true } }}
         url={`https://youtu.be/${video}`}

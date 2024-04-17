@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { TLookingForData } from '../../Home/types';
+import { TLookingForData } from '../../Pages/Home/types';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 const LookingForCard = ({

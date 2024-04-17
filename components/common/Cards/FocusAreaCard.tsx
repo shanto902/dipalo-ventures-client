@@ -1,4 +1,4 @@
-import { TFocusAreas } from '@/components/Fund2/types';
+import { TFocusAreas } from '@/components/Pages/Fund2/types';
 import Image from 'next/image';
 import React from 'react';
 

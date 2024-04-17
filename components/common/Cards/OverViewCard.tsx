@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { TOverviewData } from '../../Home/types';
+import { TOverviewData } from '../../Pages/Home/types';
 import { OverViewSVG } from '../SVG/OverViewSVG';
 import parse from 'html-react-parser';
 import { motion } from 'framer-motion';

@@ -1,9 +1,9 @@
 import Header from '@/components/common/Header';
 import React from 'react';
 import image from '@/public/assets/headers/about-us.jpg';
-import HeaderAboutUs from '@/components/AboutUs/HeaderAboutUs';
-import TeamSection from '@/components/AboutUs/TeamSection';
-import ResidencyAdvisor from '@/components/AboutUs/ResidencyAdvisor';
+import HeaderAboutUs from '@/components/Pages/AboutUs/HeaderAboutUs';
+import TeamSection from '@/components/Pages/AboutUs/TeamSection';
+import ResidencyAdvisor from '@/components/Pages/AboutUs/ResidencyAdvisor';
 import { TResidencyAdvisor, TTeam } from '@/components/types';
 import getAllTeamMembers from '@/helpers/getAllTeamMembers';
 import getAllResidencyAdvisors from '@/helpers/getAllResidencyAdvisors';

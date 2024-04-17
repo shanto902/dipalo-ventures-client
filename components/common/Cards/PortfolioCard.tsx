@@ -1,4 +1,4 @@
-import { TCompany } from '@/components/Portfolio/types';
+import { TCompany } from '@/components/Pages/Portfolio/types';
 import Image from 'next/image';
 import React from 'react';
 
