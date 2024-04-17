@@ -1,8 +1,4 @@
-import {
-  TCaseStudy,
-  TResidencyAdvisor,
-  TTeam,
-} from '@/components/common/types';
+import { TCaseStudy, TResidencyAdvisor, TTeam } from '@/components/types';
 import directus from '@/lib/directus';
 import { readItems } from '@directus/sdk';
 

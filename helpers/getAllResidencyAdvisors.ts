@@ -1,4 +1,4 @@
-import { TResidencyAdvisor, TTeam } from '@/components/common/types';
+import { TResidencyAdvisor, TTeam } from '@/components/types';
 import directus from '@/lib/directus';
 import { Query, readItems } from '@directus/sdk';
 

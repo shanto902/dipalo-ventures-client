@@ -38,3 +38,23 @@ export type TCaseStudy = {
   overview: string;
   solution: string;
 };
+
+export type TMediumPost = {
+  title: string;
+  image: string | undefined;
+  description: string;
+  publishedDate: string;
+  postLink: string;
+};
+
+export type TYoutubePlaylist = {
+  id: string;
+  title: string;
+  publishedAt: string;
+  image: {
+    url: string;
+    width: number;
+    height: number;
+  };
+  video: string;
+};

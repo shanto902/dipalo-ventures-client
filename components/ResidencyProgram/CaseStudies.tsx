@@ -3,7 +3,7 @@ import React from 'react';
 import PaddingContainer from '../Layout/PaddingContainer';
 import CaseStudyTab from './CaseStudyTab';
 import CustomTitle from '../common/CustomTitle';
-import { TCaseStudy } from '../common/types';
+import { TCaseStudy } from '../types';
 
 const CaseStudies = ({caseStudies} : { caseStudies:TCaseStudy[]}) => {
   return (

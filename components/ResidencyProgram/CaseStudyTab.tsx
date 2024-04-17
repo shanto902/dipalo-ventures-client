@@ -4,7 +4,7 @@ import PaddingContainer from '../Layout/PaddingContainer';
 import ResizablePanel from '../common/ResizablePanel';
 import Image from 'next/image';
 import parse from 'html-react-parser';
-import { TCaseStudy } from '../common/types';
+import { TCaseStudy } from '../types';
 const CaseStudyTab = ({ caseStudies } : {caseStudies:TCaseStudy[]}) => {
   let [activeTab, setActiveTab] = useState(caseStudies[0].id);
   let duration = 0.25;
@@ -38,7 +38,7 @@ const CaseStudyTab = ({ caseStudies } : {caseStudies:TCaseStudy[]}) => {
             onClick={() => setActiveTab(tab.id)}
             className={`${
               activeTab === tab.id ? 'text-white' : 'hover:text-dipalo'
-            } relative rounded-3xl shadow-md px-3 bg-stone-50 z-10 w-[300px] h-[80px] py-1.5 overflow-hidden text-lg font-medium text-black dipalo transition focus-visible:outline-2`}
+            } relative rounded-3xl flex-flow shadow-md px-5 bg-stone-50 z-10  w-fit h-fit py-5 overflow-hidden lg:text-lg md:text-md text-base font-medium text-black dipalo transition focus-visible:outline-2`}
             style={{
               WebkitTapHighlightColor: 'transparent'
             }}

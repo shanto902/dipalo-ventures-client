@@ -7,6 +7,14 @@ const nextConfig = {
         hostname: 'admin.dipaloventures.com',
         protocol: 'https',
       },
+      {
+        hostname: 'cdn-images-1.medium.com',
+        protocol: 'https',
+      },
+      {
+        hostname: 'i.ytimg.com',
+        protocol: 'https',
+      },
     ],
   },
   async redirects() {

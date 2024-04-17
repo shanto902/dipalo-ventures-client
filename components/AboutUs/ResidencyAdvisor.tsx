@@ -1,6 +1,6 @@
 import React from 'react';
 import ResidencyAdvisorsCard from './ResidencyAdvisorsCard';
-import { TResidencyAdvisor } from '../common/types';
+import { TResidencyAdvisor } from '../types';
 import PaddingContainer from '../Layout/PaddingContainer';
 import CustomTitle from '../common/CustomTitle';
 

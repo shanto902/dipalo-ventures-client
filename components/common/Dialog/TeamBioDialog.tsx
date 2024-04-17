@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import parse from 'html-react-parser';
 import linkedinLogo from '@/public/assets/linkedin.svg';
 import Tooltip from '../Tooltip';
-import { TTeam } from '../types';
+import { TTeam } from '../../types';
 
 
 const TeamBioDialog = ({

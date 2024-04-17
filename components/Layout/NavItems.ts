@@ -3,18 +3,18 @@ import { TNavItem } from './types';
 export const navItems: TNavItem[] = [
   {
     label: 'Home',
-    link: '/'
+    link: '/',
   },
   {
     label: 'Residency',
-    link: '/residency-program'
+    link: '/residency-program',
   },
   {
     label: 'Funds',
     children: [
       {
         label: 'Dipalo Ventures Fund I',
-        link: '/funds/fund-1'
+        link: '/funds/fund-1',
       },
       {
         label: 'Dipalo Heed Climate Fund II',
@@ -22,26 +22,26 @@ export const navItems: TNavItem[] = [
         children: [
           {
             label: 'Golden Visa',
-            link: '/db'
-          }
-        ]
-      }
-    ]
+            link: '/db',
+          },
+        ],
+      },
+    ],
   },
   {
     label: 'Our Portfolio',
-    link: '/portfolio'
+    link: '/portfolio',
   },
   {
     label: 'Team',
-    link: '/about-us'
+    link: '/about-us',
   },
   {
     label: 'Media',
-    link: '/#'
+    link: '/media',
   },
   {
     label: 'Contact',
-    link: '/contact'
-  }
+    link: '/contact',
+  },
 ];

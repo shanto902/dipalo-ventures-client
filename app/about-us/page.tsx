@@ -4,7 +4,7 @@ import image from '@/public/assets/headers/about-us.jpg';
 import HeaderAboutUs from '@/components/AboutUs/HeaderAboutUs';
 import TeamSection from '@/components/AboutUs/TeamSection';
 import ResidencyAdvisor from '@/components/AboutUs/ResidencyAdvisor';
-import { TResidencyAdvisor, TTeam } from '@/components/common/types';
+import { TResidencyAdvisor, TTeam } from '@/components/types';
 import getAllTeamMembers from '@/helpers/getAllTeamMembers';
 import getAllResidencyAdvisors from '@/helpers/getAllResidencyAdvisors';
 

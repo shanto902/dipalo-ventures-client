@@ -4,7 +4,7 @@ import TeamBioDialog from '../common/Dialog/TeamBioDialog';
 import CustomTitle from '../common/CustomTitle';
 import AnimatedPara from '../common/AnimatedPara';
 import AnimatedDiv from '../common/AnimatedDiv';
-import { TResidencyAdvisor, TTeam } from '../common/types';
+import { TResidencyAdvisor, TTeam } from '../types';
 
 
 const TeamSection = ( {members} :{ members: TTeam[]}) => {
