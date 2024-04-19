@@ -66,3 +66,13 @@ export type TFounderVideo = {
   companyName: string;
   videoLink: string;
 };
+
+export type TCompany = {
+  id?: string;
+  companyName: string;
+  logo: string;
+  state: string;
+  stage: string;
+  category: string;
+  websiteLink: string;
+};

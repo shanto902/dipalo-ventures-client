@@ -28,6 +28,7 @@ const AnimatedDiv = ({
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       transition={{ duration: 0.5, delay: id * delay }}
       viewport={{ once: true }}
+      exit={animations[animationStyle]}
       key={id}
       className={twMerge('  overflow-hidden ', className)}
     >

@@ -1,14 +1,15 @@
-import { TCompany } from '@/components/Pages/Portfolio/types';
+
+import { TCompany } from '@/components/types';
 import Image from 'next/image';
 import React from 'react';
 
-const PortfolioCard = ({ logo, name, link }: TCompany) => {
+const PortfolioCard = ({ logo, companyName, websiteLink }: TCompany) => {
   return (
     <div className=" relative group h-[300px]  bg-white border flex flex-col justify-around items-center">
       <Image
         className="h-[200px] object-contain"
-        src={logo}
-        alt={name}
+        src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${logo}`}
+        alt={companyName}
         height={200}
         width={200}
       />

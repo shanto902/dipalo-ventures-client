@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { EmblaOptionsType } from 'embla-carousel';
 import useEmblaCarousel from 'embla-carousel-react';
@@ -27,7 +27,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
       emblaMainApi.scrollTo(index);
       // Play the clicked video
       if (videoRefs.current[index]) {
-        videoRefs.current[index].play();
+        videoRefs.current[index]?.play();
       }
     },
     [emblaMainApi, emblaThumbsApi]
@@ -66,30 +66,32 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <div className="backface-hidden flex touch-pan-y">
           {founderVideos.map((video, index) => (
             <div className="flex-none flex-shrink-0 w-full" key={video.id}>
-            
-              <div className='p-5'>
-                <video 
-                className=' rounded-3xl overflow-hidden shadow-lg'
-                  width={1920}
-                  height={1080}
-                  controls
-                  autoPlay
-                  preload="auto"
-                  ref={(el) => {
-                    videoRefs.current[index] = el;
-                  }}
-                >
-                  <source src={video.videoLink} type="video/mp4" />
-                  {/* <track
+              <div className="p-5">
+                {video.videoLink ? (
+                  <video
+                    className=" rounded-3xl overflow-hidden shadow-lg"
+                    width={1920}
+                    height={1080}
+                    controls
+                    autoPlay
+                    preload="auto"
+                    ref={(el) => {
+                      videoRefs.current[index] = el;
+                    }}
+                  >
+                    <source src={video.videoLink} type="video/mp4" />
+                    {/* <track
                     src="/path/to/captions.vtt"
                     kind="subtitles"
                     srcLang="en"
                     label="English"
                   /> 
                    Your browser does not support the video tag. */}
-                </video>
+                  </video>
+                ) : (
+                  <div className="skeleton w-full h-full"></div>
+                )}
               </div>
-              
             </div>
           ))}
         </div>

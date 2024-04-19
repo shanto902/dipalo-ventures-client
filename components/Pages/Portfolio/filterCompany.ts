@@ -1,10 +1,11 @@
-import { companies } from './const';
+import { TCompany } from '@/components/types';
 
 // Function to filter companies based on selected category, state, or stage
 export const filterCompanies = (
   selectedCategories: string[],
   selectedStates: string[],
-  selectedStages: string[]
+  selectedStages: string[],
+  companies: TCompany[]
 ) => {
   // Filtered companies array
   let filteredCompanies = companies;

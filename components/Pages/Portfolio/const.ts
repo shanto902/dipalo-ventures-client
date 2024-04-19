@@ -1,6 +1,6 @@
-import { TCompany } from './types';
+import { TCompany } from '@/components/types';
 
-export const companies: TCompany[] = [
+export const companies = [
   {
     name: 'Azumo',
     category: 'Climate Tech',

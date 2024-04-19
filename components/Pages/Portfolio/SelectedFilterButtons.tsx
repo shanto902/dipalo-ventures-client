@@ -1,3 +1,6 @@
+import AnimatedDiv from '@/components/common/AnimatedDiv';
+import {AnimatePresence, motion} from 'framer-motion'
+import { MdOutlineClose } from "react-icons/md";
 interface SelectedFilterButtonsProps {
   items: string[];
   onClick: (item: string) => void;
@@ -8,14 +11,21 @@ export const SelectedFilterButtons = ({
   onClick
 }: SelectedFilterButtonsProps) => (
   <>
+  <AnimatePresence mode='wait'>
     {items.map((item, index) => (
-      <button
-        key={index}
-        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"
+   
+     <AnimatedDiv animationStyle='down' key={index} id={index}>
+        <button
+     
+        className="bg-gray-50 border group border-gray-300 text-gray-900 text-sm rounded-3xl flex gap-2 hover:bg-red-500 hover:text-white  justify-between items-center p-2.5 "
         onClick={() => onClick(item)}
       >
         {item}
+
+        <MdOutlineClose  className=' group-hover:block hidden'/>
       </button>
+    </AnimatedDiv>
     ))}
+    </AnimatePresence>
   </>
 );
