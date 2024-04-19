@@ -10,7 +10,6 @@ const PortfolioPage = async() => {
   const founderVideos = await getAllFounderVideos()
   const companies = await getAllCompanies()
 
-  console.log(companies)
   return (
     <div>
       <Header title="Our Portfolio" image={image} breadcrumb="Our Portfolio" />

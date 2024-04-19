@@ -54,7 +54,7 @@ const Footer = () => {
           <div className=" text-white text-base font-normal leading-7">
             <p className=" text-white  text-xl py-5">Find us in</p>
             <p className="">
-              31623 W Fulton St, Suite 237 <br /> Chicago, IL 60612
+              1623 W Fulton St, Suite 237 <br /> Chicago, IL 60612
             </p>
           </div>
 
