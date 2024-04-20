@@ -13,8 +13,8 @@ const LottieAnimation = dynamic(() => import('../../common/LottieAnimation'), {
 const ThesisSection = () => {
   return (
     <PaddingContainer>
-      <CustomTitle className=" mt-10">Thesis</CustomTitle>
-      <div className=" flex gap-5 items-center min-h-[400px]">
+      <CustomTitle className=" my-10 ">Thesis</CustomTitle>
+      <div className=" flex md:flex-row flex-col-reverse gap-5 items-center">
         <AnimatedPara>
           Building on our deep expertise in product development, we launched our
           first fund in early 2022. Our investment strategy centered around the

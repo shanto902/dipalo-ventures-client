@@ -63,11 +63,11 @@ const Thesis = () => {
                 viewport={{ once: true }}
               >
                 <Image
-                  className=""
+                  className="h-[50%] w-[50%]"
                   src="/assets/dipalo-heed.svg"
                   alt="Logo"
-                  width={280}
-                  height={70}
+                  width={140}
+                  height={35}
                 />
               </motion.div>
             </div>

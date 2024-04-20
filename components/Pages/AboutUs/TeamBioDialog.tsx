@@ -4,7 +4,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import parse from 'html-react-parser';
 import linkedinLogo from '@/public/assets/linkedin.svg';
-import Tooltip from '../Tooltip';
+import Tooltip from '../../common/Tooltip';
 import { TTeam } from '../../types';
 
 

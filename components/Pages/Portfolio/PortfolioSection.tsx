@@ -144,10 +144,11 @@ const PortfolioSection = ({ companies }: { companies: TCompany[] }) => {
         {/* Display filtered companies */}
         <div>
           {selectedCompanies.length > 0 ? (
-            <div className="grid xl:grid-cols-5 lg:grid-cols-4  md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-1 h-full my-10">
+            <div className="grid xl:grid-cols-5 md:mx-0 mx-10 lg:grid-cols-4  md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-1 h-full my-10">
               {selectedCompanies.map((company, index) => (
               <AnimatedDiv key={index} id={index}>
                   <PortfolioCard
+                  status={company.status}
                   companyName={company.companyName}
                   logo={company.logo}
                   category={''}

@@ -59,7 +59,7 @@ export default function Navbar() {
             className="w-6 bg-white h-px block"
           ></motion.span>
         </motion.button>
-        <AnimatePresence>
+        <AnimatePresence mode='wait'>
           {mobileNav && (
             <MotionConfig
               transition={{
@@ -71,12 +71,12 @@ export default function Navbar() {
                 key="mobile-nav"
                 variants={{
                   hide: {
-                    x: '-100%',
+                    x: '100%',
                     transition: {
                       type: 'spring',
                       bounce: 0.1,
                       when: 'afterChildren',
-                      staggerChildren: 0.25,
+                      staggerChildren: 0.01,
                     },
                   },
                   show: {
@@ -85,7 +85,7 @@ export default function Navbar() {
                       type: 'spring',
                       bounce: 0.1,
                       when: 'beforeChildren',
-                      staggerChildren: 0.25,
+                      staggerChildren: 0.01,
                     },
                   },
                 }}
@@ -105,12 +105,12 @@ export default function Navbar() {
                       opacity: 1,
                     },
                   }}
-                  className="list-none space-y-6 "
+                  className="list-none space-y-4 overflow-y-scroll no-scrollbar"
                 >
                   {navItems.map((d, i) => (
                     <li
                       onClick={toggleMobileNav}
-                      className="text-white text-lg font-bold drop-shadow-xl hover:underline underline-offset-4"
+                      className="text-white text-lg font-bold  hover:underline underline-offset-4"
                       key={i}
                     >
                       {' '}

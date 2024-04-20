@@ -20,7 +20,8 @@ const Header = ({
         alt="Main Background"
         placeholder="blur"
         src={image}
-        quality={80}
+        quality={100}
+        sizes={"(max-width: 1920px) 100vw, 33vw"}
         fill
       />
       <div className="absolute inset-0 flex flex-col z-10 items-center justify-center text-white">

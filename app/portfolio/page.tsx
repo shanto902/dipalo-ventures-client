@@ -14,8 +14,8 @@ const PortfolioPage = async() => {
     <div>
       <Header title="Our Portfolio" image={image} breadcrumb="Our Portfolio" />
       <TopSection />
-      <PortfolioSection companies={companies} />
       <FounderVideo founderVideos={founderVideos} />
+      <PortfolioSection companies={companies} />
     </div>
   );
 };

@@ -76,4 +76,5 @@ export type TCompany = {
   category: string;
   websiteLink: string;
   shortDescription: string;
+  status: string;
 };

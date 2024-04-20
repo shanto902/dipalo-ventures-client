@@ -25,7 +25,7 @@ const AnimatedPara = ({
   return (
     <motion.p
       className={twMerge(
-        'text-lg font-semibold leading-loose text-zinc-900',
+        'md:text-lg text-base  font-semibold leading-loose text-zinc-900',
         className
       )}
       initial={animations[animationStyle]}

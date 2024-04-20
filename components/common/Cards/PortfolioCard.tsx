@@ -10,17 +10,21 @@ const PortfolioCard = ({
   websiteLink,
   shortDescription,
   state,
+  status,
 }: TCompany) => {
   return (
-    <div className="relative group drop-shadow-md  m-3 hover:drop-shadow-none overflow-hidden transition-all duration-500 aspect-[3/4] bg-white border flex rounded-3xl flex-col justify-around items-center hover:bg-dipalo hover:backdrop-blur-lg">
+    <div className="relative group drop-shadow-md  m-3 hover:drop-shadow-none overflow-hidden transition-all duration-500 aspect-[3/4]   bg-white border flex rounded-3xl flex-col justify-around items-center hover:bg-dipalo hover:backdrop-blur-lg">
+   { status !== 'ongoing' &&   <div className={`absolute top-0 right-0 pl-4 pr-3 rounded-bl-3xl uppercase text-xs text-white font-semibold ${status === 'exit' ? ' bg-error' : "bg-warning"}`}>
+        {status}
+      </div>}
       <Image
-        className="size-[150px]  object-contain mix-blend-multiply md:group-hover:translate-y-[-60%] sm:group-hover:translate-y-[-90%]  group-hover:translate-y-[-90%] group-hover:scale-50 transition-all duration-500"
+        className="size-[150px]  object-contain mix-blend-multiply md:group-hover:translate-y-[-60%] sm:group-hover:translate-y-[-90%]  group-hover:translate-y-[-100%] group-hover:scale-50 transition-all duration-500"
         src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${logo}`}
         alt={companyName}
         height={200}
         width={200}
       />
-      <p className="text-white drop-shadow-md text-sm opacity-0 w-full h-full absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 group-hover:opacity-100 transition-opacity duration-500 lg:mt-24 md:mt-36 sm:mt-32 mt-32 px-4 line-clamp-6 ">
+      <p className="text-white drop-shadow-md text-sm opacity-0 w-full h-full absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 group-hover:opacity-100 transition-opacity duration-500 lg:mt-24 md:mt-36 sm:mt-32 mt-40 px-4 line-clamp-6 ">
         {shortDescription}
       </p>
       <div className="absolute bottom-0 group-hover:bottom-5 text-white transition-all duration-500 ">

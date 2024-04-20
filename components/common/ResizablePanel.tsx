@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { ReactNode } from 'react';
 import useMeasure from 'react-use-measure';
-import { ignoreCircularReferences } from './utils/ignoreCircularReferences';
+import { ignoreCircularReferences } from '../utils/ignoreCircularReferences';
 
 const ResizablePanel = ({ children }: { children: ReactNode }) => {
   let [ref, { height }] = useMeasure();

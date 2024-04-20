@@ -13,6 +13,7 @@ const LookingForCard = ({
     <div className="group h-full p-5 relative grid grid-rows-2 transition-transform duration-500 overflow-hidden ">
       <Image
         className="absolute group-hover:scale-110 transition-transform duration-[2000ms] inset-0 w-full h-full object-cover object-center"
+        sizes={"(max-width: 500px) 100vw, 33vw"}
         alt="Main Background"
         src={image}
         quality={100}

@@ -1,6 +1,6 @@
 import React from 'react';
 import PaddingContainer from '../../Layout/PaddingContainer';
-import TeamBioDialog from '../../common/Dialog/TeamBioDialog';
+import TeamBioDialog from './TeamBioDialog';
 import CustomTitle from '../../common/CustomTitle';
 import AnimatedPara from '../../common/AnimatedPara';
 import AnimatedDiv from '../../common/AnimatedDiv';

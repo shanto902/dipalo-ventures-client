@@ -3,7 +3,7 @@ import { TYoutubePlaylist } from '../../types';
 import PaddingContainer from '../../Layout/PaddingContainer';
 import Image from 'next/image';
 import moment from 'moment';
-import Video from '../../common/utils/Video';
+import Video from '../../utils/Video';
 import AnimatedDiv from '@/components/common/AnimatedDiv';
 import { IoIosPlayCircle } from 'react-icons/io';
 const Youtube = ({

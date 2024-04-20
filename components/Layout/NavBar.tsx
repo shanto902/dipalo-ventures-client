@@ -59,7 +59,7 @@ const Navbar = () => {
             <section className="flex items-center gap-10">
               <Link href={'/'} className="pl-4">
                 <Image
-                  className=" drop-shadow-xl hidden lg:block"
+                  className=" hidden lg:block h-auto w-auto"
                   src="/logo.svg"
                   alt="logo"
                   width={100}

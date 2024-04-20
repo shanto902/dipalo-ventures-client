@@ -17,7 +17,7 @@ const CustomTitle = ({
       transition={{ duration: 0.5, delay: 0.25, ease: 'easeInOut' }}
       viewport={{ once: true }}
       className={twMerge(
-        ' text-center text-2xl font-bold uppercase text-zinc underline underline-offset-8 decoration-dipalo ',
+        ' text-center lg:text-3xl md:text-2xl text-xl font-bold uppercase text-zinc underline underline-offset-8 decoration-dipalo ',
         className
       )}
     >

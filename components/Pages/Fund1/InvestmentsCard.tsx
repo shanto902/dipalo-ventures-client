@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { OverViewSVG } from '../SVG/OverViewSVG';
+import { OverViewSVG } from '../../common/SVG/OverViewSVG';
 import parse from 'html-react-parser';
 import { TInvestment, TKeyMetrics } from '@/components/Pages/Fund1/types';
 import { InvestmentsSVG } from '@/components/common/SVG/InvestmentsSVG';
@@ -23,13 +23,13 @@ const InvestmentsCard = ({ id, image, text }: TInvestment) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       whileHover="hidden"
-      className="group shadow-md rounded-xl overflow-hidden flex items-center justify-start px-10 py-5 bg-stone-50 hover:bg-dipalo  transition-colors duration-500"
+      className="group shadow-md rounded-xl overflow-hidden flex items-center md:justify-start justify-center md:px-10 px-2 py-5 bg-stone-50 hover:bg-dipalo  transition-colors duration-500"
     >
-      <div className=" flex flex-row  gap-5 items-center  h-full  ">
+      <div className=" flex md:flex-row flex-col  gap-5   items-center  h-full  ">
         <motion.div variants={icon}>
           <InvestmentsSVG id={id} hovered={hovered} width={80} height={80} />
         </motion.div>
-        <h3 className="text-center text-lg  font-semibold text-black group-hover:text-white transition-colors duration-300">
+        <h3 className="text-center lg:text-lg md:text-base text-sm  font-semibold text-black group-hover:text-white transition-colors duration-300">
           {text}
         </h3>
       </div>

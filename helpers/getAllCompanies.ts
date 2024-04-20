@@ -11,13 +11,9 @@ const getAllCompanies = async (): Promise<TCompany[]> => {
   try {
     const result = await directus.request(
       readItems('companies' as any, {
-        filter: {
-          status: {
-            _eq: 'published',
-          },
-        },
         fields: [
           'id',
+          'status',
           'companyName',
           'logo',
           'websiteLink',
@@ -38,6 +34,7 @@ const getAllCompanies = async (): Promise<TCompany[]> => {
         category = {},
         location = {},
         stage = {},
+        status,
         shortDescription,
       } = item;
 
@@ -45,6 +42,7 @@ const getAllCompanies = async (): Promise<TCompany[]> => {
         id,
         companyName,
         websiteLink,
+        status,
         logo,
         shortDescription,
         category: category.categoryName,

@@ -22,7 +22,7 @@ export const navItems: TNavItem[] = [
         children: [
           {
             label: 'Golden Visa',
-            link: '/db',
+            link: '/funds/fund-2/golden-visa',
           },
         ],
       },
