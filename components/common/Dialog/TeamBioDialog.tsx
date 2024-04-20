@@ -25,28 +25,28 @@ const TeamBioDialog = ({
   const handleMouseLeave = () => {
     setHovered(false);
   };
-
+  const isLargeScreen = window.innerWidth > 768;
   return (
     <div>
       <section
-        className=" group relative h-[315px]  rounded-3xl  "
+        className=" group relative h-[315px]  rounded-3xl   "
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
         {' '}
         <Image
-          className=" h-[170] shadow-md mx-auto absolute top-0 left-0 right-0 justify-center  w-[170] aspect-square object-cover rounded-full"
+          className=" h-[170] drop-shadow-lg mx-auto absolute top-0 left-0 right-0 justify-center  w-[170] aspect-square object-cover rounded-full"
           src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${photo}`}
           alt=""
           width={200}
           height={200}
         />
        <div>
-       {hovered ? (
+       {hovered || !isLargeScreen  ? (
           <div className="absolute bottom-4 left-0 right-0 mx-auto transition-opacity duration-500 ${hovered ? 'opacity-100' : 'opacity-0'}">
             <div className="text-center text-white">
-              <h2 className="text-base font-bold uppercase">{name}</h2>
-              <h3 className="text-xs">{designation}</h3>
+              <h2 className="text-base font-bold uppercase group-hover:drop-shadow-lg  md:drop-shadow-none drop-shadow-lg  transition-shadow duration-300">{name}</h2>
+              <h3 className="text-xs group-hover:drop-shadow-md md:drop-shadow-none drop-shadow-md transition-shadow duration-300">{designation}</h3>
               <div>
                 <a
                   href={linkedinLink}
@@ -56,13 +56,13 @@ const TeamBioDialog = ({
                 >
                   <Image
                     src={linkedinLogo}
-                    className=" cursor-pointer"
+                    className=" cursor-pointer drop-shadow-md hover:drop-shadow-none transition-all duration-300"
                     alt="Linkedin Icon"
                   />
                 </a>
               </div>
               <div
-                className="z-20 inline-block text-xs mx-auto pointer hover:underline underline-offset-4 cursor-pointer transition-all duration-300"
+                className="z-20 inline-block text-xs mx-auto pointer hover:underline underline-offset-4 cursor-pointer transition-all duration-300 drop-shadow-md"
                 onClick={() => {
                   const modal = document.getElementById(
                     `my_modal_${serialNo}`
@@ -86,7 +86,7 @@ const TeamBioDialog = ({
           </div>
         )}
        </div>
-        <div className="shadow-md absolute w-full group-hover:bg-dipalo bg-stone-50 h-[180px] rounded-3xl bottom-0 -z-10 transition-colors duration-300" />
+        <div className="shadow-md absolute w-full group-hover:bg-dipalo bg-dipalo  md:bg-stone-50 h-[180px] rounded-3xl bottom-0 -z-10 transition-colors duration-300" />
       </section>
 
       <dialog id={`my_modal_${serialNo}`} className="modal">

@@ -75,4 +75,5 @@ export type TCompany = {
   stage: string;
   category: string;
   websiteLink: string;
+  shortDescription: string;
 };

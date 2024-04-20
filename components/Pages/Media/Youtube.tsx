@@ -18,7 +18,7 @@ const Youtube = ({
       <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 py-10">
         {youtubePlaylist.map((video, i) => (
           <AnimatedDiv
-          delay={.25}
+          delay={.15}
             id={i}
             key={video.id}
             className="hover:shadow-2xl shadow-lg transition-shadow duration-300 bg-base-100  w-fit overflow-hidden rounded-2xl"

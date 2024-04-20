@@ -8,6 +8,7 @@ import { TCompany } from '@/components/types';
 import CustomTitle from '@/components/common/CustomTitle';
 import SelectWithMotion from './SelectWithMotion';
 import { motion, AnimatePresence } from 'framer-motion';
+import AnimatedDiv from '@/components/common/AnimatedDiv';
 
 const PortfolioSection = ({ companies }: { companies: TCompany[] }) => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
@@ -143,17 +144,19 @@ const PortfolioSection = ({ companies }: { companies: TCompany[] }) => {
         {/* Display filtered companies */}
         <div>
           {selectedCompanies.length > 0 ? (
-            <div className="grid lg:grid-cols-4 grid-cols-1 gap-5 h-full my-10">
+            <div className="grid lg:grid-cols-5  md:grid-cols-3 grid-cols-2 gap-1 h-full my-10">
               {selectedCompanies.map((company, index) => (
-                <PortfolioCard
-                  key={index}
+              <AnimatedDiv key={index} id={index}>
+                  <PortfolioCard
                   companyName={company.companyName}
                   logo={company.logo}
                   category={''}
                   state={''}
                   stage={''}
-                  websiteLink={''}
+                  websiteLink={company.websiteLink}
+                  shortDescription={company.shortDescription}
                 />
+              </AnimatedDiv>
               ))}
             </div>
           ) : (

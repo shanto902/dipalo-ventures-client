@@ -29,16 +29,10 @@ const SelectWithMotion: React.FC<Props> = ({
 
   return (
     <motion.select
-      className="appearance-none bg-white border cursor-pointer min-w-[100px]   border-neutral-400 text-base rounded-3xl px-2 py-2 font-semibold text-center "
+      className="  border cursor-pointer min-w-[100px]    text-base rounded-3xl px-2 py-2 font-semibold text-center"
       value=""
       onChange={handleOptionChange}
-      initial={{  backgroundColor: '#FFFFFF', color: '#000000' }}
-      whileHover={{
-        backgroundColor: '#FFB012',
-        color: '#FFFFFF',
-      }}
-      transition={{ scale: { type: 'spring', stiffness: 100 } }}
-    
+   
     >
       <option className=" hidden" value="">
         {`${dropdownType} ↓`}

@@ -30,7 +30,7 @@ const TeamSection = ( {members} :{ members: TTeam[]}) => {
 
       {/* Main Team  */}
       {members.map((user, i) => (
-        <AnimatedDiv id={i} key={i} className="rounded-3xl shadow-md ">
+        <AnimatedDiv id={i} key={i} className="rounded-3xl drop-shadow-lg ">
           <TeamBioDialog
             priorInvestments={user.priorInvestments}
             key={i}

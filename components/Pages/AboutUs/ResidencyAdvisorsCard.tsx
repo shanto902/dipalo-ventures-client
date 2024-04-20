@@ -18,7 +18,7 @@ const ResidencyAdvisorsCard = ({
 }) => {
   return (
     <div>
-      <div className="group relative  items-center justify-center  rounded-full overflow-hidden shadow-md">
+      <div className="group relative  items-center justify-center  rounded-full overflow-hidden drop-shadow-md">
         <div className=" aspect-square  ">
           <Image
             className="h-full w-full object-cover  transition-transform duration-500 "

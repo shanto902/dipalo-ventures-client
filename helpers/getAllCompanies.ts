@@ -24,6 +24,7 @@ const getAllCompanies = async (): Promise<TCompany[]> => {
           'category.categoryName',
           'stage.stage',
           'location.state',
+          'shortDescription',
         ],
       })
     );
@@ -37,6 +38,7 @@ const getAllCompanies = async (): Promise<TCompany[]> => {
         category = {},
         location = {},
         stage = {},
+        shortDescription,
       } = item;
 
       const companyData: TCompany = {
@@ -44,6 +46,7 @@ const getAllCompanies = async (): Promise<TCompany[]> => {
         companyName,
         websiteLink,
         logo,
+        shortDescription,
         category: category.categoryName,
         state: location.state,
         stage: stage.stage,
