@@ -8,6 +8,7 @@ import { navItems } from './NavItems';
 import MobileNav from './MobileNav';
 import { usePathname } from 'next/navigation';
 import Headroom from 'react-headroom';
+import PaddingContainer from './PaddingContainer';
 
 const ForwardedMobileNav = forwardRef(MobileNav);
 
@@ -72,9 +73,10 @@ const Navbar = () => {
 
   return (
     <nav className="absolute w-full z-30 lg:mt-12">
-      <Headroom pinStart={40}>
+ 
+  <Headroom pinStart={40}>
         <div
-          className={`${scrollY < 150 ? '' : ' backdrop-blur-sm bg-black/50'}`}
+          className={`${scrollY < 150 ? '' : ' backdrop-blur-sm bg-black/50'} hidden lg:block`}
           style={{
             transition: 'background-color 0.3s ease'
           }}
@@ -84,14 +86,9 @@ const Navbar = () => {
           >
             <section className="flex items-center gap-10">
               <Link href={'/'} className="pl-4">
-                <Image src="/logo.svg" alt="logo" width={100} height={100} />
+                <Image className=' drop-shadow-xl hidden lg:block' src="/logo.svg" alt="logo" width={100} height={100} />
               </Link>
-              {isSideMenuOpen && (
-                <ForwardedMobileNav
-                  closeSideMenu={closeSideMenu}
-                  ref={sidebarRef}
-                />
-              )}
+              
             </section>
 
             <section className="items-center hidden gap-8 lg:flex">
@@ -189,13 +186,17 @@ const Navbar = () => {
                 ))}
               </div>
             </section>
-            <FiMenu
-              onClick={openSideMenu}
-              className="text-4xl text-white cursor-pointer lg:hidden"
-            />
+            
           </div>
         </div>
       </Headroom>
+<PaddingContainer>
+<Link href={'/'} >
+                <Image className=' pt-4 drop-shadow-xl lg:hidden  ' src="/logo.svg" alt="logo" width={100} height={100} />
+              </Link>
+</PaddingContainer>
+      <MobileNav/>
+
     </nav>
   );
 };
