@@ -9,14 +9,26 @@ import CustomTitle from '@/components/common/CustomTitle';
 import SelectWithMotion from './SelectWithMotion';
 import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedDiv from '@/components/common/AnimatedDiv';
+import { useSearchParams } from 'next/navigation';
 
 const PortfolioSection = ({ companies }: { companies: TCompany[] }) => {
+  
+  const searchParams = useSearchParams()
+  const category = searchParams.get('category')
+  const decodedCategory = decodeURIComponent(category || '');
+
+ 
+
+
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedStates, setSelectedStates] = useState<string[]>([]);
   const [selectedStages, setSelectedStages] = useState<string[]>([]);
   const [selectedCompanies, setSelectedCompanies] =
     useState<TCompany[]>(companies);
 
+
+   
+    
   useEffect(() => {
     const filteredCompanies = filterCompanies(
       selectedCategories,
@@ -26,6 +38,14 @@ const PortfolioSection = ({ companies }: { companies: TCompany[] }) => {
     );
     setSelectedCompanies(filteredCompanies);
   }, [selectedCategories, selectedStates, selectedStages, companies]);
+
+  useEffect(() => {
+    // Set category state if a value is received from the category parameter
+    if (decodedCategory) {
+      setSelectedCategories([decodedCategory]); // Assuming category is a single value, use an array if it could have multiple values
+    }
+  }, [decodedCategory]);
+
 
   const handleFilterChange = (
     value: string,
@@ -52,8 +72,10 @@ const PortfolioSection = ({ companies }: { companies: TCompany[] }) => {
     setSelectedStages([]);
   };
 
+
+  console.log(selectedCategories)
   return (
-    <>
+    <div id='portfolio'>
       <PaddingContainer>
         <CustomTitle>Portfolio</CustomTitle>
         <div className="flex lg:gap-6 gap-2 md:gap-4 mt-10">
@@ -123,7 +145,7 @@ const PortfolioSection = ({ companies }: { companies: TCompany[] }) => {
           {selectedCategories.length > 0 ||
           selectedStages.length > 0 ||
           selectedStates.length > 0 ? (
-            <AnimatePresence mode="wait">
+            <AnimatePresence>
               <motion.button
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
@@ -167,7 +189,7 @@ const PortfolioSection = ({ companies }: { companies: TCompany[] }) => {
           )}
         </div>
       </PaddingContainer>
-    </>
+    </div>
   );
 };
 

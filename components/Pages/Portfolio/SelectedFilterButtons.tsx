@@ -11,7 +11,7 @@ export const SelectedFilterButtons = ({
   onClick
 }: SelectedFilterButtonsProps) => (
   <>
-  <AnimatePresence mode='wait'>
+  <AnimatePresence>
     {items.map((item, index) => (
    
      <AnimatedDiv animationStyle='down' key={index} id={index}>

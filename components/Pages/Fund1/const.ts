@@ -13,17 +13,17 @@ export const investment: TInvestment[] = [
   {
     id: 1,
     image: '/assets/key-metrics/k1.jpeg',
-    text: 'ClimateTech',
+    text: 'Climate Tech',
   },
   {
     id: 2,
     image: '/assets/key-metrics/k2.jpeg',
-    text: 'Connected Devices',
+    text: 'Connected Device',
   },
   {
     id: 3,
     image: '/assets/key-metrics/k3.jpeg',
-    text: 'Industrial / Manufacturing',
+    text: 'Industrial and Advanced Manufacturing',
   },
   {
     id: 4,
@@ -33,11 +33,11 @@ export const investment: TInvestment[] = [
   {
     id: 5,
     image: '/assets/key-metrics/k5.jpeg',
-    text: 'MedTech',
+    text: 'Med Tech',
   },
   {
     id: 6,
     image: '/assets/key-metrics/k6.jpeg',
-    text: 'Food & Ag Tech',
+    text: 'Food and Agriculture',
   },
 ];
