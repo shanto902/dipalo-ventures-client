@@ -25,7 +25,7 @@ const TeamBioDialog = ({
   const handleMouseLeave = () => {
     setHovered(false);
   };
-  const isLargeScreen = window.innerWidth > 768;
+
   return (
     <div>
       <section
@@ -42,11 +42,11 @@ const TeamBioDialog = ({
           height={200}
         />
        <div>
-       {hovered || !isLargeScreen  ? (
+       {hovered ? (
           <div className="absolute bottom-4 left-0 right-0 mx-auto transition-opacity duration-500 ${hovered ? 'opacity-100' : 'opacity-0'}">
             <div className="text-center text-white">
-              <h2 className="text-base font-bold uppercase group-hover:drop-shadow-lg  md:drop-shadow-none drop-shadow-lg  transition-shadow duration-300">{name}</h2>
-              <h3 className="text-xs group-hover:drop-shadow-md md:drop-shadow-none drop-shadow-md transition-shadow duration-300">{designation}</h3>
+              <h2 className="text-base font-bold uppercase group-hover:drop-shadow-lg drop-shadow-none transition-shadow duration-300">{name}</h2>
+              <h3 className="text-xs group-hover:drop-shadow-md drop-shadow-none transition-shadow duration-300">{designation}</h3>
               <div>
                 <a
                   href={linkedinLink}
@@ -86,7 +86,7 @@ const TeamBioDialog = ({
           </div>
         )}
        </div>
-        <div className="shadow-md absolute w-full group-hover:bg-dipalo bg-dipalo  md:bg-stone-50 h-[180px] rounded-3xl bottom-0 -z-10 transition-colors duration-300" />
+        <div className="shadow-md absolute w-full group-hover:bg-dipalo  bg-stone-50 h-[180px] rounded-3xl bottom-0 -z-10 transition-colors duration-300" />
       </section>
 
       <dialog id={`my_modal_${serialNo}`} className="modal">

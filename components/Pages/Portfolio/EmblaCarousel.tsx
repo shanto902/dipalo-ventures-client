@@ -52,13 +52,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     emblaMainApi.on('reInit', onSelect);
   }, [emblaMainApi, onSelect]);
 
-  useEffect(() => {
-    videoRefs.current.forEach((video) => {
-      if (video && video.paused) {
-        video.play();
-      }
-    });
-  }, []);
+
 
   return (
     <div className="max-w-4xl mx-auto space-y-5 my-10">
@@ -84,7 +78,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                     src="/path/to/captions.vtt"
                     kind="subtitles"
                     srcLang="en"
-                    label="English"
+                    label="English" 
                   /> 
                    Your browser does not support the video tag. */}
                   </video>
