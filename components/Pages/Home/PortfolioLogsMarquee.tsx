@@ -4,18 +4,19 @@ import Image from 'next/image';
 import PaddingContainer from '../../Layout/PaddingContainer';
 import Marquee from 'react-fast-marquee';
 import Link from 'next/link';
-const PortfolioLogsMarquee = () => {
+import { TCompany } from '@/components/types';
+const PortfolioLogsMarquee = ({companies}:{companies:TCompany[]}) => {
   return (
     <PaddingContainer className=" my-10">
       <div>
         <Marquee gradient pauseOnHover gradientColor="white">
           {' '}
           {companies.map((company, i) => (
-            <Link href={'/portfolio'} className="" key={i}>
+            <Link href={company.websiteLink} className="overflow-hidden" key={i}>
               <Image
-                className=" mx-10"
-                src={company.logo}
-                alt={company.name}
+                className=" mx-10 my-6 hover:scale-110 transition-transform duration-500 object-contain"
+                src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${company.logo}`}
+                alt={company.companyName}
                 height={150}
                 width={150}
               />

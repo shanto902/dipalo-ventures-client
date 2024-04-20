@@ -10,13 +10,12 @@ import { usePathname } from 'next/navigation';
 import Headroom from 'react-headroom';
 import PaddingContainer from './PaddingContainer';
 
-const ForwardedMobileNav = forwardRef(MobileNav);
 
 const Navbar = () => {
-  const [isSideMenuOpen, setSideMenu] = useState(false);
+
   const [openSubmenu, setOpenSubmenu] = useState(null); // State to track open submenu
   const [scrollY, setScrollY] = useState(0);
-  const sidebarRef = useRef<HTMLDivElement>(null);
+
   const currentPath = usePathname();
 
   const pathArray = currentPath.split('/');
@@ -34,32 +33,6 @@ const Navbar = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        sidebarRef.current &&
-        !sidebarRef.current.contains(event.target as Node)
-      ) {
-        setSideMenu(false);
-      }
-    };
-
-    if (isSideMenuOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
-      };
-    }
-  }, [isSideMenuOpen]);
-
-  const openSideMenu = () => {
-    setSideMenu(true);
-  };
-
-  const closeSideMenu = () => {
-    setSideMenu(false);
-  };
-
   const handleSubmenuOpen = (index: SetStateAction<null> | number) => {
     setOpenSubmenu(index as SetStateAction<null>);
   };
@@ -73,12 +46,11 @@ const Navbar = () => {
 
   return (
     <nav className="absolute w-full z-30 lg:mt-12">
- 
-  <Headroom pinStart={40}>
+      <Headroom pinStart={40}>
         <div
           className={`${scrollY < 150 ? '' : ' backdrop-blur-sm bg-black/50'} hidden lg:block`}
           style={{
-            transition: 'background-color 0.3s ease'
+            transition: 'background-color 0.3s ease',
           }}
         >
           <div
@@ -86,9 +58,14 @@ const Navbar = () => {
           >
             <section className="flex items-center gap-10">
               <Link href={'/'} className="pl-4">
-                <Image className=' drop-shadow-xl hidden lg:block' src="/logo.svg" alt="logo" width={100} height={100} />
+                <Image
+                  className=" drop-shadow-xl hidden lg:block"
+                  src="/logo.svg"
+                  alt="logo"
+                  width={100}
+                  height={100}
+                />
               </Link>
-              
             </section>
 
             <section className="items-center hidden gap-8 lg:flex">
@@ -186,17 +163,21 @@ const Navbar = () => {
                 ))}
               </div>
             </section>
-            
           </div>
         </div>
       </Headroom>
-<PaddingContainer>
-<Link href={'/'} >
-                <Image className=' pt-4 drop-shadow-xl lg:hidden  ' src="/logo.svg" alt="logo" width={100} height={100} />
-              </Link>
-</PaddingContainer>
-      <MobileNav/>
-
+      <PaddingContainer>
+        <Link href={'/'}>
+          <Image
+            className=" pt-4 drop-shadow-xl lg:hidden  "
+            src="/logo.svg"
+            alt="logo"
+            width={100}
+            height={100}
+          />
+        </Link>
+      </PaddingContainer>
+      <MobileNav />
     </nav>
   );
 };

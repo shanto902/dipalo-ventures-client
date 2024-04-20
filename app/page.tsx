@@ -6,8 +6,10 @@ import PortfolioLogsMarquee from '@/components/Pages/Home/PortfolioLogsMarquee';
 import Thesis from '@/components/Pages/Home/Thesis';
 import WhatsWrongWithVC from '@/components/Pages/Home/WhatsWrongWithVC';
 import WhatWeDo from '@/components/Pages/Home/WhatWeDo';
+import getAllCompanies from '@/helpers/getAllCompanies';
 
-const HomePage = () => {
+const HomePage = async () => {
+  const companies = await getAllCompanies()
   return (
     <>
       <Main />
@@ -17,7 +19,7 @@ const HomePage = () => {
       <Methodology />
       <WhatsWrongWithVC />
       <LookingFor />
-      <PortfolioLogsMarquee />
+      <PortfolioLogsMarquee companies={companies}/>
     </>
   );
 };
