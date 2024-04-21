@@ -5,6 +5,7 @@ import ResizablePanel from '../../common/ResizablePanel';
 import Image from 'next/image';
 import parse from 'html-react-parser';
 import { TCaseStudy } from '../../types';
+import Link from 'next/link';
 const CaseStudyTab = ({ caseStudies } : {caseStudies:TCaseStudy[]}) => {
   let [activeTab, setActiveTab] = useState(caseStudies[0].id);
   let duration = 0.25;
@@ -73,13 +74,15 @@ const CaseStudyTab = ({ caseStudies } : {caseStudies:TCaseStudy[]}) => {
                   animate="visible"
                 >
                   <motion.div className=" justify-self-center" variants={item}>
-                    <Image
+                   <Link href={selectedCaseStudy
+                    .companyLink
+                   }> <Image
                       className=" mx-auto mb-5"
                       src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${selectedCaseStudy.companyLogo}`}
                       alt={selectedCaseStudy.companyName}
                       height={100}
                       width={100}
-                    />
+                    /></Link>
                   </motion.div>
                   <motion.h3
                     variants={item}

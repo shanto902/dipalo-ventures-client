@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { TMediumPost } from '../../types';
 import Image from 'next/image';
 import PaddingContainer from '../../Layout/PaddingContainer';
@@ -10,8 +10,9 @@ const Medium = ({ mediumPosts }: { mediumPosts: TMediumPost[] }) => {
   return (
     <PaddingContainer className=" relative grid md:grid-cols-3 grid-cols-1 md:gap-20 gap-10 my-10">
       {mediumPosts.map((post, i) => (
-        <AnimatedDiv id={i}  key={i} className="group card w-fit bg-base-100 hover:shadow-2xl hover:bg-dipalo shadow-lg transition-all duration-300 hover:text-white" >
-         <div className=' flex flex-col h-full '>
+        <AnimatedDiv id={i}  key={i} delay={.10} className="group card w-fit bg-base-100 hover:shadow-2xl hover:bg-dipalo shadow-lg transition-all duration-300 hover:text-white" >
+       <Suspense fallback={<div className="skeleton w-32 h-32"></div>}>
+       <div className=' flex flex-col h-full '>
          <a href={post.postLink} >
          <figure>
             {' '}
@@ -43,6 +44,7 @@ const Medium = ({ mediumPosts }: { mediumPosts: TMediumPost[] }) => {
             </div>
           </div>
          </div>
+       </Suspense>
         </AnimatedDiv>
       ))}
     </PaddingContainer>

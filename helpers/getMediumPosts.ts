@@ -40,7 +40,6 @@ const getMediumPosts = async (): Promise<TMediumPost[]> => {
     };
     return postData;
   });
-
   return mediumData;
 };
 

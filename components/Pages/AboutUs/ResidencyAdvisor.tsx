@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ResidencyAdvisorsCard from './ResidencyAdvisorsCard';
 import { TResidencyAdvisor } from '../../types';
 import PaddingContainer from '../../Layout/PaddingContainer';
@@ -11,7 +11,8 @@ const ResidencyAdvisor = ({residencyAdvisors}: {residencyAdvisors:TResidencyAdvi
       Residency Advisors
       </CustomTitle>
       <div className=" grid lg:grid-cols-5 md:grid-cols-3 grid-cols-1  md:mx-5 mx-16 place-content-center gap-10 ">
-        {residencyAdvisors.map((user, i) => (
+       <Suspense>
+       {residencyAdvisors.map((user, i) => (
           <ResidencyAdvisorsCard
             key={i}
             image={user.photo}
@@ -21,6 +22,7 @@ const ResidencyAdvisor = ({residencyAdvisors}: {residencyAdvisors:TResidencyAdvi
             designation={user.designation}
           />
         ))}
+       </Suspense>
       </div>{' '}
     </PaddingContainer>
   );

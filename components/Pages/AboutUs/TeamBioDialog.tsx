@@ -143,7 +143,7 @@ const TeamBioDialog = ({
                       >
                         {company.status !== 'ongoing' && (
                           <span
-                            className={` absolute badge z-10 badge-xs  bottom-0 left-0 text-white ${
+                            className={` absolute badge z-10 badge-xs  bottom-0 left-0 text-white uppercase ${
                               company.status === 'exit'
                                 ? `badge-error`
                                 : `badge-warning`

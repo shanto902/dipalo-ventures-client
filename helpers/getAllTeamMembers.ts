@@ -1,8 +1,9 @@
 import { TTeam } from '@/components/types';
 import directus from '@/lib/directus';
 import { readItems } from '@directus/sdk';
+import { cache } from 'react';
 
-const getAllTeamMembers = async (): Promise<TTeam[]> => {
+const getAllTeamMembers = cache(async (): Promise<TTeam[]> => {
   try {
     const result = await directus.request(
       readItems('teams' as any, {
@@ -32,6 +33,6 @@ const getAllTeamMembers = async (): Promise<TTeam[]> => {
   } catch (error) {
     throw new Error('Team Members Not Found');
   }
-};
+});
 
 export default getAllTeamMembers;

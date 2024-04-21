@@ -73,7 +73,6 @@ const PortfolioSection = ({ companies }: { companies: TCompany[] }) => {
   };
 
 
-  console.log(selectedCategories)
   return (
     <div id='portfolio'>
       <PaddingContainer>

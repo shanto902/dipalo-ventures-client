@@ -6,8 +6,8 @@ import {
 } from '@/components/types';
 import directus from '@/lib/directus';
 import { readItems } from '@directus/sdk';
-
-const getAllCompanies = async (): Promise<TCompany[]> => {
+import { cache } from 'react';
+const getAllCompanies = cache(async (): Promise<TCompany[]> => {
   try {
     const result = await directus.request(
       readItems('companies' as any, {
@@ -52,11 +52,10 @@ const getAllCompanies = async (): Promise<TCompany[]> => {
 
       return companyData;
     });
-
     return companiesData as TCompany[];
   } catch (error) {
     throw new Error('Categories Not Found');
   }
-};
+});
 
 export default getAllCompanies;
