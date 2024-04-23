@@ -9,13 +9,13 @@ import { TTeam } from '../../types';
 
 
 const TeamBioDialog = ({
+  id,
   photo,
   name,
   designation,
   bio,
   linkedinLink,
   priorInvestments,
-  serialNo
 }: TTeam) => {
   const [hovered, setHovered] = useState(false);
   const handleMouseEnter = () => {
@@ -65,7 +65,7 @@ const TeamBioDialog = ({
                 className="z-20 inline-block text-xs mx-auto pointer hover:underline underline-offset-4 cursor-pointer transition-all duration-300 drop-shadow-md"
                 onClick={() => {
                   const modal = document.getElementById(
-                    `my_modal_${serialNo}`
+                    `my_modal_${id}`
                   ) as HTMLDialogElement;
                   if (modal) {
                     modal.showModal();
@@ -89,7 +89,7 @@ const TeamBioDialog = ({
         <div className="shadow-md absolute w-full group-hover:bg-dipalo  bg-stone-50 h-[180px] rounded-3xl bottom-0 -z-10 transition-colors duration-300" />
       </section>
 
-      <dialog id={`my_modal_${serialNo}`} className="modal">
+      <dialog id={`my_modal_${id}`} className="modal">
         <div className="modal-box md:max-w-6xl max-w-sm rounded-xl bg-stone-50">
           <div className=" grid md:grid-cols-3 grid-cols-1 overflow-hidden lg:px-20 lg:pb-10 lg:pt-14 md:gap-x-12 place-items-center ">
             <div className="col-span-1 flex justify-center flex-col items-center">

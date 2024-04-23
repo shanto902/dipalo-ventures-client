@@ -48,7 +48,7 @@ const VideoCard = ({ video }: { video: TFounderVideo }) => {
               height={100}
             />
 
-            <div className={`text-right ${isPlaying ? 'text-white font-semibold': 'text-black'} transition-all duration-500`}>
+            <div className={`text-right ${isPlaying ? 'text-white font-semibold drop-shadow-md': 'text-black'} transition-all duration-500 `}>
               <h2 className="font-xl font-bold">{video.name}</h2>
               <h3 className="text-sm">{video.designation}</h3>
             </div>
