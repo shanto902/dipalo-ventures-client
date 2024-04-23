@@ -12,7 +12,7 @@ const getAllTeamMembers = cache(async (): Promise<TTeam[]> => {
             _eq: 'published',
           },
         },
-        sort: ['serialNo', 'serialNo'],
+        sort: ['sort'],
         fields: [
           'id',
           'name',

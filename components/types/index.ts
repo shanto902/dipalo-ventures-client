@@ -65,6 +65,8 @@ export type TFounderVideo = {
   companyLogo: string;
   companyName: string;
   videoLink: string;
+  poster: string;
+  designation: string;
 };
 
 export type TCompany = {
@@ -77,4 +79,10 @@ export type TCompany = {
   websiteLink: string;
   shortDescription: string;
   status: string;
+};
+
+type TBenefit = {
+  id: string;
+  name: string;
+  icon: string;
 };

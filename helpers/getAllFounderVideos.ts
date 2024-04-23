@@ -17,7 +17,15 @@ const getAllFounderVideos = cache(async (): Promise<TFounderVideo[]> => {
             _eq: 'published',
           },
         },
-        fields: ['id', 'name', 'companyLogo', 'companyName', 'videoLink'],
+        fields: [
+          'id',
+          'name',
+          'companyLogo',
+          'companyName',
+          'videoLink',
+          'poster',
+          'designation',
+        ],
       })
     );
     return result as TFounderVideo[];

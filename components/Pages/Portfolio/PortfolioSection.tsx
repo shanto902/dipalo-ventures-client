@@ -74,7 +74,7 @@ const PortfolioSection = ({ companies }: { companies: TCompany[] }) => {
 
 
   return (
-    <div id='portfolio'>
+    <div id='portfolio' className='my-20'>
       <PaddingContainer>
         <CustomTitle>Portfolio</CustomTitle>
         <div className="flex lg:gap-6 gap-2 md:gap-4 mt-10">
