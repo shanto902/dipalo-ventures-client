@@ -35,6 +35,7 @@ const TeamSection = ( {members} :{ members: TTeam[]}) => {
        <TeamBioDialog
             priorInvestments={user.priorInvestments}
             key={i}
+            id={user.id}
             photo={user.photo}
             name={user.name}
             linkedinLink={user.linkedinLink}
