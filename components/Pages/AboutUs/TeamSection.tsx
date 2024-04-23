@@ -40,7 +40,7 @@ const TeamSection = ( {members} :{ members: TTeam[]}) => {
             name={user.name}
             linkedinLink={user.linkedinLink}
             designation={user.designation}
-            bio={user.bio} serialNo={user.serialNo}/>
+            bio={user.bio}/>
        </Suspense>
         </AnimatedDiv>
       ))}

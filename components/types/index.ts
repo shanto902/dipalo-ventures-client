@@ -8,7 +8,6 @@ export type TPriorInvestments = {
 
 export type TTeam = {
   id?: string;
-  serialNo: number;
   status?: string;
   name: string;
   photo: string;
