@@ -19,7 +19,7 @@ const FounderVideo = ({
       </CustomTitle>
       {/* <EmblaCarousel founderVideos={founderVideos} /> */}
 
-      <section className=' grid grid-cols-2 gap-5'>
+      <section className=' grid md:grid-cols-2 grid-cols-1 gap-5'>
         {founderVideos.map((video, i) => (
           <AnimatedDiv key={video.id} id={i}>
             <VideoCard video={video}/>

@@ -24,7 +24,7 @@ const VideoCard = ({ video }: { video: TFounderVideo }) => {
   return (
     <div>
       {video.videoLink ? (
-        <div className={`m-5 rounded-3xl overflow-hidden  relative shadow-md hover:shadow-lg duration-500 transition-shadow`}>
+        <div className={`lg:m-5 md:m-3 m-2 rounded-3xl overflow-hidden  relative shadow-md hover:shadow-lg duration-500 transition-shadow`}>
         
           <video 
             poster={`${process.env.NEXT_PUBLIC_ASSETS_URL}${video.poster}`}
@@ -39,7 +39,7 @@ const VideoCard = ({ video }: { video: TFounderVideo }) => {
           >
             <source src={video.videoLink} type="video/mp4" />
           </video>
-          <div className="flex items-center justify-around">
+          <div className="flex items-center justify-between lg:px-10 px-5">
             <Image
               className="aspect-square object-contain my-2 mix-blend-multiply"
               src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${video.companyLogo}`}
@@ -48,7 +48,7 @@ const VideoCard = ({ video }: { video: TFounderVideo }) => {
               height={100}
             />
 
-            <div className="text-right">
+            <div className={`text-right ${isPlaying ? 'text-white font-semibold': 'text-black'} transition-all duration-500`}>
               <h2 className="font-xl font-bold">{video.name}</h2>
               <h3 className="text-sm">{video.designation}</h3>
             </div>
