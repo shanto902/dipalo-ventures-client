@@ -8,18 +8,17 @@ const VideoCard = ({ video }: { video: TFounderVideo }) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
   const handlePlay = () => {
-    // Pause all other videos
     document.querySelectorAll('video').forEach((vid: HTMLVideoElement) => {
       if (vid !== videoRef.current && !vid.paused) {
         vid.pause();
       }
     });
 
-    setIsPlaying(true); // Set the state to indicate video is playing
+    setIsPlaying(true);
   };
 
   const handlePause = () => {
-    setIsPlaying(false); // Set the state to indicate video is paused
+    setIsPlaying(false);
   };
 
   return (
@@ -35,8 +34,8 @@ const VideoCard = ({ video }: { video: TFounderVideo }) => {
             height={1080}
             controls
             preload="auto"
-            onPlay={handlePlay} // Call handlePlay when video starts playing
-            onPause={handlePause} // Call handlePause when video is paused
+            onPlay={handlePlay} 
+            onPause={handlePause} 
           >
             <source src={video.videoLink} type="video/mp4" />
           </video>
