@@ -24,21 +24,8 @@ const VideoCard = ({ video }: { video: TFounderVideo }) => {
   return (
     <div>
       {video.videoLink ? (
-        <div className={`lg:m-5 md:m-3 m-2 rounded-3xl overflow-hidden  relative shadow-md hover:shadow-lg duration-500 transition-shadow`}>
+        <div className={`lg:m-5 md:m-3 m-2 rounded-3xl overflow-hidden bg-white  relative drop-shadow hover:drop-shadow-xl duration-500 transition-all`}>
         
-          <video 
-            poster={`${process.env.NEXT_PUBLIC_ASSETS_URL}${video.poster}`}
-            ref={videoRef}
-            className={`rounded-3xl cursor-pointer ${isPlaying ? 'drop-shadow-lg' : 'drop-shadow-none'} transition-all duration-500`}
-            width={1920}
-            height={1080}
-            controls
-            preload="auto"
-            onPlay={handlePlay} 
-            onPause={handlePause} 
-          >
-            <source src={video.videoLink} type="video/mp4" />
-          </video>
           <div className="flex items-center justify-between lg:px-10 px-5">
             <Image
               className="aspect-square object-contain my-2 mix-blend-multiply"
@@ -53,6 +40,19 @@ const VideoCard = ({ video }: { video: TFounderVideo }) => {
               <h3 className="text-sm">{video.designation}</h3>
             </div>
           </div>
+          <video 
+            poster={`${process.env.NEXT_PUBLIC_ASSETS_URL}${video.poster}`}
+            ref={videoRef}
+            className={`rounded-3xl cursor-pointer ${isPlaying ? 'drop-shadow-lg' : 'drop-shadow-none'} transition-all duration-500`}
+            width={1920}
+            height={1080}
+            controls
+            preload="auto"
+            onPlay={handlePlay} 
+            onPause={handlePause} 
+          >
+            <source src={video.videoLink} type="video/mp4" />
+          </video>
           <div className={` absolute -z-20 top-0 left-0 w-full h-full ${isPlaying ? 'bg-dipalo' : 'bg-white'} transition-colors duration-500`}></div>
         </div>
       ) : (

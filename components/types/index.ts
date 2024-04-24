@@ -27,17 +27,6 @@ export type TResidencyAdvisor = {
   companyName: string;
 };
 
-export type TCaseStudy = {
-  id?: string;
-  status?: string;
-  companyName: string;
-  companyLogo: string;
-  companyLink: string;
-  bannerPicture: string;
-  overview: string;
-  solution: string;
-};
-
 export type TMediumPost = {
   title: string;
   image: string | undefined;
@@ -84,4 +73,26 @@ type TBenefit = {
   id: string;
   name: string;
   icon: string;
+};
+
+export type TCaseStudy = {
+  id?: string;
+  status?: string;
+  companyName: string;
+  companyLogo: string;
+  companyLink: string;
+  bannerPicture: string;
+  overview: string;
+  solution: string;
+};
+
+export type TTestimonial = {
+  id?: string;
+  status?: string;
+  name: string;
+  photo: string;
+  designation: string;
+  companyName: string;
+  testimony: string;
+  videoLink?: string;
 };

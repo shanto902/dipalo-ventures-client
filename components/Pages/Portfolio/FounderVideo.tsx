@@ -15,7 +15,7 @@ const FounderVideo = ({
   return (
     <PaddingContainer className='my-10'>
       <CustomTitle className=" my-10">
-        Founder Introduction Videos
+      Founder Testimonials
       </CustomTitle>
       {/* <EmblaCarousel founderVideos={founderVideos} /> */}
 

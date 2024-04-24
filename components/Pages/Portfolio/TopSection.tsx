@@ -1,6 +1,5 @@
 import React from 'react';
 import PaddingContainer from '../../Layout/PaddingContainer';
-import Image from 'next/image';
 import AnimatedPara from '@/components/common/AnimatedPara';
 const LottieAnimation = dynamic(() => import('../../common/LottieAnimation'), {
   ssr: false,
