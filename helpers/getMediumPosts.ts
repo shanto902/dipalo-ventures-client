@@ -5,7 +5,7 @@ const getMediumPosts = async (): Promise<TMediumPost[]> => {
   // Specify the return type as Promise<TMediumPost[]>
   const res = await fetch(
     'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@dipaloventures',
-    { cache: 'force-cache' }
+    { next: { revalidate: 3600 } }
   );
 
   if (!res.ok) {
