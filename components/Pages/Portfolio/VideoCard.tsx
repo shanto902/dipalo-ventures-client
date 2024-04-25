@@ -26,13 +26,13 @@ const VideoCard = ({ video }: { video: TFounderVideo }) => {
       {video.videoLink ? (
         <div className={`lg:m-5 md:m-3 m-2 rounded-3xl overflow-hidden bg-white  relative drop-shadow hover:drop-shadow-xl duration-500 transition-all`}>
         
-          <div className="flex items-center justify-between lg:px-10 px-5">
+          <div className="flex items-center justify-between lg:px-5 px-2">
             <Image
               className="aspect-square object-contain my-2 mix-blend-multiply"
               src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${video.companyLogo}`}
               alt=""
-              width={100}
-              height={100}
+              width={50}
+              height={50}
             />
 
             <div className={`text-right ${isPlaying ? 'text-white font-semibold drop-shadow-md': 'text-black'} transition-all duration-500 `}>

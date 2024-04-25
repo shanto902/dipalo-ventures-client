@@ -17,6 +17,8 @@
   },
   "dependencies": {
     "@directus/sdk": "^15.1.0",
+    "@egjs/flicking-plugins": "^4.7.1",
+    "@egjs/react-flicking": "^4.11.2",
     "@lottiefiles/react-lottie-player": "^3.5.3",
     "classnames": "^2.5.1",
     "embla-carousel": "^8.0.2",
