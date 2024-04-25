@@ -13,9 +13,6 @@
       -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;  /* Firefox */
 }
-}
-
-
 .hover-underline-animation {
   display: inline-block;
   position: relative;
@@ -38,12 +35,9 @@
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-
-
-.SamplePrevArrow::before {
-  content: ''; /* This is required for pseudo-elements */
-  /* Additional styles for the pseudo-element */
-  /* For example, to set the color and background color */
-  color: blue;
-  background-color: yellow;
 }
+
+
+
+
+

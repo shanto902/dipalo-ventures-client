@@ -96,3 +96,10 @@ export type TTestimonial = {
   testimony: string;
   videoLink?: string;
 };
+
+export type TPartner = {
+  id?: string;
+  companyName: string;
+  logo: string;
+  websiteLink: string;
+};
