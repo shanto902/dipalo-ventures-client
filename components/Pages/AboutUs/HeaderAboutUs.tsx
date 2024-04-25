@@ -12,7 +12,7 @@ const HeaderAboutUs = ({ image }: { image: StaticImageData }) => {
   return (
     <div className="relative md:h-[455px] h-[60vh] overflow-hidden">
       <Image
-        className="absolute inset-0 w-full h-full object-left object-cover "
+        className="absolute inset-0 w-full h-full object-start object-cover "
         alt="Main Background"
         placeholder="blur"
         src={image}

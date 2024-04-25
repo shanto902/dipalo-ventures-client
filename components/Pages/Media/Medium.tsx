@@ -18,7 +18,7 @@ const Medium = ({ mediumPosts }: { mediumPosts: TMediumPost[] }) => {
             {' '}
            
             <Image
-            className=' w-full object-contain'
+            className=' w-full max-h-[200px] object-cover'
               src={post.image as string}
               width={1000}
               height={500}
