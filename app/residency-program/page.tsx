@@ -4,8 +4,8 @@ import image from '@/public/assets/headers/residency-program.jpg';
 import Process from '@/components/Pages/ResidencyProgram/Process';
 import CaseStudies from '@/components/Pages/ResidencyProgram/CaseStudies';
 import Residency from '@/components/Pages/ResidencyProgram/Residency';
-import ResidencyAdvisory from '@/components/Pages/ResidencyProgram/ResidencyAdvisory';
 import getAllCaseStudies from '@/helpers/getAllCaseStudies';
+import Partners from '@/components/Pages/ResidencyProgram/Partners';
 const ResidencyProgramPage = async () => {  
   const caseStudies = await getAllCaseStudies();
   return (
@@ -14,7 +14,7 @@ const ResidencyProgramPage = async () => {
       <Process />
       <Residency />
       <CaseStudies caseStudies={caseStudies}  />
-      <ResidencyAdvisory />
+      <Partners />
     </>
   );
 };

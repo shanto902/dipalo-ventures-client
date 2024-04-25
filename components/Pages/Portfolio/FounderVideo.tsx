@@ -14,8 +14,8 @@ const FounderVideo = ({
   founderVideos: TFounderVideo[];
 }) => {
   return (
-    <PaddingContainer className='my-10'>
-      <CustomTitle className=" my-10">
+    <PaddingContainer className='mb-5'>
+      <CustomTitle className=" mb-5">
       Founder Testimonials
       </CustomTitle>
       {/* <EmblaCarousel founderVideos={founderVideos} /> */}

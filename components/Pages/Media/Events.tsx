@@ -32,7 +32,7 @@ const Events = () => {
   }, []);
 
   return (
-    <div className='flex justify-center w-full my-10'>
+    <div className='flex justify-center w-full my-5'>
       {loading && <div className={`skeleton w-[100vw] h-[50vh] flex justify-center items-center !rounded-none -mr-5'`}></div>}
       <iframe
         className='mx-auto bg-transparent'

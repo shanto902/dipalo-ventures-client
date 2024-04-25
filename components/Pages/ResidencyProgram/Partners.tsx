@@ -2,12 +2,12 @@ import React from 'react';
 import PaddingContainer from '../../Layout/PaddingContainer';
 import CustomTitle from '../../common/CustomTitle';
 
-const ResidencyAdvisory = () => {
+const Partners = () => {
   return (
     <PaddingContainer className="py-10">
-      <CustomTitle>Residency Advisory</CustomTitle>
+      <CustomTitle>Partners</CustomTitle>
     </PaddingContainer>
   );
 };
 
-export default ResidencyAdvisory;
+export default Partners;

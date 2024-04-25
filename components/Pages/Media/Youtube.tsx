@@ -15,7 +15,7 @@ const Youtube = ({
 
   return (
     <PaddingContainer className="">
-      <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 py-10">
+      <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 py-5">
         {youtubePlaylist.map((video, i) => (
           <AnimatedDiv
           delay={.15}

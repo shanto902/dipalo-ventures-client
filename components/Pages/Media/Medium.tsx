@@ -8,19 +8,19 @@ import { CiRead } from "react-icons/ci";
 
 const Medium = ({ mediumPosts }: { mediumPosts: TMediumPost[] }) => {
   return (
-    <PaddingContainer className=" relative grid md:grid-cols-3 grid-cols-1 md:gap-20 gap-10 my-10">
+    <PaddingContainer className=" relative grid grid-row-1  gap-5 my-5">
       {mediumPosts.map((post, i) => (
-        <AnimatedDiv id={i}  key={i} delay={.10} className="group card w-fit bg-base-100 hover:shadow-2xl hover:bg-dipalo shadow-lg transition-all duration-300 hover:text-white" >
-       <Suspense fallback={<div className="skeleton w-32 h-32"></div>}>
-       <div className=' flex flex-col h-full '>
-         <a href={post.postLink} >
+        <AnimatedDiv id={i}  key={i} delay={.01} className="group card w-full bg-base-100 hover:shadow-2xl hover:bg-dipalo shadow-lg transition-all duration-300 hover:text-white" >
+       <Suspense fallback={<div className="skeleton w-full h-full"></div>}>
+       <div className=' flex flex-col h-full w-full '>
+         <a target='_blank' href={post.postLink} >
          <figure>
             {' '}
            
             <Image
-            className=' h-[150px] w-full object-cover object-center'
+            className=' w-full object-contain'
               src={post.image as string}
-              width={500}
+              width={1000}
               height={500}
               alt={post.title}
             />
@@ -32,10 +32,10 @@ const Medium = ({ mediumPosts }: { mediumPosts: TMediumPost[] }) => {
           </figure>
           </a>
           <div className="card-body z-10">
-            <h2 className="card-title  text-lg line-clamp-2">
+            <h2 className="card-title  lg:text-xl md:text-lg text-base line-clamp-2">
               {post.title}
             </h2>
-            <p className=' line-clamp-3'>{post.description}</p>
+            <p className=' line-clamp-2 lg:text-base md:text-sm text-xs'>{post.description}</p>
             <div className="card-actions justify-end">
               <p>{moment(post.publishedDate, "YYYYMMDD").fromNow()}</p>
               <a href={post.postLink} className="  hover:underline decoration-white underline-offset-4 font-bold">
