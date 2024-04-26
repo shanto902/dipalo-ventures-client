@@ -69,10 +69,15 @@ export type TCompany = {
   status: string;
 };
 
-type TBenefit = {
-  id: string;
-  name: string;
+export type TBenefit = {
+  id?: string;
+  categoryTitle: string;
   icon: string;
+  items: [
+    {
+      text: string;
+    },
+  ];
 };
 
 export type TCaseStudy = {

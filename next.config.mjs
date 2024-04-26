@@ -2,6 +2,7 @@
 
 const nextConfig = {
   images: {
+    dangerouslyAllowSVG: true,
     remotePatterns: [
       {
         hostname: 'admin.dipaloventures.com',
