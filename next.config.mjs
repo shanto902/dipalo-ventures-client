@@ -16,6 +16,10 @@ const nextConfig = {
         hostname: 'i.ytimg.com',
         protocol: 'https',
       },
+      {
+        hostname: 'scontent.cdninstagram.com',
+        protocol: 'https',
+      },
     ],
   },
   async redirects() {

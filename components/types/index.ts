@@ -108,3 +108,21 @@ export type TPartner = {
   logo: string;
   websiteLink: string;
 };
+
+export type TInstagramCarousel = {
+  id: string;
+  media_url: string;
+  media_type: string;
+};
+
+export type TInstagramPost = {
+  id: string;
+  caption: string;
+  media_url: string;
+  timestamp: string;
+  media_type: string;
+  permalink: string;
+  children?: {
+    data: TInstagramCarousel[];
+  };
+};

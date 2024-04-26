@@ -4,7 +4,7 @@ import PaddingContainer from '../../Layout/PaddingContainer';
 import { motion, MotionConfig } from 'framer-motion'
 import ResizablePanel from '../../common/ResizablePanel';
 import Medium from './Medium';
-import { TMediumPost, TYoutubePlaylist } from '../../types';
+import { TInstagramPost, TMediumPost, TYoutubePlaylist } from '../../types';
 import Youtube from './Youtube';
 import Spotlight from './Spotlight';
 import Events from './Events';
@@ -14,7 +14,7 @@ id: number;
 tabName:string;
 element: ReactNode;
 }
-const MediaTabs = ({mediumPosts, youtubePlaylist}:{mediumPosts: TMediumPost[], youtubePlaylist:TYoutubePlaylist[]}) => {
+const MediaTabs = ({mediumPosts, youtubePlaylist, instagramPosts}:{mediumPosts: TMediumPost[], youtubePlaylist:TYoutubePlaylist[], instagramPosts:TInstagramPost[]}) => {
   const media : TMedia[] = [{
     id: 1,
     tabName: "Youtube",
@@ -23,7 +23,7 @@ const MediaTabs = ({mediumPosts, youtubePlaylist}:{mediumPosts: TMediumPost[], y
   {
     id: 2,
     tabName: 'Spotlight',
-    element: <Spotlight/>
+    element: <Spotlight instagramPosts={instagramPosts}/>
   },
   {
     id: 3,
