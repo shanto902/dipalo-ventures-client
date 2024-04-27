@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -24,13 +25,13 @@ const InstagramSlider = ({ post }: { post: TInstagramCarousel[] }) => {
         {post.map((item) => (
           <SwiperSlide key={item.id}>
             {item.media_type === 'VIDEO' ? (
-              <video controls width={1000} height={1000}>
+              <video controls>
                 <source src={item.media_url} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             ) : (
               item.media_url && (
-                <Image src={item.media_url} alt="" width={1000} height={1000} />
+                <img src={item.media_url} alt=""  />
               )
             )}
           </SwiperSlide>

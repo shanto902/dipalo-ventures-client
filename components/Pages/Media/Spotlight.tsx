@@ -17,7 +17,6 @@ const Spotlight = ({
           <AnimatedDiv delay={0.10} key={post.id} id={i} className='p-2'>
             <div className="card mb-5  bg-base-100 shadow-xl">
               <figure>
-                {' '}
                 {post.media_type === 'IMAGE' && (
                   <Image
                     className="aspect-square object-cover"
@@ -48,7 +47,7 @@ const Spotlight = ({
                         }
                       }}
                       src={post.media_url}
-                      alt={post.caption}
+                      alt={post.id}
                       width={400}
                       height={400}
                     />

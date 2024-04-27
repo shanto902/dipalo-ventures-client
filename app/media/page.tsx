@@ -10,7 +10,6 @@ const MediaPage = async () => {
   const mediumPosts = await getMediumPosts();
   const youtubePlaylist = await getAllYoutubeVideos();
   const instagramPosts = await getAllInstagramPosts();
- 
 
   return (
     <>
