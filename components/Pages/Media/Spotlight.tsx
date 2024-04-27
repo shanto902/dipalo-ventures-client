@@ -3,7 +3,8 @@ import { TInstagramPost } from '@/components/types';
 import Image from 'next/image';
 import React from 'react';
 import InstagramSlider from './InstagramSlider';
-
+import './styles.css';
+import AnimatedDiv from '@/components/common/AnimatedDiv';
 const Spotlight = ({
   instagramPosts,
 }: {
@@ -11,14 +12,15 @@ const Spotlight = ({
 }) => {
   return (
     <PaddingContainer>
-      <section className=" grid grid-cols-4 gap-5">
-        {instagramPosts.map((post) => (
-          <div key={post.id}>
-            {
-              <div>
-                <h2 className=" line-clamp-2">{post.caption}</h2>
+      <section className=" grid grid-cols-4 ">
+        {instagramPosts.map((post,i) => (
+          <AnimatedDiv delay={0.10} key={post.id} id={i} className='p-2'>
+            <div className="card mb-5  bg-base-100 shadow-xl">
+              <figure>
+                {' '}
                 {post.media_type === 'IMAGE' && (
                   <Image
+                    className="aspect-square object-cover"
                     src={post.media_url}
                     alt={post.caption}
                     width={400}
@@ -36,6 +38,7 @@ const Spotlight = ({
                 {post.media_type === 'CAROUSEL_ALBUM' &&
                   post.children?.data && (
                     <Image
+                      className="aspect-square object-cover"
                       onClick={() => {
                         const modal = document.getElementById(
                           `my_modal_${post.id}`
@@ -50,33 +53,45 @@ const Spotlight = ({
                       height={400}
                     />
                   )}
-
                 {post.media_type === 'VIDEO' && (
-                  <video autoPlay muted preload="none"  onClick={() => {
-                    const modal = document.getElementById(
-                      `my_modal_${post.id}`
-                    ) as HTMLDialogElement;
-                    if (modal) {
-                      modal.showModal();
-                    }
-                  }}>
-                    <source src={post.media_url} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                )}
-              </div>
-            }{' '}
-            <dialog id={`my_modal_${post.id}`} className="modal">
-              <div className="modal-box md:max-w-6xl max-w-sm rounded-xl bg-stone-50">
-                {post.children?.data ? (
-                  <InstagramSlider post={post.children.data} />
-                ) : (
                   <Image
-                    src={post.media_url}
+                    className="aspect-square object-cover"
+                    onClick={() => {
+                      const modal = document.getElementById(
+                        `my_modal_${post.id}`
+                      ) as HTMLDialogElement;
+                      if (modal) {
+                        modal.showModal();
+                      }
+                    }}
+                    src={post.thumbnail_url}
                     alt={post.caption}
                     width={400}
                     height={400}
                   />
+                )}
+              </figure>
+              <div className="card-body !p-4">
+                <h2 className="text-base font-semibold line-clamp-2">{post.caption}</h2>
+              </div>
+            </div>
+
+            <dialog id={`my_modal_${post.id}`} className="modal">
+              <div className="modal-box h-fit min-w-md rounded-xl bg-black flex justify-center items-center">
+                {post.children?.data ? (
+                  <InstagramSlider post={post.children.data} />
+                ) : post.media_type === 'IMAGE' ? (
+                  <Image
+                    src={post.media_url}
+                    alt={post.caption}
+                    width={1000}
+                    height={1000}
+                  />
+                ) : (
+                  <video autoPlay muted preload="none">
+                    <source src={post.media_url} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 )}
               </div>
 
@@ -84,7 +99,7 @@ const Spotlight = ({
                 <button>close</button>
               </form>
             </dialog>
-          </div>
+          </AnimatedDiv>
         ))}
       </section>
     </PaddingContainer>

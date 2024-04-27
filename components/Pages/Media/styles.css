@@ -1,0 +1,22 @@
+.swiper-button-next, 
+.swiper-button-prev {
+  color: #FFB012;
+}
+
+.swiper-button-next:after, 
+.swiper-button-prev:after {
+  font-size: 30px;
+}
+
+.swiper-button-next.swiper-button-disabled, 
+.swiper-button-prev.swiper-button-disabled {
+    opacity: 0;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #FFB012 !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: #754e00;
+}

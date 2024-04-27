@@ -121,6 +121,7 @@ export type TInstagramPost = {
   media_url: string;
   timestamp: string;
   media_type: string;
+  thumbnail_url: string;
   permalink: string;
   children?: {
     data: TInstagramCarousel[];

@@ -5,7 +5,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-
 import 'swiper/css/navigation';
 
 import { Pagination, Navigation } from 'swiper/modules';
@@ -16,7 +15,7 @@ const InstagramSlider = ({ post }: { post: TInstagramCarousel[] }) => {
     <>
       <Swiper
         pagination={{
-          type: 'fraction',
+          type: 'bullets',
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
@@ -25,13 +24,13 @@ const InstagramSlider = ({ post }: { post: TInstagramCarousel[] }) => {
         {post.map((item) => (
           <SwiperSlide key={item.id}>
             {item.media_type === 'VIDEO' ? (
-              <video controls width={400} height={400}>
+              <video controls width={1000} height={1000}>
                 <source src={item.media_url} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             ) : (
               item.media_url && (
-                <Image src={item.media_url} alt="" width={400} height={400} />
+                <Image src={item.media_url} alt="" width={1000} height={1000} />
               )
             )}
           </SwiperSlide>
