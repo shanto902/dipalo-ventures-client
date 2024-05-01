@@ -13,7 +13,7 @@ const LookingFor = () => {
       <CustomTitle>
         WHO WE’RE <span className="text-dipalo">LOOKING</span> FOR
       </CustomTitle>
-      <div className=" grid lg:grid-cols-3 grid-cols-1 gap-16 mt-10 mb-24">
+      <div className=" grid lg:grid-cols-3 grid-cols-1 lg:gap-16 md:gap-10 gap-5 mt-10 lg:mb-24 mb-10">
         {lookingForData.map((data, i) => (
           <AnimatedDiv
             key={i}

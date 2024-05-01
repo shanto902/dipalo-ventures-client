@@ -10,7 +10,7 @@ import AnimatedDiv from '../../common/AnimatedDiv';
 const Overview = () => {
   return (
     <PaddingContainer>
-      <div className="py-14">
+      <div className="md:py-14 py-10">
         {/* Title Text  */}
         <CustomTitle>OVERVIEW</CustomTitle>
 

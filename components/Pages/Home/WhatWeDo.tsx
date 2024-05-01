@@ -7,7 +7,7 @@ import AnimatedPara from '../../common/AnimatedPara';
 const WhatWeDo = () => {
   return (
     <div className="relative lg:pt-10  lg:pb-14">
-      <div className="absolute bottom-0 right-0 hidden w-56 md:block md:w-96 -z-10"></div>
+   
       <PaddingContainer>
         <motion.div
           initial={{ y: 200 }}

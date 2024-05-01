@@ -115,6 +115,16 @@ export type TInstagramCarousel = {
   media_type: string;
 };
 
+export type TGoldenVisaPage = {
+  id: string;
+  whyPortugal: string;
+  investment: string;
+  investmentAnimation: string;
+  whyTakeTheFundRoute: string;
+  fundRouteAnimation: string;
+  videoLink?: string;
+};
+
 export type TInstagramPost = {
   id: string;
   caption: string;

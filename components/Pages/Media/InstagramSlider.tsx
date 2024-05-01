@@ -11,7 +11,7 @@ import { TInstagramCarousel } from '@/components/types';
 const videoRefs: React.RefObject<HTMLVideoElement>[] = [];
 
 const InstagramSlider = ({ post, caption }: { post: TInstagramCarousel[], caption: string }) => {
-  // Use useEffect to create refs after the component mounts
+  
   useEffect(() => {
     post.forEach(() => {
       videoRefs.push(React.createRef<HTMLVideoElement>());

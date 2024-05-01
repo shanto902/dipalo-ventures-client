@@ -5,6 +5,7 @@ import React, { useEffect } from 'react';
 import InstagramSlider from './InstagramSlider';
 import './styles.css';
 import AnimatedDiv from '@/components/common/AnimatedDiv';
+import moment from 'moment';
 const Spotlight = ({
   instagramPosts,
 }: {
@@ -39,7 +40,14 @@ const Spotlight = ({
       <section className=" grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 ">
         {instagramPosts.map((post, i) => (
           <AnimatedDiv delay={0.1} key={post.id} id={i} className="p-2">
-            <div className="card mb-5  bg-base-100 shadow-xl">
+            <div className="card mb-5 group  bg-base-100 hover:shadow-xl shadow-md cursor-pointer hover:bg-dipalo duration-500 transition-colors"  onClick={() => {
+                      const modal = document.getElementById(
+                        `my_modal_${post.id}`
+                      ) as HTMLDialogElement;
+                      if (modal) {
+                        modal.showModal();
+                      }
+                    }}>
               <figure>
                 {post.media_type === 'IMAGE' && (
                   <Image
@@ -48,14 +56,7 @@ const Spotlight = ({
                     alt={post.caption}
                     width={400}
                     height={400}
-                    onClick={() => {
-                      const modal = document.getElementById(
-                        `my_modal_${post.id}`
-                      ) as HTMLDialogElement;
-                      if (modal) {
-                        modal.showModal();
-                      }
-                    }}
+                   
                   />
                 )}
                 {post.media_type === 'CAROUSEL_ALBUM' &&
@@ -94,10 +95,13 @@ const Spotlight = ({
                   />
                 )}
               </figure>
-              <div className="card-body !p-4">
-                <h2 className="text-base font-semibold line-clamp-2">
+              <div className="card-body flex flex-col !p-4 h-full group-hover:text-white transition-colors duration-500">
+                <h2 className="text-base font-semibold line-clamp-2 flex-1">
                   {post.caption}
                 </h2>
+                <p className=" md:text-sm text-xs text-right">
+                    {moment(post.timestamp, 'YYYYMMDD').fromNow()}
+                  </p>
               </div>
             </div>
 

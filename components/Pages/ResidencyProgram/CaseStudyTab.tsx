@@ -99,7 +99,7 @@ const CaseStudyTab = ({ caseStudies } : {caseStudies:TCaseStudy[]}) => {
                   >
                     Solution
                   </motion.h3>
-                  <motion.div variants={item} className=" text-black">
+                  <motion.div variants={item} className=" text-black rich-text">
                     {parse(selectedCaseStudy.solution)}
                   </motion.div>
                 </motion.div>
