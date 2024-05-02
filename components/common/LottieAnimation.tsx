@@ -4,7 +4,7 @@ import React from 'react';
 import { Player } from '@lottiefiles/react-lottie-player';
 import { motion } from 'framer-motion';
 
-const LottieAnimation = ({ animationData }: { animationData: any }) => {
+const LottieAnimation = ({ animationData }: { animationData: JSON }) => {
   if (typeof document === 'undefined') {
     return null; 
   }
