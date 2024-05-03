@@ -1,16 +1,14 @@
 import React from 'react';
 import PaddingContainer from '../../Layout/PaddingContainer';
 import { focusAreas } from './const';
-import FocusAreaCard from '../../common/Cards/FocusAreaCard';
+import FocusAreaCard from './FocusAreaCard';
 import CustomTitle from '@/components/common/CustomTitle';
 import AnimatedPara from '@/components/common/AnimatedPara';
 
 const FocusAreas = () => {
   return (
     <PaddingContainer className=" py-10">
-      <CustomTitle className=' pb-10'>
-        FOCUS AREAS
-      </CustomTitle>
+      <CustomTitle className=" pb-5">FOCUS AREAS</CustomTitle>
       <AnimatedPara className=" text-center text-black text-lg font-medium ">
         The Dipalo Heed ClimateTech fund invests in enabling architecture and
         scalable products with which we can save the planet. We target emerging
@@ -18,7 +16,7 @@ const FocusAreas = () => {
         expertise is a differentiator. 
       </AnimatedPara>
 
-      <div className=" grid grid-cols-2 py-10">
+      <div className=" grid grid-cols-2 py-5 lg:gap-x-28 gap-x-5 lg:gap-y-14 gap-y-5">
         {focusAreas.map((area, index) => (
           <FocusAreaCard
             key={index}

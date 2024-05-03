@@ -3,6 +3,7 @@ import React from 'react';
 import image from '@/public/assets/headers/fund2.jpg';
 import Fund2Thesis from '@/components/Pages/Fund2/Fund2Thesis';
 import FocusAreas from '@/components/Pages/Fund2/FocusAreas';
+import Partnership from '@/components/Pages/Fund2/Partnership';
 const Fund2Page = () => {
   return (
     <>
@@ -13,6 +14,7 @@ const Fund2Page = () => {
       />
       <Fund2Thesis />
       <FocusAreas />
+      <Partnership />
     </>
   );
 };
