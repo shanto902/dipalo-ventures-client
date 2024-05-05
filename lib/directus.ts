@@ -5,9 +5,6 @@ const directus = createDirectus(process.env.NEXT_PUBLIC_API_URL as string)
     rest({
       onRequest: (options) => ({
         ...options,
-        next: {
-          revalidate: 0,
-        },
       }),
     })
   );
