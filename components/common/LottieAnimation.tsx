@@ -3,8 +3,9 @@ import React from 'react';
 
 import { Player } from '@lottiefiles/react-lottie-player';
 import { motion } from 'framer-motion';
+import { twMerge } from 'tailwind-merge';
 
-const LottieAnimation = ({ animationData }: { animationData: JSON }) => {
+const LottieAnimation = ({ animationData, className }: { animationData: any, className?:string }) => {
   if (typeof document === 'undefined') {
     return null; 
   }
@@ -17,7 +18,7 @@ const LottieAnimation = ({ animationData }: { animationData: JSON }) => {
       viewport={{ once: true }}
     >
       <Player
-        className="md:h-[400px] md:w-[400px] h-full w-full"
+        className={ twMerge("h-full w-full", className)}
         src={animationData}
         autoplay
         loop

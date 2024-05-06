@@ -23,7 +23,7 @@ const ThesisSection = () => {
           amazing new products and services are being introduced in this space,
           venture capital needs to invest in this next wave of opportunity.
         </AnimatedPara>
-        <LottieAnimation animationData={animationData} />
+        <LottieAnimation  className='md:w-[300px] md:h-[300px]' animationData={animationData} />
       </div>
     </PaddingContainer>
   );

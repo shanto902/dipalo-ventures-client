@@ -45,7 +45,7 @@ const Process = () => {
             technical diligence prior to the initial investment.
           </AnimatedPara>
 
-          <LottieAnimation animationData={animationData} />
+          <LottieAnimation className='md:w-[300px] md:h-[300px]' animationData={animationData} />
         </div>
         <section className="bg-stone-50 rounded-3xl py-10 shadow">
           <motion.div

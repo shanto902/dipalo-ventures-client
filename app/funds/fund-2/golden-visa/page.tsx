@@ -4,11 +4,10 @@ import image from '@/public/assets/headers/golden-visa.jpg';
 import getAllBenefits from '@/helpers/getAllBenefits';
 import Benefits from '@/components/Pages/Fund2/GoldenVisa/Benefits';
 import getGoldenVisaPage from '@/helpers/getGoldenVisaPage';
-import CustomTitle from '@/components/common/CustomTitle';
-import AnimatedPara from '@/components/common/AnimatedPara';
 import WhyPortugal from '@/components/Pages/Fund2/GoldenVisa/WhyPortugal';
 import Investment from '@/components/Pages/Fund2/GoldenVisa/Investment';
-import Timeline from '@/components/Pages/Fund2/GoldenVisa/Timeline';
+import FundRoute from '@/components/Pages/Fund2/GoldenVisa/FundRoute';
+import Process from '@/components/Pages/Fund2/GoldenVisa/Process';
 
 const page = async () => {
   const benefits = await getAllBenefits();
@@ -24,10 +23,12 @@ const page = async () => {
 
       <Investment
         text={goldenVisaPage.investment}
-        animationLink={goldenVisaPage.fundRouteAnimation}
+        animationLink={goldenVisaPage.investmentAnimation}
       />
       <Benefits benefits={benefits} />
-      <Timeline />
+      <FundRoute  text={goldenVisaPage.whyTakeTheFundRoute}
+        animationLink={goldenVisaPage.fundRouteAnimation}/>
+     <Process />
     </>
   );
 };
