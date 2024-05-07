@@ -8,6 +8,9 @@ import WhyPortugal from '@/components/Pages/Fund2/GoldenVisa/WhyPortugal';
 import Investment from '@/components/Pages/Fund2/GoldenVisa/Investment';
 import FundRoute from '@/components/Pages/Fund2/GoldenVisa/FundRoute';
 import Process from '@/components/Pages/Fund2/GoldenVisa/Process';
+import FAQ from '@/components/Pages/Fund2/GoldenVisa/FAQ';
+import Video from '@/components/Pages/Fund2/GoldenVisa/Video';
+
 
 const page = async () => {
   const benefits = await getAllBenefits();
@@ -29,6 +32,8 @@ const page = async () => {
       <FundRoute  text={goldenVisaPage.whyTakeTheFundRoute}
         animationLink={goldenVisaPage.fundRouteAnimation}/>
      <Process />
+     <FAQ />
+     <Video />
     </>
   );
 };
