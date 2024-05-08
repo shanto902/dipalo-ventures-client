@@ -7,7 +7,6 @@ import linkedinLogo from '@/public/assets/linkedin.svg';
 import Tooltip from '../../common/Tooltip';
 import { TTeam } from '../../types';
 
-
 const TeamBioDialog = ({
   id,
   photo,
@@ -41,51 +40,55 @@ const TeamBioDialog = ({
           width={200}
           height={200}
         />
-       <div>
-       {hovered ? (
-          <div className="absolute bottom-4 left-0 right-0 mx-auto transition-opacity duration-500 ${hovered ? 'opacity-100' : 'opacity-0'}">
-            <div className="text-center text-white">
-              <h2 className="text-base font-bold uppercase group-hover:drop-shadow-lg drop-shadow-none transition-shadow duration-300">{name}</h2>
-              <h3 className="text-xs group-hover:drop-shadow-md drop-shadow-none transition-shadow duration-300">{designation}</h3>
-              <div>
-                <a
-                  href={linkedinLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mx-auto mt-2 -mb-1 inline-block"
+        <div>
+          {hovered ? (
+            <div className="absolute bottom-4 left-0 right-0 mx-auto transition-opacity duration-500 ${hovered ? 'opacity-100' : 'opacity-0'}">
+              <div className="text-center text-white">
+                <h2 className="text-base font-bold uppercase group-hover:drop-shadow-lg drop-shadow-none transition-shadow duration-300">
+                  {name}
+                </h2>
+                <h3 className="text-xs group-hover:drop-shadow-md drop-shadow-none transition-shadow duration-300">
+                  {designation}
+                </h3>
+                <div>
+                  <a
+                    href={linkedinLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mx-auto mt-2 -mb-1 inline-block"
+                  >
+                    <Image
+                      src={linkedinLogo}
+                      className=" cursor-pointer drop-shadow-md hover:drop-shadow-none transition-all duration-300"
+                      alt="Linkedin Icon"
+                    />
+                  </a>
+                </div>
+                <div
+                  className="z-20 inline-block text-xs mx-auto pointer hover:underline underline-offset-4 cursor-pointer transition-all duration-300 drop-shadow-md"
+                  onClick={() => {
+                    const modal = document.getElementById(
+                      `my_modal_${id}`
+                    ) as HTMLDialogElement;
+                    if (modal) {
+                      modal.showModal();
+                    }
+                  }}
                 >
-                  <Image
-                    src={linkedinLogo}
-                    className=" cursor-pointer drop-shadow-md hover:drop-shadow-none transition-all duration-300"
-                    alt="Linkedin Icon"
-                  />
-                </a>
-              </div>
-              <div
-                className="z-20 inline-block text-xs mx-auto pointer hover:underline underline-offset-4 cursor-pointer transition-all duration-300 drop-shadow-md"
-                onClick={() => {
-                  const modal = document.getElementById(
-                    `my_modal_${id}`
-                  ) as HTMLDialogElement;
-                  if (modal) {
-                    modal.showModal();
-                  }
-                }}
-              >
-                Click To Learn More
+                  Click To Learn More
+                </div>
               </div>
             </div>
-          </div>
-        ) : (
-          <div className="absolute bottom-4 left-0 right-0 mx-auto transition-opacity duration-500 ${hovered ? 'opacity-100' : 'opacity-0'}">
-            <div className="text-center text-black px-4 ">
-              <h2 className="text-base font-bold uppercase">{name}</h2>
-              <h3 className="text-xs">{designation}</h3>
-              <div className=" text-xs line-clamp-2 my-2">{parse(bio)}</div>
+          ) : (
+            <div className="absolute bottom-4 left-0 right-0 mx-auto transition-opacity duration-500 ${hovered ? 'opacity-100' : 'opacity-0'}">
+              <div className="text-center text-black px-4 ">
+                <h2 className="text-base font-bold uppercase">{name}</h2>
+                <h3 className="text-xs">{designation}</h3>
+                <div className=" text-xs line-clamp-2 my-2">{parse(bio)}</div>
+              </div>
             </div>
-          </div>
-        )}
-       </div>
+          )}
+        </div>
         <div className="shadow-md absolute w-full group-hover:bg-dipalo  bg-stone-50 h-[180px] rounded-3xl bottom-0 -z-10 transition-colors duration-300" />
       </section>
 
