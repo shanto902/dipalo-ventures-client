@@ -14,9 +14,8 @@
   }
 
   .rich-text a {
-    @apply text-dipalo hover:underline;
+    @apply hover:text-dipalo hover:underline;
   }
-
 
   .hover-underline-animation {
     display: inline-block;
