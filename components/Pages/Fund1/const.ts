@@ -12,32 +12,27 @@ export const keyMetrics: TKeyMetrics[] = [
 export const investment: TInvestment[] = [
   {
     id: 1,
-    image: '/assets/key-metrics/k1.jpeg',
     text: 'Climate Tech',
   },
   {
     id: 2,
-    image: '/assets/key-metrics/k2.jpeg',
     text: 'Connected Device',
   },
   {
     id: 3,
-    image: '/assets/key-metrics/k3.jpeg',
     text: 'Industrial and Advanced Manufacturing',
   },
   {
     id: 4,
-    image: '/assets/key-metrics/k4.jpeg',
+
     text: 'Mobility',
   },
   {
     id: 5,
-    image: '/assets/key-metrics/k5.jpeg',
     text: 'Med Tech',
   },
   {
     id: 6,
-    image: '/assets/key-metrics/k6.jpeg',
     text: 'Food and Agriculture',
   },
 ];
