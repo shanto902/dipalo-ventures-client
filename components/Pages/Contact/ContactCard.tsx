@@ -13,7 +13,7 @@ const ContactCard = ({
   isSocial?: boolean;
 }) => {
   return (
-    <div className="w-96 h-60 relative group">
+    <div className="lg:w-96 md:w-80 w-72 h-60 relative group">
       <div className="w-full  h-full left-0 top-8 absolute bg-white rounded-[10px] border shadow group-hover:shadow-lg transition-all duration-500 border-gray-200 flex flex-col items-baseline">
         <div className=" absolute top-10 mx-5">
           <h3 className=" mb-3 lg:text-xl font-bold text-base text-left">

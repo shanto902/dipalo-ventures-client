@@ -1,5 +1,4 @@
 import Image, { StaticImageData } from 'next/image';
-import React from 'react';
 import PaddingContainer from '../../Layout/PaddingContainer';
 
 import Typewriting from '@/components/common/Typewriting';
@@ -17,11 +16,11 @@ const HeaderAboutUs = ({ image }: { image: StaticImageData }) => {
       />
       <PaddingContainer className="absolute inset-0 flex flex-col z-10 items- justify-center text-white px-5 md:mt-44 mt-10 ">
         <Typewriting
-          className="text-white text-3xl leading-[76px] font-bold drop-shadow-2xl"
+          className="text-white lg:text-3xl md:text-2xl text-xl leading-[76px] font-bold drop-shadow-2xl"
           text="Dipalo [DI-PA-LO]"
         />
         <AnimatedDiv animationStyle="down" delay={2}>
-          <ol className="list-decimal pl-5 lg:text-lg md:text-base font-normal leading-loose text-white ">
+          <ol className="list-decimal pl-5 lg:text-lg md:text-base text-sm font-normal leading-loose text-white ">
             <li>
               From Bangla, the modern South Asian language rooted in Sanskrit
             </li>

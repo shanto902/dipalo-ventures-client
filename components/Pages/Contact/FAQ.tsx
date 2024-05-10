@@ -1,6 +1,5 @@
 import CustomTitle from '@/components/common/CustomTitle';
 import PaddingContainer from '@/components/Layout/PaddingContainer';
-import React from 'react';
 import { FaUser, FaUserGroup } from 'react-icons/fa6';
 
 const faqCardText = [
@@ -23,7 +22,7 @@ const FAQ = () => {
       <div className=" flex md:flex-row flex-col items-center  justify-center gap-20">
         {faqCardText.map((card, i) => (
           <div key={i} className="relative group">
-            <div className=" pt-14 px-10  border rounded-2xl w-96 h-60 group-hover:bg-dipalo transition-all duration-500 group-hover:text-white  group-hover:shadow-lg shadow ">
+            <div className=" pt-14 px-10  border rounded-2xl lg:w-96 md:w-80 w-72  h-60 group-hover:bg-dipalo transition-all duration-500 group-hover:text-white  group-hover:shadow-lg shadow ">
               <h4 className=" text-xl font-bold">{card.mainText}</h4>
               <a className=" hover:underline my-2" href={card.link}>
                 Click to know more
