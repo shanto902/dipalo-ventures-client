@@ -1,5 +1,5 @@
 'use client';
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { twMerge } from 'tailwind-merge';
 const AnimatedPara = ({
@@ -7,7 +7,7 @@ const AnimatedPara = ({
   className,
   duration = 0.5,
   delay = 0.5,
-  animationStyle = 'fade'
+  animationStyle = 'fade',
 }: {
   children: ReactNode;
   className?: string;
@@ -20,7 +20,7 @@ const AnimatedPara = ({
     left: { opacity: 0, x: -30 },
     right: { opacity: 0, x: 30 },
     up: { opacity: 0, y: 30 },
-    down: { opacity: 0, y: -30 }
+    down: { opacity: 0, y: -30 },
   };
   return (
     <motion.p

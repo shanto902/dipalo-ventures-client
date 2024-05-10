@@ -1,5 +1,4 @@
-import CustomTitle from '@/components/common/CustomTitle';
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa6';
 import parse from 'html-react-parser';
 const ContactCard = ({
@@ -14,15 +13,15 @@ const ContactCard = ({
   isSocial?: boolean;
 }) => {
   return (
-    <div className="w-72 h-60 relative">
-      <div className="w-full h-full left-0 top-8 absolute bg-white rounded-[10px] border border-gray-200 flex flex-col items-baseline">
+    <div className="w-96 h-60 relative group">
+      <div className="w-full  h-full left-0 top-8 absolute bg-white rounded-[10px] border shadow group-hover:shadow-lg transition-all duration-500 border-gray-200 flex flex-col items-baseline">
         <div className=" absolute top-10 mx-5">
-          <CustomTitle className=" mb-5 text-base text-left">
+          <h3 className=" mb-3 lg:text-xl font-bold text-base text-left">
             {mainText}
-          </CustomTitle>
+          </h3>
           <div className=" text-base font-semibold  ">
             {isSocial ? (
-              <div className=" flex gap-5 text-4xl text-black">
+              <div className=" flex gap-5  text-4xl text-black">
                 {' '}
                 <a
                   target="_blank"
@@ -54,7 +53,7 @@ const ContactCard = ({
         </div>
       </div>
       <div
-        className="size-16
+        className="size-16 group-hover:text-white group-hover:bg-dipalo group-hover:drop-shadow transition-all duration-500 drop-shadow-none
        left-10 -top-3 flex justify-center items-center absolute bg-white rounded-full border border-gray-200"
       >
         {children}

@@ -4,6 +4,7 @@ import image from '@/public/assets/headers/contact-us.jpg';
 import ContactInfo from '@/components/Pages/Contact/ContactInfo';
 import FAQ from '@/components/Pages/Contact/FAQ';
 import ContactForm from '@/components/Pages/Contact/ContactForm';
+import GoogleMap from '@/components/Pages/Contact/GoogleMap';
 const ContactPage = () => {
   return (
     <>
@@ -11,6 +12,7 @@ const ContactPage = () => {
       <ContactInfo />
       <FAQ />
       <ContactForm />
+      <GoogleMap />
     </>
   );
 };

@@ -1,4 +1,3 @@
-import React from 'react';
 import PaddingContainer from '../../Layout/PaddingContainer';
 import { investment } from './const';
 import InvestmentsCard from './InvestmentsCard';
@@ -10,12 +9,7 @@ const Investments = () => {
       <CustomTitle>INVESTMENTS</CustomTitle>
       <div className=" grid md:grid-cols-3 grid-cols-2 md:gap-20 gap-5 mt-20 place-content-center">
         {investment.map((invest) => (
-          <InvestmentsCard
-            key={invest.id}
-            id={invest.id}
-            text={invest.text}
-            image={invest.image}
-          />
+          <InvestmentsCard key={invest.id} id={invest.id} text={invest.text} />
         ))}
       </div>
     </PaddingContainer>

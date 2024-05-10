@@ -16,17 +16,17 @@ const ResizablePanel = ({ children }: { children: ReactNode }) => {
         <motion.div
           key={JSON.stringify(children, ignoreCircularReferences())}
           initial={{
-            opacity: 0
+            opacity: 0,
           }}
           animate={{
             opacity: 1,
 
-            transition: { duration: duration / 2, delay: duration / 2 }
+            transition: { duration: duration / 2, delay: duration / 2 },
           }}
           exit={{
             opacity: 0,
 
-            transition: { duration: duration / 2 }
+            transition: { duration: duration / 2 },
           }}
         >
           <div ref={ref} className={`${height ? 'absolute' : 'relative'} `}>

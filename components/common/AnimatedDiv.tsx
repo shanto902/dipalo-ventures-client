@@ -7,7 +7,7 @@ const AnimatedDiv = ({
   id = 1,
   className,
   delay = 0.25,
-  animationStyle = 'up'
+  animationStyle = 'up',
 }: {
   children: ReactNode;
   id?: number;
@@ -20,7 +20,7 @@ const AnimatedDiv = ({
     left: { opacity: 0, x: -30 },
     right: { opacity: 0, x: 30 },
     up: { opacity: 0, y: 30 },
-    down: { opacity: 0, y: -30 }
+    down: { opacity: 0, y: -30 },
   };
   return (
     <motion.div

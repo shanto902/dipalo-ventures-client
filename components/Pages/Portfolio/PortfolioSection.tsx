@@ -1,5 +1,5 @@
 'use client';
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PaddingContainer from '../../Layout/PaddingContainer';
 import { filterCompanies } from './filterCompany';
 import PortfolioCard from '../../common/Cards/PortfolioCard';
@@ -12,23 +12,15 @@ import AnimatedDiv from '@/components/common/AnimatedDiv';
 import { useSearchParams } from 'next/navigation';
 
 const PortfolioSection = ({ companies }: { companies: TCompany[] }) => {
-  
-  const searchParams = useSearchParams()
-  const category = searchParams.get('category')
+  const searchParams = useSearchParams();
+  const category = searchParams.get('category');
   const decodedCategory = decodeURIComponent(category || '');
-
- 
-
-
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedStates, setSelectedStates] = useState<string[]>([]);
   const [selectedStages, setSelectedStages] = useState<string[]>([]);
   const [selectedCompanies, setSelectedCompanies] =
     useState<TCompany[]>(companies);
 
-
-   
-    
   useEffect(() => {
     const filteredCompanies = filterCompanies(
       selectedCategories,
@@ -45,7 +37,6 @@ const PortfolioSection = ({ companies }: { companies: TCompany[] }) => {
       setSelectedCategories([decodedCategory]); // Assuming category is a single value, use an array if it could have multiple values
     }
   }, [decodedCategory]);
-
 
   const handleFilterChange = (
     value: string,
@@ -72,9 +63,8 @@ const PortfolioSection = ({ companies }: { companies: TCompany[] }) => {
     setSelectedStages([]);
   };
 
-
   return (
-    <div id='portfolio' className='my-20'>
+    <div id="portfolio" className="my-10">
       <PaddingContainer>
         <CustomTitle>Portfolio</CustomTitle>
         <div className="flex lg:gap-6 gap-2 md:gap-4 mt-10">
@@ -149,7 +139,6 @@ const PortfolioSection = ({ companies }: { companies: TCompany[] }) => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.25 }}
-            
                 exit={{ opacity: 0 }}
                 className="text-white px-4 py-2  bg-dipalo rounded-3xl hover:bg-red-500 transition-colors duration-300"
                 onClick={clearAllFilters}
@@ -167,18 +156,18 @@ const PortfolioSection = ({ companies }: { companies: TCompany[] }) => {
           {selectedCompanies.length > 0 ? (
             <div className="grid xl:grid-cols-5 md:mx-0 mx-10 lg:grid-cols-4  md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-1 h-full my-10">
               {selectedCompanies.map((company, index) => (
-              <AnimatedDiv key={index} id={index}>
+                <AnimatedDiv key={index} id={index}>
                   <PortfolioCard
-                  status={company.status}
-                  companyName={company.companyName}
-                  logo={company.logo}
-                  category={''}
-                  state={company.state}
-                  stage={''}
-                  websiteLink={company.websiteLink}
-                  shortDescription={company.shortDescription}
-                />
-              </AnimatedDiv>
+                    status={company.status}
+                    companyName={company.companyName}
+                    logo={company.logo}
+                    category={''}
+                    state={company.state}
+                    stage={''}
+                    websiteLink={company.websiteLink}
+                    shortDescription={company.shortDescription}
+                  />
+                </AnimatedDiv>
               ))}
             </div>
           ) : (

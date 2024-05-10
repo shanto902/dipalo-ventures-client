@@ -1,10 +1,10 @@
 'use client';
 import { useState } from 'react';
 import { TInvestment } from '@/components/Pages/Fund1/types';
-import { InvestmentsSVG } from '@/components/common/SVG/InvestmentsSVG';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-const InvestmentsCard = ({ id, text }: TInvestment) => {
+import { FundTermSVG } from '@/components/common/SVG/FundTermsSvg';
+const FundTermCard = ({ id, text }: TInvestment) => {
   const [hovered, setHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -33,7 +33,7 @@ const InvestmentsCard = ({ id, text }: TInvestment) => {
       >
         <div className=" flex md:flex-row flex-col  gap-5   items-center  h-full  ">
           <motion.div variants={icon}>
-            <InvestmentsSVG id={id} hovered={hovered} width={80} height={80} />
+            <FundTermSVG id={id} hovered={hovered} width={80} height={80} />
           </motion.div>
 
           <h3 className="text-center lg:text-lg md:text-base text-sm  font-semibold text-black group-hover:text-white transition-colors duration-300">
@@ -45,4 +45,4 @@ const InvestmentsCard = ({ id, text }: TInvestment) => {
   );
 };
 
-export default InvestmentsCard;
+export default FundTermCard;

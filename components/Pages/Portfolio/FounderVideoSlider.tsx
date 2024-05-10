@@ -1,10 +1,14 @@
 'use client';
-import React from 'react';
-import Slider from 'react-slick';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import css files
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import './style.css';
+// import required modules
+import { Pagination } from 'swiper/modules';
 import { TFounderVideo } from '@/components/types';
 import AnimatedDiv from '@/components/common/AnimatedDiv';
 import VideoCard from './VideoCard';
@@ -14,51 +18,42 @@ const FounderVideoSlider = ({
 }: {
   founderVideos: TFounderVideo[];
 }) => {
-  const settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+  const breakPoints = {
+    640: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 50,
+    },
   };
   return (
     <div className="slider-container">
-      <Slider {...settings}>
+      <Swiper
+        slidesPerView={1}
+        spaceBetween={10}
+        pagination={{
+          clickable: true,
+        }}
+        breakpoints={breakPoints}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
         {founderVideos.map((video, i) => (
-          <AnimatedDiv className=" py-4" key={video.id} id={i}>
-            <VideoCard video={video} />
-          </AnimatedDiv>
+          <SwiperSlide key={i}>
+            <AnimatedDiv className=" py-4" id={i}>
+              <VideoCard video={video} />
+            </AnimatedDiv>
+          </SwiperSlide>
         ))}
-      </Slider>
+      </Swiper>
     </div>
   );
 };
-
 
 export default FounderVideoSlider;

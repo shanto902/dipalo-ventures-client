@@ -1,11 +1,10 @@
-import React from 'react';
 import PaddingContainer from '../../Layout/PaddingContainer';
 import AnimatedPara from '@/components/common/AnimatedPara';
+import animationData from '@/components/LottieFiles/portfolio-lottie.json';
+import dynamic from 'next/dynamic';
 const LottieAnimation = dynamic(() => import('../../common/LottieAnimation'), {
   ssr: false,
 });
-import animationData from '@/components/LottieFiles/portfolio-lottie.json';
-import dynamic from 'next/dynamic';
 const TopSection = () => {
   return (
     <>

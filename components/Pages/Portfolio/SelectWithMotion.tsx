@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { FaAngleDown } from "react-icons/fa";
 interface Company {
   state: string;
   stage: string;

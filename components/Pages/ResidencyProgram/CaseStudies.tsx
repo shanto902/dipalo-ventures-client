@@ -1,11 +1,10 @@
 'use client';
-import React from 'react';
 import PaddingContainer from '../../Layout/PaddingContainer';
 import CaseStudyTab from './CaseStudyTab';
 import CustomTitle from '../../common/CustomTitle';
 import { TCaseStudy } from '../../types';
 
-const CaseStudies = ({caseStudies} : { caseStudies:TCaseStudy[]}) => {
+const CaseStudies = ({ caseStudies }: { caseStudies: TCaseStudy[] }) => {
   return (
     <div className=" my-10">
       <PaddingContainer>
@@ -16,7 +15,7 @@ const CaseStudies = ({caseStudies} : { caseStudies:TCaseStudy[]}) => {
         </p>
       </PaddingContainer>
 
-      <CaseStudyTab  caseStudies={caseStudies} />
+      <CaseStudyTab caseStudies={caseStudies} />
     </div>
   );
 };
