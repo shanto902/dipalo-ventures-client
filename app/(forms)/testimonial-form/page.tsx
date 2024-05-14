@@ -1,8 +1,11 @@
 'use client';
 import React, { FormEvent, useState } from 'react'; // Import React
-import { CldUploadWidget } from 'next-cloudinary';
 import directus from '@/lib/directus';
 import { createItem, updateFile } from '@directus/sdk';
+import { CldUploadWidget } from 'next-cloudinary';
+import { FaUpload } from 'react-icons/fa';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Form = () => {
   // Define state variables
@@ -34,7 +37,6 @@ const Form = () => {
   ) => {
     const files = e.target.files;
     if (files && files.length > 0) {
-      // Check if files exist and not empty
       const file = files[0];
       try {
         const uploadResponse = await directus.request(updateFile('demo', file));
@@ -51,61 +53,89 @@ const Form = () => {
   };
 
   return (
-    <div>
+    <div className=" flex flex-col justify-center items-center">
       {/* Cloudinary upload widget */}
-      <CldUploadWidget
-        signatureEndpoint="/api/signed-video"
-        onSuccess={(result) => {
-          if (typeof result.info === 'object' && result.info !== null) {
-            const videoLink = result.info.url;
-            setFormData({ ...formData, videoLink });
-          } else {
-            console.log('Result info is not an object or is null');
-          }
-        }}
-      >
-        {({ open }) => {
-          return <button onClick={() => open()}>Upload an Image</button>;
-        }}
-      </CldUploadWidget>
-
+      <Link href={'/'} className="mb-10">
+        <Image
+          className=" hidden lg:block h-auto w-auto"
+          src="/logo.svg"
+          alt="logo"
+          width={200}
+          height={200}
+        />
+      </Link>
       {/* Form */}
-      <form onSubmit={handleSubmit}>
+      <form
+        onSubmit={handleSubmit}
+        className="card-body max-w-md mx-auto gap-4"
+      >
         {/* Input fields */}
-        <input
-          type="text"
-          value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          placeholder="Name..."
-        />
-        <input
-          type="text"
-          value={formData.companyName}
-          onChange={(e) =>
-            setFormData({ ...formData, companyName: e.target.value })
-          }
-          placeholder="Company Name..."
-        />
-        <input
-          type="text"
-          value={formData.designation}
-          onChange={(e) =>
-            setFormData({ ...formData, designation: e.target.value })
-          }
-          placeholder="Designation..."
-        />
-        {/* Input field for company logo */}
-        <input type="file" onChange={handleLogoFileChange} />{' '}
-        {/* Change event handler for file selection */}
-        <input
-          type="text"
-          value={formData.companyLogo}
-          readOnly
-          placeholder="Company Logo..."
-        />{' '}
-        {/* Read-only input for display */}
-        {/* Submit button */}
-        <button type="submit">Submit</button>
+        <label className="input input-warning input-bordered flex items-center gap-2">
+          <span className="font-bold"> Name :</span>
+          <input
+            className="grow"
+            type="text"
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+          />
+        </label>
+
+        <label className="input input-warning input-bordered flex items-center gap-2">
+          <span className="font-bold"> Designation :</span>
+          <input
+            type="text"
+            value={formData.designation}
+            onChange={(e) =>
+              setFormData({ ...formData, designation: e.target.value })
+            }
+          />
+        </label>
+
+        <label className="input input-warning input-bordered flex items-center gap-2">
+          <span className="font-bold"> Company Name :</span>
+          <input
+            type="text"
+            value={formData.companyName}
+            onChange={(e) =>
+              setFormData({ ...formData, companyName: e.target.value })
+            }
+          />
+        </label>
+
+        <label className=" flex input-warning flex-col items-start justify-center gap-2 ">
+          <span className="font-bold flex-1 text-white"> Company Logo </span>
+          <input
+            className="file-input file-input-bordered file-input-warning !w-full"
+            type="file"
+            onChange={handleLogoFileChange}
+          />
+        </label>
+
+        <CldUploadWidget
+          signatureEndpoint="/api/signed-video"
+          onSuccess={(result) => {
+            if (typeof result.info === 'object' && result.info !== null) {
+              const videoLink = result.info.url;
+              setFormData({ ...formData, videoLink });
+            } else {
+              console.log('Result info is not an object or is null');
+            }
+          }}
+        >
+          {({ open }) => {
+            return (
+              <button
+                className="mx-auto btn-warning btn w-full"
+                onClick={() => open()}
+              >
+                <FaUpload /> Upload Video Testimony
+              </button>
+            );
+          }}
+        </CldUploadWidget>
+        <button className=" mx-auto btn btn-warning max-w-sm" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );

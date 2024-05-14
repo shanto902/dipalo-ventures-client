@@ -1,4 +1,3 @@
-// import { TBenefit, TResidencyAdvisor, TTeam } from '@/components/types';
 import { TFocusArea } from '@/components/types';
 import directus from '@/lib/directus';
 import { readItems } from '@directus/sdk';

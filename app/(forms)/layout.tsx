@@ -12,7 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-black h-screen flex justify-center items-center">
         <PaddingContainer>{children}</PaddingContainer>
       </body>
     </html>
