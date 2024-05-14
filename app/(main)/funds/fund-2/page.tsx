@@ -5,7 +5,9 @@ import FocusAreas from '@/components/Pages/Fund2/FocusAreas';
 import Partnership from '@/components/Pages/Fund2/Partnership';
 import FundTerms from '@/components/Pages/Fund2/FundTerms';
 import GoldenVisa from '@/components/Pages/Fund2/GoldenVisa';
-const Fund2Page = () => {
+import getAllFocusAreas from '@/helpers/getAllFocusAreas';
+const Fund2Page = async () => {
+  const focusAreas = await getAllFocusAreas();
   return (
     <>
       <Header
@@ -14,7 +16,7 @@ const Fund2Page = () => {
         breadcrumb="Funds"
       />
       <Fund2Thesis />
-      <FocusAreas />
+      <FocusAreas focusAreas={focusAreas} />
       <Partnership />
       <FundTerms />
       <GoldenVisa />

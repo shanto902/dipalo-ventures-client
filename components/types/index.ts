@@ -80,6 +80,17 @@ export type TBenefit = {
   ];
 };
 
+export type TFocusArea = {
+  id?: string;
+  title: string;
+  image: string;
+  lists: [
+    {
+      text: string;
+    },
+  ];
+};
+
 export type TCaseStudy = {
   id?: string;
   status?: string;

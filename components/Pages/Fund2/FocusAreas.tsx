@@ -1,11 +1,11 @@
 import PaddingContainer from '../../Layout/PaddingContainer';
-import { focusAreas } from './const';
 import FocusAreaCard from './FocusAreaCard';
 import CustomTitle from '@/components/common/CustomTitle';
 import AnimatedPara from '@/components/common/AnimatedPara';
 import AnimatedDiv from '@/components/common/AnimatedDiv';
+import { TFocusArea } from '@/components/types';
 
-const FocusAreas = () => {
+const FocusAreas = ({ focusAreas }: { focusAreas: TFocusArea[] }) => {
   return (
     <PaddingContainer className=" py-10">
       <CustomTitle className=" pb-5">FOCUS AREAS</CustomTitle>
@@ -20,8 +20,8 @@ const FocusAreas = () => {
         {focusAreas.map((area, index) => (
           <AnimatedDiv className="overflow-visible" key={index} id={index}>
             <FocusAreaCard
-              listText={area.listText}
-              logo={area.logo}
+              lists={area.lists}
+              image={area.image}
               title={area.title}
             />
           </AnimatedDiv>

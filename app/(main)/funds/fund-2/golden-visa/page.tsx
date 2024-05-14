@@ -1,5 +1,4 @@
 import Header from '@/components/common/Header';
-import React from 'react';
 import image from '@/public/assets/headers/golden-visa.jpg';
 import getAllBenefits from '@/helpers/getAllBenefits';
 import Benefits from '@/components/Pages/Fund2/GoldenVisa/Benefits';
@@ -11,8 +10,7 @@ import Process from '@/components/Pages/Fund2/GoldenVisa/Process';
 import FAQ from '@/components/Pages/Fund2/GoldenVisa/FAQ';
 import Video from '@/components/Pages/Fund2/GoldenVisa/Video';
 
-
-const page = async () => {
+const GoldenVisaPage = async () => {
   const benefits = await getAllBenefits();
   const goldenVisaPage = await getGoldenVisaPage();
   return (
@@ -29,13 +27,15 @@ const page = async () => {
         animationLink={goldenVisaPage.investmentAnimation}
       />
       <Benefits benefits={benefits} />
-      <FundRoute  text={goldenVisaPage.whyTakeTheFundRoute}
-        animationLink={goldenVisaPage.fundRouteAnimation}/>
-     <Process />
-     <FAQ />
-     <Video />
+      <FundRoute
+        text={goldenVisaPage.whyTakeTheFundRoute}
+        animationLink={goldenVisaPage.fundRouteAnimation}
+      />
+      <Process />
+      <FAQ />
+      <Video />
     </>
   );
 };
 
-export default page;
+export default GoldenVisaPage;
