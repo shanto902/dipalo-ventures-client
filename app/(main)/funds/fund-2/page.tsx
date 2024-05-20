@@ -6,6 +6,14 @@ import Partnership from '@/components/Pages/Fund2/Partnership';
 import FundTerms from '@/components/Pages/Fund2/FundTerms';
 import GoldenVisa from '@/components/Pages/Fund2/GoldenVisa';
 import getAllFocusAreas from '@/helpers/getAllFocusAreas';
+import { getMetadata } from '@/components/utils/generateMetadata';
+
+export const metadata = getMetadata({
+  title: 'Heed ClimateTech Fund II | Dipalo Ventures',
+  description:
+    'Hard Tech Innovation for Climate Change: Engineering for a Greener World',
+});
+
 const Fund2Page = async () => {
   const focusAreas = await getAllFocusAreas();
   return (
