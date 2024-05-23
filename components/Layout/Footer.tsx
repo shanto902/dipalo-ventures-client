@@ -2,13 +2,8 @@ import PaddingContainer from './PaddingContainer';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import {
-  FaCaretRight,
-  FaInstagram,
-  FaLinkedin,
-  FaTwitter,
-  FaYoutube,
-} from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
+import NewsLetter from '../common/NewsLetter';
 
 const Footer = () => {
   type TSocialIcons = {
@@ -119,23 +114,7 @@ const Footer = () => {
 
             <p className="text-white">Subscribe to our newsletter</p>
 
-            <div className="relative mt-5 ">
-              <input
-                type="text"
-                id="username"
-                className="border-b py-1 w-full md:w-auto focus:outline-none text-white bg-zinc-900 focus:border-dipalo focus:border-b-2 transition-colors peer"
-                autoComplete="off"
-              />
-              <label
-                htmlFor="username"
-                className="absolute left-0 top-1 text-white text-base cursor-text peer-focus:text-xs peer-focus:-top-4 peer-focus:text-dipalo transition-all"
-              >
-                Email
-              </label>
-            </div>
-            <button className=" flex items-center  gap-2 mt-5 uppercase text-center border rounded  text-sm shadow-md border-white border-opacity-30 py-2 px-4 hover:bg-dipalo z-20 text-white transition-all duration-500">
-              Subscribe <FaCaretRight />
-            </button>
+            <NewsLetter />
           </div>
         </div>
 
