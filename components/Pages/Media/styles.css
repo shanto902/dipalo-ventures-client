@@ -1,20 +1,25 @@
-.swiper-button-next, 
+.swiper-button-next,
 .swiper-button-prev {
-  color: #FFB012;
+  color: #ffb012;
+  background-color: black;
+  opacity: 0.6;
+  height: 50px;
+  width: 40px;
+  border-radius: 10px;
 }
 
-.swiper-button-next:after, 
+.swiper-button-next:after,
 .swiper-button-prev:after {
   font-size: 30px;
 }
 
-.swiper-button-next.swiper-button-disabled, 
+.swiper-button-next.swiper-button-disabled,
 .swiper-button-prev.swiper-button-disabled {
-    opacity: 0;
+  opacity: 0;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #FFB012 !important;
+  background-color: #ffb012 !important;
 }
 
 .swiper-pagination-bullet {

@@ -3,14 +3,60 @@ import PaddingContainer from '@/components/Layout/PaddingContainer';
 import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import animationData from '@/components/LottieFiles/contact-us2.json';
+import { FormEvent, useState } from 'react';
+import directus from '@/lib/directus';
+import { createItem } from '@directus/sdk';
+import Swal from 'sweetalert2';
 const LottieAnimation = dynamic(
   () => import('@/components/common/LottieAnimation'),
   {
     ssr: false,
   }
 );
-
 const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phoneNo: '',
+    subject: '',
+    comment: '',
+  });
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    try {
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('phoneNo', formData.phoneNo);
+      formDataToSend.append('subject', formData.subject);
+      formDataToSend.append('comment', formData.comment);
+
+      // Log form information
+      console.log('Form submitted with the following information:');
+      formDataToSend.forEach((value, key) => {
+        console.log(key, value);
+      });
+
+      const response = await directus.request(createItem('contacts', formData));
+      console.log('Response from Directus:', response);
+    } catch (error) {
+      console.error('Error occurred:', error);
+      Swal.fire({
+        title: 'Error!',
+        text: 'Something Went wrong',
+        icon: 'error',
+        confirmButtonText: 'Close',
+      });
+    }
+    Swal.fire({
+      text: 'Form submitted successfully',
+      icon: 'success',
+      confirmButtonText: 'Close',
+    });
+    (e.target as HTMLFormElement).reset();
+  };
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -48,11 +94,14 @@ const ContactForm = () => {
             <LottieAnimation className="" animationData={animationData} />
           </div>
           <div className="card flex-1 w-full">
-            <form className="card-body space-y-2">
+            <form onSubmit={handleSubmit} className="card-body space-y-2">
               <div className="form-control">
                 <input
                   type="text"
                   placeholder="Your Name"
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
                   className="input input-bordered"
                   required
                 />
@@ -62,6 +111,9 @@ const ContactForm = () => {
                   type="email"
                   placeholder="Your Email"
                   className="input input-bordered"
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                   required
                 />
               </div>
@@ -70,8 +122,9 @@ const ContactForm = () => {
                   type="text"
                   placeholder="Your Phone No"
                   className="input input-bordered"
-                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                  title="Phone number format: xxx-xxx-xxxx"
+                  onChange={(e) =>
+                    setFormData({ ...formData, phoneNo: e.target.value })
+                  }
                   required
                 />
               </div>
@@ -81,6 +134,9 @@ const ContactForm = () => {
                   type="text"
                   placeholder="Subject"
                   className="input input-bordered"
+                  onChange={(e) =>
+                    setFormData({ ...formData, subject: e.target.value })
+                  }
                   required
                 />
               </div>
@@ -88,6 +144,9 @@ const ContactForm = () => {
                 <textarea
                   className="textarea textarea-bordered"
                   placeholder="Your Comment"
+                  onChange={(e) =>
+                    setFormData({ ...formData, comment: e.target.value })
+                  }
                 ></textarea>
               </div>
               <div className="form-control mt-6">

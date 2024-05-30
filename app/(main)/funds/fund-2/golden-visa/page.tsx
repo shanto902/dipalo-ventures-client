@@ -20,6 +20,7 @@ export const metadata = getMetadata({
 const GoldenVisaPage = async () => {
   const benefits = await getAllBenefits();
   const goldenVisaPage = await getGoldenVisaPage();
+  console.log(goldenVisaPage);
   return (
     <>
       <Header
