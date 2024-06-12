@@ -14,6 +14,8 @@ const MediaPage = async () => {
   const youtubePlaylist = await getAllYoutubeVideos();
   const instagramPosts = await getAllInstagramPosts();
 
+  console.log(instagramPosts);
+
   return (
     <>
       <Header image={image} title={'Media'} breadcrumb="Media" />
