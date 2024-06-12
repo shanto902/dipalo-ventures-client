@@ -10,7 +10,7 @@ import { getMetadata } from '@/components/utils/generateMetadata';
 export const metadata = getMetadata({
   title: 'The Teams | Dipalo Ventures',
   description:
-    'We Help To Achieve, Your Business Goal. Collectively, we represent a level of experience in product development and manufacturing generally not found in venture capital.',
+    'We help achieve your business goal with our unparalleled expertise in product development and manufacturing.',
 });
 const AboutUSPage = async () => {
   const members = await getAllTeamMembers();

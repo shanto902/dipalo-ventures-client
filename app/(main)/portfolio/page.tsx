@@ -11,7 +11,7 @@ import { getMetadata } from '@/components/utils/generateMetadata';
 export const metadata = getMetadata({
   title: 'Our Portfolio | Dipalo Ventures',
   description:
-    'Our first fund specialized in advancing built technologies at the intersection of digital and physical. We sought to foster innovative solutions that integrate seamlessly into our built world to promote sustainability and resilience.',
+    '“Our first fund focused on advancing built technologies at the intersection of the digital and physical products. We aimed to nurture innovative solutions that integrate seamlessly with our built environment, enhancing sustainability and resilience.”',
 });
 const PortfolioPage = async () => {
   const founderVideos = await getAllFounderVideos();

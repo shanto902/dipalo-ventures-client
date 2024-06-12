@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import { Suspense } from 'react';
 import PaddingContainer from '../../Layout/PaddingContainer';
 import TeamBioDialog from './TeamBioDialog';
 import CustomTitle from '../../common/CustomTitle';
@@ -22,8 +22,8 @@ const TeamSection = ({ members }: { members: TTeam[] }) => {
           Your Business <span className=" text-dipalo">Goal</span>
         </AnimatedPara>
         <AnimatedPara>
-          Collectively, we represent a level of experience in product
-          development and manufacturing generally not found in venture capital.
+          With our unparalleled expertise in product development and
+          manufacturing.
         </AnimatedPara>
       </AnimatedDiv>
 

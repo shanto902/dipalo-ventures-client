@@ -2,11 +2,9 @@ import { useState } from 'react';
 import { motion, AnimatePresence, MotionConfig } from 'framer-motion';
 import { navItems } from './NavItems';
 import Link from 'next/link';
-import { IoIosArrowDown } from 'react-icons/io';
-import Image from 'next/image';
-import { FaLinkedin } from "react-icons/fa";
-import { FaFacebookSquare } from "react-icons/fa";
-import { FaInstagramSquare } from "react-icons/fa";
+import { FaLinkedin } from 'react-icons/fa';
+import { FaFacebookSquare } from 'react-icons/fa';
+import { FaInstagramSquare } from 'react-icons/fa';
 export default function Navbar() {
   const [mobileNav, setMobileNav] = useState(false);
 
@@ -59,7 +57,7 @@ export default function Navbar() {
             className="w-6 bg-white h-px block"
           ></motion.span>
         </motion.button>
-        <AnimatePresence mode='wait'>
+        <AnimatePresence mode="wait">
           {mobileNav && (
             <MotionConfig
               transition={{
@@ -123,7 +121,10 @@ export default function Navbar() {
                       <ul className=" list-disc ml-10">
                         {d.children &&
                           d.children.map((ch, j) => (
-                            <li className="hover:underline underline-offset-4" key={j}>
+                            <li
+                              className="hover:underline underline-offset-4"
+                              key={j}
+                            >
                               <Link
                                 className=" inline-flex items-center gap-2"
                                 href={ch.link ?? '#'}
@@ -134,7 +135,10 @@ export default function Navbar() {
                               <ul className="ml-10 list-disc">
                                 {ch.children &&
                                   ch.children.map((sub, i) => (
-                                    <li className='hover:underline underline-offset-4' key={i}>
+                                    <li
+                                      className="hover:underline underline-offset-4"
+                                      key={i}
+                                    >
                                       {' '}
                                       <Link
                                         className=" inline-flex items-center gap-2"
@@ -179,13 +183,22 @@ export default function Navbar() {
                   className="list-none flex justify-center gap-x-4"
                 >
                   <li>
-                   <FaLinkedin  size={32} className='text-white  backdrop-blur-md'/>
+                    <FaLinkedin
+                      size={32}
+                      className="text-white  backdrop-blur-md"
+                    />
                   </li>
                   <li>
-                  <FaFacebookSquare size={32} className='text-white  backdrop-blur-md'/>
+                    <FaFacebookSquare
+                      size={32}
+                      className="text-white  backdrop-blur-md"
+                    />
                   </li>
                   <li>
-                  <FaInstagramSquare size={32} className='text-white  backdrop-blur-md'/>
+                    <FaInstagramSquare
+                      size={32}
+                      className="text-white  backdrop-blur-md"
+                    />
                   </li>
                 </motion.ul>
                 <motion.div

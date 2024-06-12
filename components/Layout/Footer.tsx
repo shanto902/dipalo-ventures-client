@@ -2,7 +2,7 @@ import PaddingContainer from './PaddingContainer';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa';
 import NewsLetter from '../common/NewsLetter';
 
 const Footer = () => {
@@ -16,16 +16,12 @@ const Footer = () => {
       link: 'https://www.linkedin.com/company/dipaloventures/',
     },
     {
-      icon: <FaTwitter />,
-      link: 'https://twitter.com/DipaloVentures',
-    },
-    {
       icon: <FaInstagram />,
       link: 'https://www.instagram.com/dipaloventures/',
     },
     {
       icon: <FaYoutube />,
-      link: 'https://www.youtube.com/@dipaloventures9243',
+      link: 'https://www.youtube.com/@dipaloventures',
     },
   ];
   const quickLinks = [
