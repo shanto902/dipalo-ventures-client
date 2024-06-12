@@ -40,7 +40,7 @@ const InternsList = () => {
         {people.map((intern, index) => (
           <AnimatedDiv
             id={index}
-            delay={0.1}
+            delay={0.05}
             className={`text-center ${index >= people.length - 1 ? 'col-span-3' : ''}`}
             key={intern.id}
           >

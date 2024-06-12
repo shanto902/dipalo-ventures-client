@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 import linkedinLogo from '@/public/assets/linkedin.svg';
 
 const ResidencyAdvisorsCard = ({
@@ -8,16 +7,16 @@ const ResidencyAdvisorsCard = ({
   name,
   designation,
   companyName,
-  linkedinLink
+  linkedinLink,
 }: {
   image: string;
   name: string;
   designation: string;
-  companyName:string;
+  companyName: string;
   linkedinLink: string;
 }) => {
   return (
-    <div>
+    <>
       <div className="group relative  items-center justify-center  rounded-full overflow-hidden drop-shadow-md">
         <div className=" aspect-square  ">
           <Image
@@ -34,13 +33,14 @@ const ResidencyAdvisorsCard = ({
             <h2 className="text-center mt-2  text-xs font-bold uppercase">
               {name}
             </h2>
-            <h4 className="text-center text-xs py-1  ">
-              {designation}
-            </h4>
+            <h4 className="text-center text-xs py-1  ">{designation}</h4>
             <h3 className="text-center text-dipalo text-xs font-semibold ">
               {companyName}
             </h3>
-            <Link className=' opacity-0 group-hover:opacity-100 duration-300' href={linkedinLink}>
+            <Link
+              className=" opacity-0 group-hover:opacity-100 duration-300"
+              href={linkedinLink}
+            >
               <Image
                 src={linkedinLogo}
                 className=" mt-3 mx-auto"
@@ -50,7 +50,7 @@ const ResidencyAdvisorsCard = ({
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
