@@ -8,7 +8,7 @@ import { CiRead } from 'react-icons/ci';
 
 const Medium = ({ mediumPosts }: { mediumPosts: TMediumPost[] }) => {
   return (
-    <PaddingContainer className=" relative grid grid-cols-3  gap-5 my-5">
+    <PaddingContainer className=" relative grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-5 my-5">
       {mediumPosts.map((post, i) => (
         <AnimatedDiv
           id={i}
@@ -18,7 +18,7 @@ const Medium = ({ mediumPosts }: { mediumPosts: TMediumPost[] }) => {
         >
           <Suspense fallback={<div className="skeleton w-full h-full"></div>}>
             <div className=" flex flex-col h-full w-full ">
-              <a target="_blank" href={post.postLink}>
+              <a target="_blank" href={post.link}>
                 <figure>
                   {' '}
                   <Image
@@ -41,9 +41,9 @@ const Medium = ({ mediumPosts }: { mediumPosts: TMediumPost[] }) => {
                   {post.description}
                 </p>
                 <div className="card-actions justify-end">
-                  <p>{moment(post.publishedDate, 'YYYYMMDD').fromNow()}</p>
+                  <p>{moment(post.published).fromNow()}</p>
                   <a
-                    href={post.postLink}
+                    href={post.link}
                     className="  hover:underline decoration-white underline-offset-4 font-bold"
                   >
                     Read Post

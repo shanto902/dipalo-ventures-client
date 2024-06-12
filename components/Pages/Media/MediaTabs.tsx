@@ -3,11 +3,11 @@ import { ReactNode, useState } from 'react';
 import PaddingContainer from '../../Layout/PaddingContainer';
 import { motion, MotionConfig } from 'framer-motion';
 import ResizablePanel from '../../common/ResizablePanel';
-import Medium from './Medium';
 import { TInstagramPost, TMediumPost, TYoutubePlaylist } from '../../types';
 import Youtube from './Youtube';
 import Spotlight from './Spotlight';
 import Events from './Events';
+import Medium from './Medium';
 
 type TMedia = {
   id: number;

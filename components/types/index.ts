@@ -29,10 +29,13 @@ export type TResidencyAdvisor = {
 
 export type TMediumPost = {
   title: string;
-  image: string | undefined;
+  link: string;
   description: string;
-  publishedDate: string;
-  postLink: string;
+  published: number;
+  created: number;
+  author: string;
+  content: string;
+  image?: string; // Optional image property
 };
 
 export type TYoutubePlaylist = {

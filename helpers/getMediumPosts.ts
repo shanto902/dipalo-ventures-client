@@ -1,22 +1,23 @@
-import { TMediumPost } from '@/components/types';
+import { Parse } from 'rss-to-json';
 import parser from 'html-react-parser';
 
+interface TMediumPost {
+  title: string;
+  link: string;
+  description: string;
+  published: number;
+  created: number;
+  author: string;
+  content: string;
+  image?: string; // Optional image property
+
+  // Add other properties you might need
+}
+
 const getMediumPosts = async (): Promise<TMediumPost[]> => {
-  // Specify the return type as Promise<TMediumPost[]>
-  const res = await fetch(
-    'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@dipaloventures',
-    { next: { revalidate: 3600 } }
-  );
-
-  if (!res.ok) {
-    throw new Error('Failed to fetch data');
-  }
-
-  const data = await res.json();
-
-  const mediumData: TMediumPost[] = data.items.map((item: any): TMediumPost => {
-    // Specify the type of mediumData as TMediumPost[]
-    const htmlContent = item.description;
+  const rss = await Parse('https://medium.com/feed/@dipaloventures');
+  const posts: TMediumPost[] = rss.items.map((item: any) => {
+    const htmlContent = item.content;
     const parsedHtml = parser(htmlContent) as React.ReactElement[];
     const firstFigure = parsedHtml.find((element) => element.type === 'figure');
     const src =
@@ -33,14 +34,18 @@ const getMediumPosts = async (): Promise<TMediumPost[]> => {
 
     const postData: TMediumPost = {
       title: item.title,
-      description: firstParagraph,
-      image: src,
-      publishedDate: item.pubDate,
-      postLink: item.guid,
+      link: item.link,
+      description: firstParagraph, // Use the first paragraph as the description
+      published: item.published,
+      author: item.author,
+      created: item.created,
+      content: item.content,
+      image: src, // Add image property
+      // Map other properties if needed
     };
     return postData;
   });
-  return mediumData;
+  return posts;
 };
 
 export default getMediumPosts;

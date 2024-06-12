@@ -6,6 +6,7 @@ import { TResidencyAdvisor, TTeam } from '@/components/types';
 import getAllTeamMembers from '@/helpers/getAllTeamMembers';
 import getAllResidencyAdvisors from '@/helpers/getAllResidencyAdvisors';
 import { getMetadata } from '@/components/utils/generateMetadata';
+import InternsList from '@/components/Pages/AboutUs/InternsList';
 
 export const metadata = getMetadata({
   title: 'The Teams | Dipalo Ventures',
@@ -23,6 +24,7 @@ const AboutUSPage = async () => {
       <ResidencyAdvisor
         residencyAdvisors={residencyAdvisors as TResidencyAdvisor[]}
       />
+      <InternsList />
     </>
   );
 };
