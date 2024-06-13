@@ -151,7 +151,7 @@ const ContactForm = () => {
               </div>
               <div className="form-control mt-6">
                 <button className="btn bg-dipalo text-white w-32 mx-auto hover:text-dipalo hover:bg-black">
-                  Submit Now
+                  Submit to Express Yourself
                 </button>
               </div>
             </form>

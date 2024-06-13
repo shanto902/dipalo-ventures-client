@@ -41,7 +41,7 @@ const InternsList = () => {
           <AnimatedDiv
             id={index}
             delay={0.05}
-            className={`text-center ${index >= people.length - 1 ? 'col-span-3' : ''}`}
+            className={`text-center ${index >= people.length - 1 ? 'lg:col-span-3 md:col-span-2' : ''}`}
             key={intern.id}
           >
             {intern.name}
